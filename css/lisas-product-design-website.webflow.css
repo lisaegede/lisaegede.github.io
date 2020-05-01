@@ -181,9 +181,10 @@ figcaption {
 
 .container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: -45px;
 }
 
 .styleguide-content-wrap {
