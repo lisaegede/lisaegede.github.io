@@ -71,9 +71,11 @@ p {
 }
 
 a {
+  font-weight: 600;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
-  color: #1a1b1f;
+  color: #0D524E;
+  text-decoration: none
 }
 
 a:hover {
@@ -267,9 +269,9 @@ figcaption {
 }
 
 .paragraph-light {
-  padding-right: 87px;
+  padding-right: 90px;
   opacity: 0.6;
-  font-size: 15px;
+  font-size: 12x;
   line-height: 20px;
   font-style: normal;
 }
