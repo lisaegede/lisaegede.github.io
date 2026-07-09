@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lisa Egede — Design Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-mid: #4a4a46;
+      --ink-soft: #8a8a84;
+      --rule: #e2e0d8;
+      --accent: #1D4ED8;
+      --bg-light: #f9f9f7;
+      --page: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: var(--ink);
+      background: #e8e6df;
+    }
+
+    .portfolio-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--page);
+      padding: 40px 60px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 20px;
+    }
+
+    .brand-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28pt;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .brand-title em { font-style: italic; color: var(--accent); }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 20px;
+      font-size: 9.5pt;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20pt;
+      color: var(--ink);
+      margin: 40px 0 20px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 5px;
+    }
+
+    /* Case Studies Styling */
+    .case-study {
+      background: var(--bg-light);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 35px;
+      margin-bottom: 35px;
+    }
+
+    .case-study-header {
+      margin-bottom: 20px;
+    }
+
+    .meta-tag {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .case-study-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22pt;
+      font-weight: 400;
+      color: var(--ink);
+      margin-top: 5px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    @media (min-width: 768px) {
+      .project-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Controlled size constraints for closer grouping */
+    .chevron-compact-grid {
+      max-width: 700px;
+      margin: 15px auto 25px;
+    }
+
+    .small-img-container {
+      max-width: 450px;
+      margin: 15px auto 25px;
+      width: 100%;
+    }
+
+    .medium-img-container {
+      max-width: 550px;
+      margin: 15px auto 25px;
+      width: 100%;
+    }
+
+    /* Expanded container style for high-detail user flows */
+    .large-img-container {
+      max-width: 850px;
+      margin: 20px auto 30px;
+      width: 100%;
+    }
+
+    .img-wrapper {
+      margin: 25px 0;
+      width: 100%;
+    }
+
+    .grid-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+      display: block;
+    }
+
+    .caption {
+      font-size: 8.5pt;
+      color: var(--ink-soft);
+      font-style: italic;
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 25px 0 10px;
+    }
+
+    p {
+      color: var(--ink-mid);
+      margin-bottom: 15px;
+      font-size: 10pt;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 15px;
+      margin: 20px 0;
+      background: rgba(29, 78, 216, 0.04);
+      padding: 15px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: var(--ink-mid);
+    }
+    li { margin-bottom: 5px; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 25px 0;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 30px;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .containerSocial {
+      display: flex;
+      gap: 25px;
+    }
+
+    .social a {
+      color: var(--ink-mid);
+      font-size: 14pt;
+      transition: color 0.2s;
+    }
+    .social a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .portfolio-wrapper { padding: 25px 20px; }
+      .case-study { padding: 20px; }
+      .brand-title { font-size: 22pt; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="portfolio-wrapper">
+
+  <header>
+    <div class="nav-bar">
+      <h1 class="brand-title">Lisa <em>Egede</em></h1>
+      <nav class="nav-links">
+        <a href="#chevron">Chevron App Design</a>
+        <a href="#ambrosia">Ambrosia Launcher</a>
+        <a href="#oua">OUA Touch Screen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-heading">Selected Design Case Studies</h2>
+
+    <article class="case-study" id="chevron">
+      <div class="case-study-header">
+        <span class="meta-tag">Dallas, Texas — Software Development &amp; UX Design Internship</span>
+        <h3 class="case-study-title">Functional Excellence Framework (FEF) Application</h3>
+      </div>
+
+      <p>In the Summer of 2019, I interned as a software developer at Chevron's corporate offices. Within the first few weeks of my internship, I began working on an agile team that consisted of full-time Chevron employees. Because agile methodology was a fundamental part of the development process, we met frequently across 4 total sprints to gather continuous, iterative feedback directly from the app's prospective system stakeholders.</p>
+
+      <h3>The Project</h3>
+      <p>To make sharing applications within business units easier, I was tasked with designing and developing the <strong>Functional Excellence Framework (FEF) Application</strong> on a Microsoft cloud platform.</p>
+
+      <blockquote class="block-quote-3">
+        <strong><em>The FEF System Objective:</em></strong><br>
+        Chevron employees maintain yearly performance metrics and operational targets. Each quarter they review these metrics and establish updated goals based on the accomplishments made in the previous quarter. Managers (Sponsors) utilize this system to view structural updates and write context-specific feedback on execution, while reporting employees (Creators) can initialize and manage metrics records.
+      </blockquote>
+
+      <h3>The Problem: Facilitating a Large Transition</h3>
+      <p>The IT department was undergoing a major technical structural shift when I entered as an intern: the legacy database migration to the cloud. This process was a stressful period for long-time employees navigating changed platform tools. Simultaneously, the core desktop software being used by Upstream IT was slow and unpleasant for users to navigate safely.</p>
+
+      <p>Crucial system tracking bugs included:</p>
+      <ul>
+        <li>System comments on specific team metrics were accidentally being overwritten by asynchronous updates.</li>
+        <li>When records were initialized, accurate transactional timestamps failed to register.</li>
+        <li>The system was unable to audit or track exactly which stakeholder modified a specific performance block.</li>
+      </ul>
+
+      <p>My core goal was to build a secure internal platform that streamlined record tracking while intentionally managing the human elements of the transition. It was essential that the system interaction patterns felt safe, stable, and highly predictable for everyday employees.</p>
+
+      <p>I followed Chevron's font and color scheme by referencing their website (chevron.com).</p>
+      <div class="small-img-container">
+        <img src="images/font.png" srcset="images/font-p-500.png 500w, images/font-p-800.png 800w, images/font.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Typography reference parameters" class="grid-img">
+      </div>
+
+
+      <h3>User Journey &amp; Architecture Layouts</h3>
+      <p>I wanted to create a process that was clear yet semi-methodical, helping Chevron employees achieve a comfortable and familiar experience. To ground this process, I mapped out a user persona and workflow tracking mechanics to align with daily realities.</p>
+
+      <p>Because I was developing an application that was drastically different than the previous, I wanted to ease its users into the new product. This meant using step by step screens and using a color scheme that felt comfortable and familiar. I consistently looked for feedback from my team and current employees to create a layout that fit their needs.</p>
+
+      <div class="medium-img-container">
+        <img src="images/theHomepage.png" srcset="images/theHomepage-p-500.png 500w, images/theHomepage-p-800.png 800w, images/theHomepage.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Application Homepage Environment Layout" class="grid-img">
+      </div>
+
+
+
+      <p>The User Journey</p>
+      <div class="large-img-container">
+          <img src="images/jessie.png" class="grid-img" alt="User Persona Framework">
+        <p class="caption">Our user persona: Jessie.</p>
+      </div>
+
+      <p>An example of Jessie's sequential interaction pathway is mapped below, demonstrating how structural stability scales across platform stages:</p>
+      <div class="large-img-container">
+        <img src="images/journeyFlow.png" class="grid-img" alt="User Journey Map Architecture Flow">
+        <p class="caption">Jessie's end-to-end milestone tracking journey flow map.</p>
+      </div>
+
+      <p>To ease employees into the application environment safely, I built a step-by-step layout structure utilizing standard typography structures and components. I established interface patterns aligned perfectly to Chevron's digital system colors and design hierarchies, leveraging familiar branding patterns to drastically lower cognitive friction during systemic updates.</p>
+
+
+      <h3>The Innovation Hackathon Project</h3>
+      <p>Toward the end of the internship, I partnered with 4 cross-functional engineering interns for an internal 3-week product hackathon challenge.</p>
+      <p><strong><em>The Use Case:</em></strong> Build an operational portal for corporate volunteer event sign-ups, enabling community administrative leads to request, approve, and match internal talent dynamically.</p>
+      <p>Our extended three-week timelines allowed our team to drill deeply into workflow edge cases, component scaling, lowercase typography patterns, and accessible views, ultimately proving highly impactful when presenting system details directly to corporate judges.</p>
+
+
+
+            <div class="medium-img-container">
+              <img src="images/ttaTracker1.png" srcset="images/ttaTracker1-p-500.png 500w, images/ttaTracker1-p-800.png 800w, images/ttaTracker1.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="TTA Tracker Application Interface Overview" class="grid-img">
+              <p class="caption">Final production layout tracking milestone metrics cleanly.</p>
+              <img src="images/ttaTracker2.png" srcset="images/ttaTracker2-p-500.png 500w, images/ttaTracker2-p-800.png 800w, images/ttaTracker2.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="TTA interface layout variant" class="grid-img">
+
+            </div>
+
+            <h3>The Outcome &amp; System Value</h3>
+            <p>As the sole designer and developer navigating this space independently, I regularly conducted user-centered feedback iterations with internal teams to build trust. I completed the 3-month cycle by delivering a live deployed application presenting the final builds directly to 15 key IT leads. The functional tool directly automated and supported key operations for approximately 30 direct administrative users and safely scaled to optimize performance record-keeping workflows for nearly 200 total IT personnel across business groups.</p>
+
+    </article>
+
+    <article class="case-study" id="ambrosia">
+      <div class="case-study-header">
+        <span class="meta-tag">Open Source Initiative — Product Design &amp; Prototyping</span>
+        <h3 class="case-study-title">Ambrosia: A Consolidated Game Launcher Experience</h3>
+      </div>
+
+      <h3>The Background &amp; Discovery Strategy</h3>
+      <p>In collaboration with a distributed multi-disciplinary team of engineers, we initiated the product discovery phase for <strong>Ambrosia</strong>: a lightweight gaming launcher optimized to consolidate local execution of emulated files scattered across separate directories and environments. The tool removes setup frustration by providing automated paths, structural storage scanning, and high-fidelity interface indexing designed specifically for emulation audiences.</p>
+
+      <p>To ground our layout ideas in real user needs, we designed a targeted validation survey distributed across computer science cohorts and specialized online community boards, identifying severe user interface gaps and layout patterns lacking across existing alternative tools.</p>
+
+      <div class="project-grid">
+        <div>
+          <img src="images/Screen-Shot-2019-09-23-at-12.07.24-AM.png" class="grid-img" alt="User Research &amp; Survey Data Analysis Grid">
+        </div>
+        <div>
+          <img src="images/Screen-Shot-2019-09-22-at-11.44.34-PM.png" class="grid-img" alt="Figma Interface Architecture Layout Structure">
+        </div>
+      </div>
+
+      <h3>High-Fidelity Interface Mechanics</h3>
+      <p>We executed the complete interface lifecycle inside of <strong>Figma</strong>. We collaborated through interactive canvases, using real-time communication tools and explicit GitHub Issue tracking matrices to link visual components directly to production code specifications. The system leverages crisp card UI groupings, minimalist side-navigation systems, and inline micro-interactions to clarify system states.</p>
+
+      <div class="project-grid">
+        <div>
+          <img src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png" class="grid-img" alt="Figma Layout Exploration Architecture Canvas">
+        </div>
+        <div>
+          <img src="images/ambrosia1.gif" class="grid-img" alt="Interactive Prototyping Component: Dynamic Game Addition Flow Animation">
+        </div>
+      </div>
+      <p class="caption">Demonstrated functional prototype interaction: adding, updating metadata, and launching local software records.</p>
+    </article>
+
+    <article class="case-study" id="oua">
+      <div class="case-study-header">
+        <span class="meta-tag">Arezzo, Italy — Product Design &amp; Human Factors Lead</span>
+        <h3 class="case-study-title">OUA Touch Screen: Bridging Civic and Social Transitions</h3>
+      </div>
+
+      <h3>Background &amp; Environmental Discovery</h3>
+      <p>While studying abroad at the university's facility in Arezzo, Italy, I served as a media intern tasked with completely redesigning the interactions, user interface, and value proposition of the <strong>OUA Touch Screen</strong> kiosk system. Located centrally inside the entrance lobby of a renovated monastery housing complex, the physical installation had been historically underutilized because it lacked clear messaging and meaningful user utility.</p>
+
+      <p>Relocating to a foreign environment presents unique spatial and social anxieties for students—from basic local language challenges to managing medical visits or grocery navigation safely. My structural challenge was transforming an isolated, dark touch kiosk into an active, contextual hardware display that students confidently relied on to support daily tasks.</p>
+
+      <div class="project-grid">
+        <div>
+          <img src="images/screen.png" class="grid-img" alt="Physical Kiosk Installation View inside Monastery Lobby">
+        </div>
+        <div>
+          <img src="images/work.png" class="grid-img" alt="UX Workstation Interface Layout Production Area">
+        </div>
+      </div>
+
+      <h3>Information Architecture &amp; System Capabilities</h3>
+      <p>To improve user engagement, I first overhauled the first impression of the interface by re-spacing cluttered icon groupings, adjusting display contrast, and applying high-vibrancy visual indicators that clearly signaled touch interactivity. Working directly with the campus director, we introduced new core service tiers to streamline navigation across the city:</p>
+      <ul>
+        <li><strong>Hyperlocal Discovery:</strong> Interactive mappings detailing nearby restaurants, pharmacies, public transit connections, and grocery operating hours.</li>
+        <li><strong>Dynamic Information Hub:</strong> Live local cultural listings, campus advisories, and scheduling data.</li>
+        <li><strong>Safety Tracking &amp; Mitigation:</strong> Real-time travel warnings and regional updates (e.g., proactive notifications of upcoming European transit labor strikes) to safeguard student travel logistics.</li>
+        <li><strong>The Digital Newsstand:</strong> A custom interface grouping localized student campus publications and domestic headlines, updating weekly to help users stay connected to home.</li>
+      </ul>
+
+      <div class="project-grid">
+        <div>
+          <img src="images/newsstand.png" srcset="images/newsstand-p-500.png 500w, images/newsstand.png 750w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 750px" alt="Newsstand Feature Conception UI Layout" class="grid-img">
+        </div>
+        <div>
+          <img src="images/NewsStandFinal.png" srcset="images/NewsStandFinal-p-500.png 500w, images/NewsStandFinal.png 750w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 750px" alt="Newsstand Feature High Fidelity Production View" class="grid-img">
+        </div>
+      </div>
+      <p class="caption">The News stand was a feature to help students feel connected with happenings back home, as well as current events going on in Europe.</p>
+
+      <div class="img-wrapper">
+        <img src="images/twitterSamp.png" srcset="images/twitterSamp-p-500.png 500w, images/twitterSamp-p-800.png 800w, images/twitterSamp-p-1080.png 1080w, images/twitterSamp.png 1500w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Integrated Twitter Real-Time Feed Feed UI Showcase" class="grid-img">
+      </div>
+      <p class="caption">Twitter was also a great source for students, especially when it came to the discussion of events in Norman, and the OU Football games.</p>
+
+      <h3>Functional Product Walkthrough</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g_O4eAUG5Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="caption">System Prototype Demo: Simulating interactive navigation, tab transitions, and news selection layers.</p>
+
+      <h3>Human Factors Reflection &amp; Critical Learnings</h3>
+      <p>This early internship provided crucial human factors insights: that a design system must always prioritize user needs over aesthetic preferences. For example, a holiday interface element looping high-volume ambient music proved polarizing, demonstrating that creating uninvited elements for the designer's personal entertainment detracts from true, inclusive utility.</p>
+      <p>By shifting focus entirely toward user-centered stability, the project successfully enhanced daily communication efficiency for students and site personnel throughout the academic year.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="containerSocial">
+      <div class="social"><a href="https://www.facebook.com/lisa.n.egede" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+      <div class="social"><a href="https://www.instagram.com/lisaegede/" target="_blank"><i class="fab fa-instagram"></i></a></div>
+      <div class="social"><a href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a></div>
+      <div class="social"><a href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
