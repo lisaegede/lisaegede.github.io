@@ -29,13 +29,34 @@
   <link href="icons/webclip.png" rel="apple-touch-icon">
   <link rel="icon" href="https://creativemarket.com/op/font-preview/2265487/2/14?s=%7B%22size%22%3A72%2C%22text%22%3A%22Le%22%2C%22retina%22%3Atrue%7D">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* Desktop default: hide the mobile header */
     .mobile-only-heading {
       display: none;
     }
+
+    .containerSocial {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Increased gap for more spacing */
+      gap: 40px;
+      padding: 30px 0;
+    }
+    .containerSocial a {
+      display: inline-block;
+      color: black !important;
+      font-size: 28px;
+      line-height: 1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    /* Brand specific hover colors */
+    .social-bluesky:hover { color: #0085ff !important; }
+    .social-twitter:hover { color: #1DA1F2 !important; } /* Classic Twitter blue */
+    .social-linkedin:hover { color: #0a66c2 !important; }
 
     @media screen and (max-width: 767px) {
       .mobile-only-heading {
@@ -61,12 +82,6 @@
       .about-head-text-wrap {
         width: 100% !important;
       }
-      .containerSocial {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px 0;
-      }
     }
   </style>
 </head>
@@ -86,16 +101,11 @@
   </div>
 
   <div class="container">
-    <!-- Mobile-Only Heading: Shows up at the absolute top of the content container on phones -->
     <h2 class="hi-there-heading mobile-only-heading">Lisa Egede</h2>
-
     <div class="w-layout-grid about-intro-grid">
       <img src="images/headshot_circle.png" alt="Lisa Egede headshot" class="image" style="width: 100%; height: auto;">
       <div id="w-node-7dee623c62c1-a6fd8423" class="about-head-text-wrap">
-
-        <!-- Desktop-Only Heading: Stays next to the image on larger screens -->
-        <h2 class="hi-there-heading desktop-only-heading">Lisa Egede</h2>
-
+        <h2 class="hi-there-heading desktop-only-heading">Hello!*~</h2>
         <p class="paragraph-light px-2">
           My name is Lisa and I'm a PhD candidate in the <a href="https://hcii.cmu.edu/people/lisa-egede" target="_blank" class="link">Human Computer Interaction Institute (HCII)</a> at Carnegie Mellon University. I recieved my undergraduate degree in Computer Science from the University of Oklahoma.<br><br>
           Grounded in societal computing, my research is oriented around understanding how diverse user groups interpret and trust AI systems. <a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&hl=en" target="_blank" class="link">My research</a> has been published at various conference venues including CHI, CSCW, DIS, and FAccT! <br><br>
@@ -108,15 +118,13 @@
 
   <footer>
     <div class="containerSocial">
-      <div class="social"><a href="https://www.facebook.com/lisa.n.egede" target="_blank" style="color: black"><i class="fab fa-facebook-f"></i></a></div>
-      <div class="social"><a href="https://www.instagram.com/lisaegede/" target="_blank" style="color: black"><i class="fab fa-instagram"></i></a></div>
-      <div class="social"><a href="https://twitter.com/lisaegede" target="_blank" style="color: black"><i class="fab fa-twitter"></i></a></div>
-      <div class="social"><a href="https://www.linkedin.com/in/lisaegede/" target="_blank" style="color: black"><i class="fab fa-linkedin-in"></i></a></div>
+      <a href="https://bsky.app/profile/lisaegede.bsky.social" target="_blank" class="social-bluesky"><i class="fa-brands fa-bluesky"></i></a>
+      <a href="https://x.com/lisaegede" target="_blank" class="social-twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" class="social-linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
     </div>
   </footer>
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
 </body>
-
 </html>
