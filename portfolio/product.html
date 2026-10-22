@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lisa Egede — Research, Product, and Technical Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-mid: #4a4a46;
+      --ink-soft: #8a8a84;
+      --rule: #e2e0d8;
+      --accent: #1D4ED8;
+      --bg-light: #f9f9f7;
+      --page: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: var(--ink);
+      background: #e8e6df;
+    }
+
+    .portfolio-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--page);
+      padding: 40px 60px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    /* PDF Interactive Document Banner Rules */
+    .pdf-interactive-banner {
+      background: rgba(29, 78, 216, 0.07);
+      border: 1px dashed var(--accent);
+      border-radius: 6px;
+      padding: 12px 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 9.5pt;
+      color: var(--ink-mid);
+    }
+    .pdf-interactive-banner a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: underline;
+    }
+    .pdf-interactive-banner a:hover {
+      color: var(--ink);
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 20px;
+    }
+
+    .brand-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28pt;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .brand-title em { font-style: italic; color: var(--accent); }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 20px;
+      font-size: 9.5pt;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20pt;
+      color: var(--ink);
+      margin: 40px 0 20px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 5px;
+    }
+
+    /* Case Studies Styling */
+    .case-study {
+      background: var(--bg-light);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 35px;
+      margin-bottom: 35px;
+    }
+
+    .case-study-header {
+      margin-bottom: 20px;
+    }
+
+    .meta-tag {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .case-study-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22pt;
+      font-weight: 400;
+      color: var(--ink);
+      margin-top: 5px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    @media (min-width: 768px) {
+      .project-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Controlled size constraints for closer grouping */
+    .chevron-compact-grid {
+      max-width: 700px;
+      margin: 15px auto 25px;
+    }
+
+    .small-img-container {
+      max-width: 450px;
+      margin: 15px auto 25px;
+      width: 100%;
+    }
+
+    .medium-img-container {
+      max-width: 550px;
+      margin: 15px auto 25px;
+      width: 100%;
+    }
+
+    /* Expanded container style for high-detail user flows */
+    .large-img-container {
+      max-width: 850px;
+      margin: 20px auto 30px;
+      width: 100%;
+    }
+
+    .img-wrapper {
+      margin: 25px 0;
+      width: 100%;
+    }
+
+    .grid-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+      display: block;
+    }
+
+    .caption {
+      font-size: 8.5pt;
+      color: var(--ink-soft);
+      font-style: italic;
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 25px 0 10px;
+    }
+
+    p {
+      color: var(--ink-mid);
+      margin-bottom: 15px;
+      font-size: 10pt;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 15px;
+      margin: 20px 0;
+      background: rgba(29, 78, 216, 0.04);
+      padding: 15px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: var(--ink-mid);
+    }
+    li { margin-bottom: 5px; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 25px 0;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 30px;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .containerSocial {
+      display: flex;
+      gap: 25px;
+    }
+
+    .social a {
+      color: var(--ink-mid);
+      font-size: 14pt;
+      transition: color 0.2s;
+    }
+    .social a:hover { color: #1DA1F2; }
+
+    @media (max-width: 768px) {
+      .portfolio-wrapper { padding: 25px 20px; }
+      .case-study { padding: 20px; }
+      .brand-title { font-size: 22pt; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="portfolio-wrapper">
+
+  <header>
+    <div class="nav-bar">
+      <h1 class="brand-title">Lisa <em>Egede</em></h1>
+      <nav class="nav-links">
+        <a href="#chevron">Chevron</a>
+        <a href="#ambrosia">Ambrosia</a>
+        <a href="#oua">University of Oklahoma</a>
+        <a href="#research">AI Research</a>
+      <a href="https://www.lisaegede.com/">lisaegede.com</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-heading">Research, Product, and Technical Projects</h2>
+
+    <section aria-label="About Lisa"><h3>Hi, I’m Lisa!</h3><p>I’m a mixed-methods researcher finishing my HCI Ph.D. at Carnegie Mellon, with a background in computer science and software development. I study how people from different backgrounds make sense of technology and decide whether they can trust it to meet their needs.</p><p>I’ve worked on everything from internal tools at Chevron to AI evaluation at Microsoft and IBM Research. I enjoy getting close to a problem, figuring out what people need, and working with others to turn what we learn into something useful. Lately, I’m especially interested in bringing that experience into managing and evaluating AI products for high-stakes contexts.</p></section><article class="case-study" id="chevron">
+<div class="case-study-header"><span class="meta-tag">Software Developer | Summer 2019 | Houston, TX</span><h3 class="case-study-title">Chevron: Building a tool employees could depend on</h3></div><p>When I joined Chevron, the IT department was in the middle of a move to cloud tools. Longtime employees were adjusting to new systems, and the application they used to track performance metrics had some frustrating problems. Comments disappeared. Records had no timestamps. There wasn’t a clear way to tell who had changed what.</p><p>My summer project was to build a better way to manage those records using Microsoft PowerApps.</p><h3>Working through the problem</h3><p>As the sole developer on the application, I had a lot of independence—and plenty of questions. I worked with full-time Chevron employees across four Agile sprints, gathering feedback as I built and bringing it into the next round of changes. Those conversations helped me understand what mattered in employees’ day-to-day work, beyond what I could see in the existing application.</p><div class="small-img-container">
+        <img src="images/font.png" srcset="images/font-p-500.png 500w, images/font-p-800.png 800w, images/font.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Typography reference parameters" class="grid-img">
+      </div>
+
+      <div class="medium-img-container">
+        <img src="images/theHomepage.png" srcset="images/theHomepage-p-500.png 500w, images/theHomepage-p-800.png 800w, images/theHomepage.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Application Homepage Environment Layout" class="grid-img">
+      </div>
+
+      <div class="large-img-container">
+          <img src="images/jessie.png" class="grid-img" alt="User Persona Framework">
+        <p class="caption">Our user persona: Jessie.</p>
+      </div>
+
+      <div class="large-img-container">
+        <img src="images/journeyFlow.png" class="grid-img" alt="User Journey Map Architecture Flow">
+        <p class="caption">Jessie's end-to-end milestone tracking journey flow map.</p>
+      </div>
+
+      <h3>The application in use</h3><p>By the end of the summer, I’d delivered the Functional Excellence Framework application, which 30 IT employees depended on to track their yearly metrics, with workflows affecting nearly 200 employees. I presented the final app to about 15 technical and non-technical employees and managers.</p><h3>A three-week hackathon</h3><p>One of my favorite parts of the internship was a three-week hackathon with four other interns. We came from different IT departments and worked together on an application for volunteer event registration and administration. Having three weeks gave us room to question our first ideas and work through the details together.</p><div class="medium-img-container">
+        <img src="images/ttaTracker1.png" srcset="images/ttaTracker1-p-500.png 500w, images/ttaTracker1-p-800.png 800w, images/ttaTracker1.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="TTA Tracker Application Interface Overview" class="grid-img">
+        <p class="caption">The volunteer event application we built together.</p>
+        <img src="images/ttaTracker2.png" srcset="images/ttaTracker2-p-500.png 500w, images/ttaTracker2-p-800.png 800w, images/ttaTracker2.png 974w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="TTA interface layout variant" class="grid-img">
+      </div>
+
+      </article>
+
+    <article class="case-study" id="ambrosia">
+<div class="case-study-header"><span class="meta-tag">Collaborative Project</span><h3 class="case-study-title">Ambrosia: Making it easier to get to the game</h3></div><p>A few friends and I started working on Ambrosia because launching emulated games across different platforms could be unnecessarily frustrating. We wanted to make it easier to access games people already had on their computers.</p><p>Before getting too far, we surveyed gamers through our computer science classes and online gaming communities. Their responses gave us a better sense of which frustrations we shared and what we’d overlooked.</p><div class="project-grid">
+        <div>
+          <img src="images/Screen-Shot-2019-09-23-at-12.07.24-AM.png" class="grid-img" alt="User Research &amp; Survey Data Analysis Grid">
+        </div>
+        <div>
+          <img src="images/Screen-Shot-2019-09-22-at-11.44.34-PM.png" class="grid-img" alt="Figma Interface Architecture Layout Structure">
+        </div>
+      </div>
+
+      <h3>Working through it together</h3><p>I worked with engineers on Figma prototypes, using GitHub Issues to keep track of tasks and decisions. It was a collaborative project: we shared ideas, questioned them, and worked through changes as the product took shape.</p><div class="project-grid">
+        <div>
+          <img src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png" class="grid-img" alt="Figma Layout Exploration Architecture Canvas">
+        </div>
+        <div>
+          <img src="images/ambrosia1.gif" class="grid-img" alt="Interactive Prototyping Component: Dynamic Game Addition Flow Animation">
+        </div>
+      </div>
+      <p class="caption">Ambrosia prototype and a look at adding a game.</p></article>
+
+    <article class="case-study" id="oua">
+<div class="case-study-header"><span class="meta-tag">Marketing and Media Intern | Fall 2017 | Arezzo, Italy</span><h3 class="case-study-title">University of Oklahoma: A campus resource students had a reason to use</h3></div><p>Studying abroad came with a lot of small questions. Where’s the nearest pharmacy? How do I get groceries? Will a transit strike affect my weekend plans?</p><p>Our campus had a touchscreen in the lobby that could help answer those questions, but students weren’t really using it. During my media internship, I worked with the campus director to give it a clearer purpose.</p><div class="project-grid">
+        <div>
+          <img src="images/screen.png" class="grid-img" alt="Physical Kiosk Installation View inside Monastery Lobby">
+        </div>
+        <div>
+          <img src="images/work.png" class="grid-img" alt="UX Workstation Interface Layout Production Area">
+        </div>
+      </div>
+
+      <h3>Making it useful day to day</h3><p>I added practical local information, travel advisories, campus updates, and news from home. Because I lived there too, I could see the questions my classmates were running into and keep updating the content throughout the semester.</p><div class="project-grid">
+        <div>
+          <img src="images/newsstand.png" srcset="images/newsstand-p-500.png 500w, images/newsstand.png 750w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 750px" alt="Newsstand Feature Conception UI Layout" class="grid-img">
+        </div>
+        <div>
+          <img src="images/NewsStandFinal.png" srcset="images/NewsStandFinal-p-500.png 500w, images/NewsStandFinal.png 750w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 750px" alt="Newsstand Feature High Fidelity Production View" class="grid-img">
+        </div>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/twitterSamp.png" srcset="images/twitterSamp-p-500.png 500w, images/twitterSamp-p-800.png 800w, images/twitterSamp-p-1080.png 1080w, images/twitterSamp.png 1500w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" alt="Integrated Twitter Real-Time Feed Feed UI Showcase" class="grid-img">
+      </div>
+      <div class="video-container">
+        <iframe src="https://www.youtube-nocookie.com/embed/g_O4eAUG5Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>What stayed with me</h3><p>I also learned a memorable lesson after adding a holiday feature that looped Mariah Carey: my enthusiasm for a feature didn’t mean everyone else wanted it. This was my project, but it wasn’t my product. The people living with it had to come first.</p></article>
+
+
+    <!-- Strategic Product Research Section -->
+        <h2 class="section-heading" id="research">The questions behind my AI research</h2>
+
+        <p style="font-size: 11pt; color: var(--ink-mid); margin-bottom: 25px; font-style: italic;">A lot of my work starts with a question: does this actually work for the person using it?</p>
+
+        <div class="case-study" style="margin-bottom: 35px;">
+<p>That gets complicated with AI. An answer might sound convincing but leave someone unsure whether it’s safe to follow. A tool built for a broad community might still miss what matters to an individual.</p><p>Through interviews, experiments, and hands-on prompting sessions, I study those gaps. I’ve worked alongside engineers, clinicians, community members, and AI researchers to turn findings into evaluation methods and recommendations teams can use.</p><p>That’s the experience I want to bring into product and project work: staying close to the people a system is meant to serve, asking questions throughout development, and helping teams make informed decisions about what comes next.</p><div style="margin-top: 30px;">
+            <h3 style="font-size: 14pt; margin-bottom: 20px; border-bottom: 1px solid var(--rule); padding-bottom: 10px;">✨ Selected Research Publications ✨</h3>
+
+            <div style="margin-bottom: 25px; padding: 15px; border: 1px solid var(--rule); border-radius: 8px; background-color: #fcfcfc;">
+              <p style="font-weight: 500; margin-bottom: 5px;">
+                🏆 "For Us By Us": Intentionally Designing Technology for Lived Black Experiences (DIS 2024) — <em>Honorable Mention</em>
+                <a href="https://dl.acm.org/doi/10.1145/3643834.3661535" style="text-decoration: none; margin-left: 8px; color: var(--accent);"><i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
+              </p>
+              <p style="font-size: 9pt; color: var(--ink-mid); margin-bottom: 8px;">Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, and Denae Ford. <em>Proceedings of the 2024 ACM Designing Interactive Systems Conference</em>.</p>
+              <p style="font-size: 10pt; color: var(--ink-mid); font-style: italic;">Utilizing community narratives, this paper establishes a "For Us By Us" design framework that provides principles for centering technology on the lived experiences of Black communities.</p>
+            </div>
+
+            <div style="margin-bottom: 25px; padding: 15px; border: 1px solid var(--rule); border-radius: 8px; background-color: #fcfcfc;">
+              <p style="font-weight: 500; margin-bottom: 5px;">
+                Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support (CSCW 2022)
+                <a href="https://dl.acm.org/doi/abs/10.1145/3512899" style="text-decoration: none; margin-left: 8px; color: var(--accent);"><i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
+              </p>
+              <p style="font-size: 9pt; color: var(--ink-mid); margin-bottom: 8px;">Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, and Hanna Wallach. <em>Proceedings of the ACM on Human-Computer Interaction</em> 6, CSCW1.</p>
+              <p style="font-size: 10pt; color: var(--ink-mid); font-style: italic;">Through interviews and workshops with 33 AI practitioners, this work identifies practitioner needs and translates them into actionable product requirements for improving AI fairness.</p>
+            </div>
+
+            <div style="margin-bottom: 25px; padding: 15px; border: 1px solid var(--rule); border-radius: 8px; background-color: #fcfcfc;">
+              <p style="font-weight: 500; margin-bottom: 5px;">
+                Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking (CHI 2023)
+                <a href="https://dl.acm.org/doi/10.1145/3544548.3580719" style="text-decoration: none; margin-left: 8px; color: var(--accent);"><i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
+              </p>
+              <p style="font-size: 9pt; color: var(--ink-mid); margin-bottom: 8px;">Lisa Egede and Christina Harrington. <em>Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems</em>.</p>
+              <p style="font-size: 10pt; color: var(--ink-mid); font-style: italic;">This study captures the lived experiences of Black older adults to develop experience maps and design recommendations for building trust in health-seeking chatbots.</p>
+            </div>
+
+            <div style="margin-bottom: 25px; padding: 15px; border: 1px solid var(--rule); border-radius: 8px; background-color: #fcfcfc;">
+              <p style="font-weight: 500; margin-bottom: 5px;">
+                Exploring Culturally Informed AI Assistants: A Comparative Study of ChatBlackGPT and ChatGPT (CHI EA 2025)
+                <a href="https://dl.acm.org/doi/10.1145/3706599.3720136" style="text-decoration: none; margin-left: 8px; color: var(--accent);"><i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
+              </p>
+              <p style="font-size: 9pt; color: var(--ink-mid); margin-bottom: 8px;">Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, and Brittany Johnson. <em>Extended Abstracts of the 2025 CHI Conference on Human Factors in Computing Systems</em>.</p>
+              <p style="font-size: 10pt; color: var(--ink-mid); font-style: italic;">This research surfaces the need for culturally informed AI as a key opportunity area, demonstrating how cultural tailoring improves AI utility for Black users.</p>
+            </div>
+
+            <div style="margin-bottom: 25px; padding: 15px; border: 1px solid var(--rule); border-radius: 8px; background-color: #fcfcfc;">
+              <p style="font-weight: 500; margin-bottom: 5px;">
+                AI Automatons: AI Systems Intended to Imitate Humans (FAccT 2025)
+                <a href="https://dl.acm.org/doi/10.1145/3805689.3812377" style="text-decoration: none; margin-left: 8px; color: var(--accent);"><i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
+              </p>
+              <p style="font-size: 9pt; color: var(--ink-mid); margin-bottom: 8px;">Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, and Myra Cheng. <em>Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency</em>.</p>
+              <p style="font-size: 10pt; color: var(--ink-mid); font-style: italic;">This work surfaces design challenges surrounding AI anthropomorphism and offers strategic recommendations for mitigating machine behaviors that risk harmful user over-reliance.</p>
+            </div>
+          </div>
+        </div>
+
+
+  <footer>
+    <div class="containerSocial">
+      <div class="social"><a href="https://www.facebook.com/lisa.n.egede" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+      <div class="social"><a href="https://www.instagram.com/lisaegede/" target="_blank"><i class="fab fa-instagram"></i></a></div>
+      <div class="social"><a href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a></div>
+      <div class="social"><a href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+  </footer>
+
+</main></div>
+
+</body>
+</html>
