@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>lisa's product portfolio</title>
-  <link rel="icon" type="image/png" href="/images/lisa2.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<title>lisa's product portfolio</title>
+<link href="/images/lisa2.png" rel="icon" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       theme: {
         extend: {
@@ -38,13 +39,12 @@
       }
     }
   </script>
-  <!-- Google Fonts & FontAwesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
+<!-- Google Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
     body {
       font-family: 'DM Sans', sans-serif;
       background-color: #EFECE6;
@@ -59,735 +59,667 @@
     .img-zoom-hover:hover {
       transform: scale(1.015);
     }
-  </style>
+    #projectDialog::backdrop { background: rgba(28,27,24,.66); backdrop-filter: blur(5px); }
+    #projectDialog .case-card { display:block !important; box-shadow:none; }
+    #projectDialog .case-card .tab-navigation { display:none; }
+    #projectDialog .case-card [class*="-tab-content"] { display:block !important; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid #e7e5e4; }
+    #projectDialog .case-card [class*="-tab-content"]:first-of-type { margin-top:0; }
+    #projectDialog .case-card .bg-white > .flex.flex-wrap.gap-2.border-b { display:none; }
+    #projectDialog iframe { max-width:100%; }
+
+    #projectDialog::backdrop { backdrop-filter:none; }
+    .project-tile { will-change:auto; }
+    @media (prefers-reduced-motion: reduce) { .project-tile, .project-tile img { transition:none!important; } }
+</style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
-
-  <!-- TOP NAVIGATION HEADER -->
-  <header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="font-serif-title text-2xl sm:text-3xl text-ink tracking-tight group">
+<!-- TOP NAVIGATION HEADER -->
+<header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<a class="font-serif-title text-2xl sm:text-3xl text-ink tracking-tight group" href="#">
         Lisa <span class="italic text-accent group-hover:underline">Egede</span>
-      </a>
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-ink-mid">
-        <a href="#about" class="hover:text-accent transition">About</a>
-        <a href="#projects" class="hover:text-accent transition">Projects</a>
-        <a href="#research" class="hover:text-accent transition">AI Research</a>
-        <a href="#impact" class="hover:text-accent transition">Impact Stats</a>
-        <a href="https://www.lisaegede.com/" target="_blank" class="px-4 py-2 rounded-full border border-stone-300 hover:border-accent hover:text-accent text-xs font-semibold bg-white transition shadow-sm">
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-ink-mid">
+<a class="hover:text-accent transition" href="#about">About</a>
+<a class="hover:text-accent transition" href="#projects">Projects</a>
+<a class="hover:text-accent transition" href="#research">AI Research</a>
+<a class="hover:text-accent transition" href="#impact">Impact Stats</a>
+<a class="px-4 py-2 rounded-full border border-stone-300 hover:border-accent hover:text-accent text-xs font-semibold bg-white transition shadow-sm" href="https://www.lisaegede.com/" target="_blank">
           lisaegede.com <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-        </a>
-      </nav>
-
-      <!-- Mobile Button -->
-      <button onclick="toggleMobileNav()" class="md:hidden p-2 text-ink text-xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Dropdown Nav -->
-    <div id="mobileNav" class="hidden md:hidden border-b border-stone-300 bg-cream-100 px-6 py-4 space-y-3">
-      <a href="#about" onclick="toggleMobileNav()" class="block font-medium text-ink-mid">About</a>
-      <a href="#projects" onclick="toggleMobileNav()" class="block font-medium text-ink-mid">Projects</a>
-      <a href="#research" onclick="toggleMobileNav()" class="block font-medium text-ink-mid">AI Research</a>
-      <a href="#impact" onclick="toggleMobileNav()" class="block font-medium text-ink-mid">Impact Stats</a>
-      <a href="https://www.lisaegede.com/" target="_blank" class="block font-bold text-accent">lisaegede.com →</a>
-    </div>
-  </header>
-
-  <!-- MAIN PORTFOLIO WRAPPER -->
-  <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
-
-    <!-- HERO / ABOUT SECTION -->
-    <section id="about" class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-
-        <div class="lg:col-span-8 space-y-5">
-
-
-          <h1 class="font-serif-title text-4xl sm:text-5xl text-ink leading-tight">
+</a>
+</nav>
+<!-- Mobile Button -->
+<button class="md:hidden p-2 text-ink text-xl" onclick="toggleMobileNav()">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+<!-- Mobile Dropdown Nav -->
+<div class="hidden md:hidden border-b border-stone-300 bg-cream-100 px-6 py-4 space-y-3" id="mobileNav">
+<a class="block font-medium text-ink-mid" href="#about" onclick="toggleMobileNav()">About</a>
+<a class="block font-medium text-ink-mid" href="#projects" onclick="toggleMobileNav()">Projects</a>
+<a class="block font-medium text-ink-mid" href="#research" onclick="toggleMobileNav()">AI Research</a>
+<a class="block font-medium text-ink-mid" href="#impact" onclick="toggleMobileNav()">Impact Stats</a>
+<a class="block font-bold text-accent" href="https://www.lisaegede.com/" target="_blank">lisaegede.com →</a>
+</div>
+</header>
+<!-- MAIN PORTFOLIO WRAPPER -->
+<main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+<!-- HERO / ABOUT SECTION -->
+<section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 space-y-5">
+<h1 class="font-serif-title text-4xl sm:text-5xl text-ink leading-tight">
             Hi, my name is Lisa!
           </h1>
-
-          <p class="text-ink-mid text-base sm:text-lg leading-relaxed">
+<p class="text-ink-mid text-base sm:text-lg leading-relaxed">
             I’m a mixed-methods researcher finishing my HCI Ph.D. at Carnegie Mellon, with a foundation in computer science. I study how people from different backgrounds evaluate and make sense of emerging AI systems.
           </p>
-
-          <p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
             My work spans internal systems at Chevron and AI evaluation at Microsoft and IBM Research. A core goal that drives my work is understanding how diverse users experience and evaluate emerging AI systems. I've been lucky to have a diverse set of experiences that have allowed me to research and develop products oriented around this goal! Lately, I've been focused on managing and evaluaitng products in high-stakes settings.
           </p>
-
-          <div class="pt-2 flex flex-wrap gap-3">
-            <a href="#projects" class="px-5 py-3 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-sm transition shadow-sm flex items-center gap-2">
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="px-5 py-3 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-sm transition shadow-sm flex items-center gap-2" href="#projects">
               Explore Interactive Case Studies <i class="fas fa-arrow-down text-xs"></i>
-            </a>
-            <a href="#research" class="px-5 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-ink font-medium text-sm transition border border-stone-300 flex items-center gap-2">
+</a>
+<a class="px-5 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-ink font-medium text-sm transition border border-stone-300 flex items-center gap-2" href="#research">
               View AI Research <i class="fas fa-book-open text-xs"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Profile / Social Card -->
-        <div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
-          <div class="w-28 h-28 rounded-full overflow-hidden mb-4 border-2 border-accent/20 p-1 bg-cream-100">
-            <img src="images/headshot_circle.png" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" alt="Lisa Egede" class="w-full h-full object-cover rounded-full" />
-          </div>
-          <h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
-          <p class="text-xs text-ink-soft mt-1">Mixed-Methods UX & AI Fairness Researcher</p>
-
-          <div class="mt-5 flex gap-4 text-ink-mid text-base">
-            <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" class="hover:text-accent p-1" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/lisaegede" target="_blank" class="hover:text-accent p-1" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- INTERACTIVE CASE STUDIES SECTION -->
-    <section id="projects" class="space-y-12">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-300 pb-4">
-        <div>
-          <h2 class="font-serif-title text-3xl text-ink">Product Research</h2>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterCategory('all', event)" class="filter-btn active-filter px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-accent text-white transition shadow-sm">All</button>
-          <button onclick="filterCategory('enterprise', event)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Enterprise Software</button>
-          <button onclick="filterCategory('gaming', event)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Gaming & UX</button>
-          <button onclick="filterCategory('public-systems', event)" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Campus & Public Systems</button>
-        </div>
-      </div>
-
-      <!-- CASE STUDY 1: CHEVRON -->
-      <article data-category="enterprise" class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6">
-        <div class="border-b border-stone-200 pb-4">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Product Development and Design | Houston, TX</span>
-          <h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Chevron: Building a tool employees could depend on</h3>
-        </div>
-
-        <p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+</a>
+</div>
+</div>
+<!-- Profile / Social Card -->
+<div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
+<div class="w-28 h-28 rounded-full overflow-hidden mb-4 border-2 border-accent/20 p-1 bg-cream-100">
+<img alt="Lisa Egede" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
+</div>
+<h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
+<p class="text-xs text-ink-soft mt-1">Mixed-Methods UX &amp; AI Fairness Researcher</p>
+<div class="mt-5 flex gap-4 text-ink-mid text-base">
+<a aria-label="LinkedIn" class="hover:text-accent p-1" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a aria-label="Twitter" class="hover:text-accent p-1" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCT PROJECT GALLERY -->
+<section class="space-y-8" id="projects">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><div><p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">Selected work</p><h2 class="font-serif-title text-3xl sm:text-4xl">Selected Products</h2><p class="text-sm text-ink-mid mt-3 max-w-2xl"> A collection of projects where I've worked across product strategy/user research and design. Pick one to explore!</p></div><span class="text-xs text-ink-soft">Three projects · Click to explore</span></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7"><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="enterprise" onclick="openProject(0)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">01 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Enterprise software · Shipped tool</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Making everyday work less frustrating</h3><p class="text-sm text-ink-mid leading-relaxed">A PowerApps workflow for tracking records, comments, and approvals across teams.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Ambrosia game launcher screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/ambrosia-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">02 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Consumer product · UX design</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Getting players to the game faster</h3><p class="text-sm text-ink-mid leading-relaxed">Turning scattered game libraries into a simpler, more usable experience.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="public-systems" onclick="openProject(2)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Arezzo campus kiosk interface" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/arezzo-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">03 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Campus services · Digital experience</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Making a campus kiosk worth using</h3><p class="text-sm text-ink-mid leading-relaxed">Redesigning an overlooked touchscreen around questions students actually had.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button></div>
+</section>
+<template id="projectStore"><div id="storedProject0"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="enterprise">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Product Development and Design | Houston, TX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Chevron: Building a tool employees could depend on</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
           When I joined Chevron, the IT department was in the middle of a move to cloud tools. Longtime employees were adjusting to new systems, and the application they used to track performance metrics had some frustrating problems: comments disappeared, records had no timestamps, and there wasn’t a clear way to tell who had changed what. My summer project was to build a better way to manage those records using Microsoft PowerApps.
         </p>
-
-        <!-- Dynamic Case Tabs -->
-        <div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
-          <div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
-            <button onclick="switchTab('chevron', 'overview')" id="chevron-tab-overview" class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition">Development Process</button>
-            <button onclick="switchTab('chevron', 'persona')" id="chevron-tab-persona" class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">User Personas</button>
-            <button onclick="switchTab('chevron', 'journey')" id="chevron-tab-journey" class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Journey Architecture Flow</button>
-            <button onclick="switchTab('chevron', 'hackathon')" id="chevron-tab-hackathon" class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Bonus: Hackathon app!</button>
-          </div>
-
-          <!-- Tab Content: Overview -->
-          <div id="chevron-content-overview" class="chevron-tab-content space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="chevron-tab-overview" onclick="switchTab('chevron', 'overview')">Development Process</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-persona" onclick="switchTab('chevron', 'persona')">User Personas</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-journey" onclick="switchTab('chevron', 'journey')">Journey Architecture Flow</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-hackathon" onclick="switchTab('chevron', 'hackathon')">Bonus: Hackathon app!</button>
+</div>
+<!-- Tab Content: Overview -->
+<div class="chevron-tab-content space-y-6 text-sm text-ink-mid" id="chevron-content-overview">
+<p class="leading-relaxed">
               As the sole developer on the application, I worked with full-time Chevron employees across four Agile sprints, gathering feedback as I built and bringing it into the next round of changes.
             </p>
-            <div class="space-y-6">
-              <div onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/font.png" onerror="this.src='https://placehold.co/900x450/1d4ed8/ffffff?text=Typography+Reference+Specs'" alt="Typography Reference Parameters" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Typography reference parameters & design specs</p>
-              </div>
-
-              <div onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/theHomepage.png" onerror="this.src='https://placehold.co/900x500/1e3a8a/ffffff?text=Application+Homepage+Layout'" alt="Application Homepage Layout" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Application Homepage Environment Layout</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content: Persona -->
-          <div id="chevron-content-persona" class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')">
+<img alt="Typography Reference Parameters" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x450/1d4ed8/ffffff?text=Typography+Reference+Specs'" src="images/font.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Typography reference parameters &amp; design specs</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')">
+<img alt="Application Homepage Layout" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e3a8a/ffffff?text=Application+Homepage+Layout'" src="images/theHomepage.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Application Homepage Environment Layout</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Persona -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-persona">
+<p class="leading-relaxed">
               To ensure the app served real enterprise needs, we modeled <strong>Jessie</strong>—a full-time Chevron employee in a manager/sponsor role who needs to quickly verify metrics created by her direct reports during busy periods.
             </p>
-            <div onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-              <img src="images/jessie.png" onerror="this.src='https://placehold.co/1000x550/334155/ffffff?text=User+Persona+Framework:+Jessie'" alt="User Persona Framework" class="w-full h-auto max-h-[550px] object-contain rounded img-zoom-hover mx-auto" />
-              <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Our user persona: Jessie</p>
-            </div>
-          </div>
-
-          <!-- Tab Content: Journey Flow -->
-          <div id="chevron-content-journey" class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')">
+<img alt="User Persona Framework" class="w-full h-auto max-h-[550px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x550/334155/ffffff?text=User+Persona+Framework:+Jessie'" src="images/jessie.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Our user persona: Jessie</p>
+</div>
+</div>
+<!-- Tab Content: Journey Flow -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-journey">
+<p class="leading-relaxed">
               Jessie's step-by-step metric review, comment thread validation, and approval journey flow map:
             </p>
-            <div onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-              <img src="images/journeyFlow.png" onerror="this.src='https://placehold.co/1100x600/0f172a/ffffff?text=User+Journey+Map+Architecture+Flow'" alt="User Journey Map Architecture Flow" class="w-full h-auto max-h-[600px] object-contain rounded img-zoom-hover mx-auto" />
-              <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Jessie's end-to-end milestone tracking journey flow map</p>
-            </div>
-          </div>
-
-          <!-- Tab Content: Hackathon -->
-          <div id="chevron-content-hackathon" class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')">
+<img alt="User Journey Map Architecture Flow" class="w-full h-auto max-h-[600px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1100x600/0f172a/ffffff?text=User+Journey+Map+Architecture+Flow'" src="images/journeyFlow.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Jessie's end-to-end milestone tracking journey flow map</p>
+</div>
+</div>
+<!-- Tab Content: Hackathon -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-hackathon">
+<p class="leading-relaxed">
               During a 3-week intern hackathon with four other interns across IT departments, we built the <strong>TTA Tracker</strong> for volunteer event registration and administration.
             </p>
-            <div class="space-y-6">
-              <div onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/ttaTracker1.png" onerror="this.src='ttaTracker2-p-800 2.png'" alt="TTA Tracker Application Interface Overview" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> TTA Tracker Event History Dashboard</p>
-              </div>
-
-              <div onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant & Problem Description')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/ttaTracker2.png" onerror="this.src='ttaTracker2-p-800 2.png'" alt="TTA Interface layout variant" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Volunteer Problem Statement & Overview Layout</p>
-              </div>
-            </div>
-          </div>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')">
+<img alt="TTA Tracker Application Interface Overview" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker1.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> TTA Tracker Event History Dashboard</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant &amp; Problem Description')">
+<img alt="TTA Interface layout variant" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Volunteer Problem Statement &amp; Overview Layout</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-xs text-ink-soft bg-cream-200/60 p-4 rounded-xl border border-stone-300">
+<strong>Outcome:</strong> Delivered the Functional Excellence Framework app used by 30 IT power-users, supporting metric tracking for nearly 200 employees, presented to 15 key technical stakeholders.
         </div>
-
-        <div class="text-xs text-ink-soft bg-cream-200/60 p-4 rounded-xl border border-stone-300">
-          <strong>Outcome:</strong> Delivered the Functional Excellence Framework app used by 30 IT power-users, supporting metric tracking for nearly 200 employees, presented to 15 key technical stakeholders.
-        </div>
-      </article>
-
-      <!-- CASE STUDY 2: AMBROSIA -->
-      <article data-category="gaming" class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6">
-        <div class="border-b border-stone-200 pb-4">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Collaborative Project • Front-End & UX</span>
-          <h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Ambrosia: Making it easier to get to the game</h3>
-        </div>
-
-        <p class="text-ink-mid text-sm sm:text-base leading-relaxed">
-          <p>If you've ever used emulators, you know that getting to the actual game can sometimes involve navigating multiple launchers, folders, and settings. A few friends and I wanted to make that process easier.
+</article>
+</div><div id="storedProject1"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="gaming">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Collaborative Project • Front-End &amp; UX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Ambrosia: Making it easier to get to the game</h3>
+</div>
+<div class="text-ink-mid text-sm sm:text-base leading-relaxed space-y-3">
+<p>If you've ever used emulators, you know that getting to the actual game can sometimes involve navigating multiple launchers, folders, and settings. A few friends and I wanted to make that process easier.
 
           <p>We started Ambrosia as a way to organize and launch games from one place. Before jumping into development, we surveyed gamers in computer science classes and Discord communities to understand how they managed their game libraries and what frustrated them.
 
-          <p>We used that feedback to prioritize features, map out user flows, and design the interface together. My work focused on the research and front-end experience, including translating early ideas into wireframes and interactive mockups.        </p>
-
-        <!-- Dynamic Case Tabs -->
-        <div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
-          <div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
-            <button onclick="switchTab('ambrosia', 'research')" id="ambrosia-tab-research" class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition">User Research & Whiteboarding</button>
-            <button onclick="switchTab('ambrosia', 'prototyping')" id="ambrosia-tab-prototyping" class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Figma & Interface Layouts</button>
-            <button onclick="switchTab('ambrosia', 'interactive')" id="ambrosia-tab-interactive" class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Interactive Flow & Mockups</button>
-          </div>
-
-          <!-- Tab Content: Research & Whiteboarding -->
-          <div id="ambrosia-content-research" class="ambrosia-tab-content space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+          <p>We used that feedback to prioritize features, map out user flows, and design the interface together. My work focused on the research and front-end experience, including translating early ideas into wireframes and interactive mockups.</p>
+</p></p></div>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="ambrosia-tab-research" onclick="switchTab('ambrosia', 'research')">User Research &amp; Whiteboarding</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-prototyping" onclick="switchTab('ambrosia', 'prototyping')">Figma &amp; Interface Layouts</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-interactive" onclick="switchTab('ambrosia', 'interactive')">Interactive Flow &amp; Mockups</button>
+</div>
+<!-- Tab Content: Research & Whiteboarding -->
+<div class="ambrosia-tab-content space-y-6 text-sm text-ink-mid" id="ambrosia-content-research">
+<p class="leading-relaxed">
               Before writing code, we surveyed gamers across computer science courses and Discord communities to prioritize features.
             </p>
-            <div class="space-y-6">
-              <div onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png" onerror="this.src='images/Screen-Shot-2019-09-22-at-11.44.34-PM.png'" alt="Ambrosia Flow Whiteboard" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> User Flow Architecture Whiteboard Sketch</p>
-              </div>
-
-              <div onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.07.24-AM.png'" alt="Team Brainstorming Session" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Collaborative Planning Session (Library, Settings & Detail View)</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content: Figma & Interface Layouts -->
-          <div id="ambrosia-content-prototyping" class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')">
+<img alt="Ambrosia Flow Whiteboard" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-22-at-11.44.34-PM.png'" src="Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> User Flow Architecture Whiteboard Sketch</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')">
+<img alt="Team Brainstorming Session" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.07.24-AM.png'" src="Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Collaborative Planning Session (Library, Settings &amp; Detail View)</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Figma & Interface Layouts -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-prototyping">
+<p class="leading-relaxed">
               Iterating on wireframes in Figma and tracking component features through GitHub Issues.
             </p>
-            <div class="space-y-6">
-              <div onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png" onerror="this.src='https://placehold.co/900x500/1e293b/ffffff?text=Figma+Layout+Exploration+Canvas'" alt="Figma Layout Exploration Canvas" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Figma design canvas exploration</p>
-              </div>
-
-              <div onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png'" alt="Ambrosia Modal Dialog" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Add Game Library modal flow</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content: Interactive Flow & Desktop Mockups -->
-          <div id="ambrosia-content-interactive" class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')">
+<img alt="Figma Layout Exploration Canvas" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e293b/ffffff?text=Figma+Layout+Exploration+Canvas'" src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Figma design canvas exploration</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')">
+<img alt="Ambrosia Modal Dialog" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png'" src="Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Add Game Library modal flow</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Interactive Flow & Desktop Mockups -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-interactive">
+<p class="leading-relaxed">
               Desktop application prototype rendering and dynamic game addition GIF animation:
             </p>
-            <div class="space-y-6">
-              <div onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="Screen-Shot-2019-09-16-at-3.34.52-PM.png" onerror="this.src='images/Screen-Shot-2019-09-16-at-3.34.52-PM.png'" alt="Ambrosia Mac Laptop Desktop" class="w-full h-auto max-h-[520px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Desktop Application Sign-in Frame Mockup</p>
-              </div>
-
-              <div onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/ambrosia1.gif" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Ambrosia+Interactive+Prototype+GIF'" alt="Interactive Component Animation" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Interactive prototyping component: Dynamic Game Addition flow animation</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- CASE STUDY 3: UNIVERSITY OF OKLAHOMA AREZZO CAMPUS SYSTEM -->
-      <article data-category="public-systems" class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6">
-        <div class="border-b border-stone-200 pb-4">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Marketing & Media Intern | Fall 2017 | Arezzo, Italy</span>
-          <h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">University of Oklahoma: A campus resource students had a reason to use</h3>
-        </div>
-
-        <p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')">
+<img alt="Ambrosia Mac Laptop Desktop" class="w-full h-auto max-h-[520px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-16-at-3.34.52-PM.png'" src="Screen-Shot-2019-09-16-at-3.34.52-PM.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Desktop Application Sign-in Frame Mockup</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')">
+<img alt="Interactive Component Animation" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Ambrosia+Interactive+Prototype+GIF'" src="images/ambrosia1.gif"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Interactive prototyping component: Dynamic Game Addition flow animation</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div><div id="storedProject2"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="public-systems">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Marketing &amp; Media Intern | Fall 2017 | Arezzo, Italy</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">University of Oklahoma: A campus resource students had a reason to use</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
           Studying abroad in Italy came with small daily questions: <em>Where’s the nearest pharmacy? How do I get groceries? Will a transit strike affect my weekend plans?</em> Our campus had a touchscreen in the monastery lobby, but students wasn't using it. During my media internship, I worked with the campus director to turn it into an engaging, practical resource.
         </p>
-
-        <!-- Dynamic Case Tabs -->
-        <div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
-          <div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
-            <button onclick="switchTab('oua', 'environment')" id="oua-tab-environment" class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition">Kiosk Physical Setup</button>
-            <button onclick="switchTab('oua', 'newsstand')" id="oua-tab-newsstand" class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Newsstand UI Evolution</button>
-            <button onclick="switchTab('oua', 'feeds')" id="oua-tab-feeds" class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition">Live Twitter Feed & Video Demo</button>
-          </div>
-
-          <!-- Tab Content: Physical Setup -->
-          <div id="oua-content-environment" class="oua-tab-content space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="oua-tab-environment" onclick="switchTab('oua', 'environment')">Kiosk Physical Setup</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-newsstand" onclick="switchTab('oua', 'newsstand')">Newsstand UI Evolution</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-feeds" onclick="switchTab('oua', 'feeds')">Live Twitter Feed &amp; Video Demo</button>
+</div>
+<!-- Tab Content: Physical Setup -->
+<div class="oua-tab-content space-y-6 text-sm text-ink-mid" id="oua-content-environment">
+<p class="leading-relaxed">
               The touch kiosk was situated directly in the monastery lobby. I set up a dedicated UX workstation area to rapid-prototype content updates during the semester.
             </p>
-
-            <div class="space-y-6">
-              <div onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/screen.png" onerror="this.src='https://placehold.co/900x500/854d0e/ffffff?text=Monastery+Lobby+Kiosk'" alt="Monastery Lobby Kiosk" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Physical Kiosk Installation View inside Monastery Lobby</p>
-              </div>
-
-              <div onclick="openLightbox('images/work.png', 'UX Workstation & Interface Layout Workspace')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/work.png" onerror="this.src='https://placehold.co/900x500/475569/ffffff?text=UX+Workstation'" alt="UX Workstation" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Production Workstation Workspace</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content: Newsstand UI Evolution -->
-          <div id="oua-content-newsstand" class="oua-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')">
+<img alt="Monastery Lobby Kiosk" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/854d0e/ffffff?text=Monastery+Lobby+Kiosk'" src="images/screen.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Physical Kiosk Installation View inside Monastery Lobby</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/work.png', 'UX Workstation &amp; Interface Layout Workspace')">
+<img alt="UX Workstation" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/475569/ffffff?text=UX+Workstation'" src="images/work.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Production Workstation Workspace</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Newsstand UI Evolution -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-newsstand">
+<p class="leading-relaxed">
               I designed practical local information, travel advisories, campus updates, and news from home. Because I lived there too, I could see the questions my classmates were running into and keep updating the content throughout the semester.
             </p>
-
-            <div class="space-y-6">
-              <div onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/newsstand.png" onerror="this.src='https://placehold.co/900x500/3f6212/ffffff?text=Newsstand+Sketched+UI'" alt="Newsstand Concept UI" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature conception sketch UI layout</p>
-              </div>
-
-              <div onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-                <img src="images/NewsStandFinal.png" onerror="this.src='https://placehold.co/900x500/b45309/ffffff?text=Newsstand+Production+UI'" alt="Newsstand Final UI" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" />
-                <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature high-fidelity production shelf view</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Content: Live Twitter Feed & Video -->
-          <div id="oua-content-feeds" class="oua-tab-content hidden space-y-6 text-sm text-ink-mid">
-            <p class="leading-relaxed">
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')">
+<img alt="Newsstand Concept UI" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/3f6212/ffffff?text=Newsstand+Sketched+UI'" src="images/newsstand.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature conception sketch UI layout</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')">
+<img alt="Newsstand Final UI" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/b45309/ffffff?text=Newsstand+Production+UI'" src="images/NewsStandFinal.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature high-fidelity production shelf view</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Live Twitter Feed & Video -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-feeds">
+<p class="leading-relaxed">
               Real-time feed integration allowed students to check campus Twitter updates directly on the touch screen:
             </p>
-
-            <div onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory & News Feed UI')" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200">
-              <img src="images/twitterSamp.png" onerror="this.src='https://placehold.co/1000x500/0369a1/ffffff?text=Twitter+Integrated+Feed+UI'" alt="Twitter Integrated Feed" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" />
-              <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Integrated Twitter real-time feed UI showcase</p>
-            </div>
-
-            <div class="space-y-2 pt-2">
-              <h4 class="font-serif-title text-lg text-ink">Touchscreen Demo Video</h4>
-              <div class="relative w-full rounded-xl overflow-hidden shadow-sm border border-stone-300 bg-black aspect-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/g_O4eAUG5Ss?si=26POW-6DjQW4Z84U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory &amp; News Feed UI')">
+<img alt="Twitter Integrated Feed" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x500/0369a1/ffffff?text=Twitter+Integrated+Feed+UI'" src="images/twitterSamp.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Integrated Twitter real-time feed UI showcase</p>
+</div>
+<div class="space-y-2 pt-2">
+<h4 class="font-serif-title text-lg text-ink">Touchscreen Demo Video</h4>
+<div class="relative w-full rounded-xl overflow-hidden shadow-sm border border-stone-300 bg-black aspect-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/g_O4eAUG5Ss?si=26POW-6DjQW4Z84U" title="YouTube video player" width="560"></iframe> </div>
+</div>
+</div>
+</div>
+</article>
+</div></template>
+<dialog aria-label="Project details" class="w-[min(94vw,980px)] max-h-[90vh] rounded-2xl p-0 border border-stone-300 shadow-2xl backdrop:bg-stone-950/65" id="projectDialog">
+<div class="sticky top-0 z-20 flex items-center justify-between bg-cream-100/95 backdrop-blur-md border-b border-stone-300 px-5 sm:px-8 py-4"><span class="font-serif-title text-xl">Project details</span><button aria-label="Close project" class="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-semibold hover:text-accent" onclick="closeProject()">Close <i class="fas fa-times ml-2"></i></button></div>
+<div class="bg-[#EFECE6] p-3 sm:p-7" id="projectDialogBody"></div>
+</dialog>
 <!-- IMPACT STATS COUNTER -->
-<section id="impact" class="bg-cream-200 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm">
-
-  <div class="text-center mb-6">
-    <p class="text-[11px] uppercase tracking-widest font-semibold text-ink-soft mb-2">
+<section class="bg-cream-200 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm" id="impact">
+<div class="text-center mb-6">
+<p class="text-[11px] uppercase tracking-widest font-semibold text-ink-soft mb-2">
 Product Development Impact
     </p>
-    <h2 class="font-serif-title text-2xl sm:text-3xl text-ink">
+<h2 class="font-serif-title text-2xl sm:text-3xl text-ink">
       By the numbers
     </h2>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-
-    <div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-      <div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-2">0</div>
-      <p class="text-sm text-ink-mid">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+<div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-2">0</div>
+<p class="text-sm text-ink-mid">
         Workflow users supported
       </p>
-    </div>
-
-    <div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-      <div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-3">0</div>
-      <p class="text-sm text-ink-mid">
+</div>
+<div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-3">0</div>
+<p class="text-sm text-ink-mid">
         AI practitioners interviewed
       </p>
-    </div>
-
-    <div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-      <div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-4">0</div>
-      <p class="text-sm text-ink-mid">
+</div>
+<div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-4">0</div>
+<p class="text-sm text-ink-mid">
         ACM publications
       </p>
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
-
-    </section>
-
-
-      <!-- AI RESEARCH HUB -->
-      <section id="research" class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm space-y-6 sm:space-y-8">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-accent border border-blue-200 mb-2">
-            <i class="fas fa-microscope"></i> Carnegie Mellon HCI Ph.D. Focus
+<!-- AI RESEARCH HUB -->
+<section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm space-y-6 sm:space-y-8" id="research">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-accent border border-blue-200 mb-2">
+<i class="fas fa-microscope"></i> Carnegie Mellon HCI Ph.D. Focus
           </div>
-
-          <h2 class="font-serif-title text-3xl sm:text-4xl text-ink">
+<h2 class="font-serif-title text-3xl sm:text-4xl text-ink">
             The Questions Behind My AI Research
           </h2>
-
-          <!-- Paragraphs -->
-          <div class="text-ink-mid text-sm sm:text-base mt-3 max-w-3xl leading-relaxed space-y-3">
-            <p>
+<!-- Paragraphs -->
+<div class="text-ink-mid text-sm sm:text-base mt-3 max-w-3xl leading-relaxed space-y-3">
+<p>
               A lot of my work starts with a question: does this actually work for the person using it?
             </p>
-            <p>
+<p>
               With AI, that question gets complicated. A response can sound convincing without being accurate or useful. People can interpret the same system differently depending on their experiences, expectations, and the situation they're using it in.
             </p>
-            <p>
+<p>
               I've explored these questions from a few angles, including how AI practitioners evaluate fairness, how people from different communities experience AI assistants, and how design choices influence trust and reliance. Lately, I've been really interested in what these findings mean for the people building and evaluating AI products!
             </p>
-          </div>
+</div>
+</div>
+<!-- RESEARCH PAPER EXPLORER WIDGET -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-3">
+<h3 class="font-serif-title text-lg text-ink flex items-center gap-2">
+<i class="fas fa-layer-group text-accent"></i> Highlighted Research
+            </h3>
+<p class="text-xs text-ink-soft">Explore a few themes behind my product work:</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<button class="topic-btn active-topic p-3 rounded-lg border text-left text-xs font-semibold transition bg-accent text-white border-accent" id="topic-btn-fairness" onclick="selectPaperTopic('fairness')">
+<i class="fas fa-balance-scale mb-1 text-sm block"></i> Practitioner AI Fairness (CSCW '22)
+              </button>
+<button class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent" id="topic-btn-cultural" onclick="selectPaperTopic('cultural')">
+<i class="fas fa-users mb-1 text-sm block"></i> Culturally Informed AI (DIS '24 / CHI EA '25)
+              </button>
+<button class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent" id="topic-btn-anthropomorphism" onclick="selectPaperTopic('anthropomorphism')">
+<i class="fas fa-robot mb-1 text-sm block"></i> AI Automatons &amp; Reliance (FAccT '25)
+              </button>
+</div>
+<div class="p-4 rounded-lg bg-cream-50 border border-stone-200 text-xs sm:text-sm text-ink-mid leading-relaxed" id="topicDetailBox">
+<!-- Populated by JS -->
+</div>
+</div>
+<!-- ALL 5 ACM PUBLICATIONS LIST -->
+<div class="space-y-4">
+<h3 class="font-serif-title text-xl text-ink">Selected publications</h3>
+<div class="space-y-3">
+<!-- Paper 1: DIS 2024 -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div class="flex-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300 mb-1">
+                      🏆 DIS 2024 — Honorable Mention
+                    </span>
+<h4 class="font-bold text-sm sm:text-base text-ink">
+                      "For Us By Us": Intentionally Designing Technology for Lived Black Experiences
+                    </h4>
+<p class="text-xs text-ink-soft mt-0.5">
+                      Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • <em>ACM DIS 2024</em>
+</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0" href="https://dl.acm.org/doi/10.1145/3643834.3661535" target="_blank">
+                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+</a>
+</div>
+<p class="text-xs text-ink-mid italic">
+                  We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.
+                </p>
+<button class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1" onclick="togglePaperDrawer('paper-1')">
+<span id="paper-1-btn">Expand Paper Details</span> <i class="fas fa-chevron-down text-[10px]" id="paper-1-icon"></i>
+</button>
+<div class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2" id="paper-1-drawer">
+<p><strong>Core Contribution:</strong> Translates qualitative findings into explicit co-design frameworks for AI tools, moving beyond standard inclusion to active community-led tech development.</p>
+</div>
+</div>
+<!-- Paper 2: CSCW 2022 -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div class="flex-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200 mb-1">
+                      CSCW 2022
+                    </span>
+<h4 class="font-bold text-sm sm:text-base text-ink">
+                      Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support
+                    </h4>
+<p class="text-xs text-ink-soft mt-0.5">
+                      Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • <em>ACM CSCW 2022</em>
+</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0" href="https://dl.acm.org/doi/abs/10.1145/3512899" target="_blank">
+                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+</a>
+</div>
+<p class="text-xs text-ink-mid italic">
+                  We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.
+                </p>
+<button class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1" onclick="togglePaperDrawer('paper-2')">
+<span id="paper-2-btn">Expand Paper Details</span> <i class="fas fa-chevron-down text-[10px]" id="paper-2-icon"></i>
+</button>
+<div class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2" id="paper-2-drawer">
+<p><strong>Methodology:</strong> Qualitative analysis of 33 practitioners across major technology enterprises, uncovering workflow bottlenecks in AI evaluation tools.</p>
+</div>
+</div>
+<!-- Paper 3: CHI 2023 -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div class="flex-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200 mb-1">
+                      CHI 2023
+                    </span>
+<h4 class="font-bold text-sm sm:text-base text-ink">
+                      Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking
+                    </h4>
+<p class="text-xs text-ink-soft mt-0.5">
+                      Lisa Egede, Christina Harrington • <em>ACM CHI 2023</em>
+</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0" href="https://dl.acm.org/doi/10.1145/3544548.3580719" target="_blank">
+                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+</a>
+</div>
+<p class="text-xs text-ink-mid italic">
+                  We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.
+                </p>
+<button class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1" onclick="togglePaperDrawer('paper-3')">
+<span id="paper-3-btn">Expand Paper Details</span> <i class="fas fa-chevron-down text-[10px]" id="paper-3-icon"></i>
+</button>
+<div class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2" id="paper-3-drawer">
+<p><strong>Key Insight:</strong> Relatability and visual framing directly impact whether users feel safe following health recommendations provided by automated conversational agents.</p>
+</div>
+</div>
+<!-- Papers 4 & 5: Full-width rows with matching ACM DL buttons -->
+<div class="grid grid-cols-1 gap-3">
+<!-- Paper 4: CHI EA 2025 -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div class="flex-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200 mb-1">CHI EA 2025</span>
+<h4 class="font-bold text-sm sm:text-base text-ink">Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT</h4>
+<p class="text-xs text-ink-soft mt-0.5">Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0" href="https://dl.acm.org/doi/10.1145/3706599.3720136" rel="noopener noreferrer" target="_blank">
+                      ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+</a>
+</div>
+<p class="text-xs text-ink-mid italic">We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.</p>
+</div>
+<!-- Paper 5: FAccT 2025 -->
+<div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div class="flex-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-200 mb-1">FAccT 2025</span>
+<h4 class="font-bold text-sm sm:text-base text-ink">AI Automatons: AI Systems Intended to Imitate Humans</h4>
+<p class="text-xs text-ink-soft mt-0.5">Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0" href="https://dl.acm.org/doi/10.1145/3805689.3812377" rel="noopener noreferrer" target="_blank">
+                      ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- LIGHTBOX MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4" id="lightboxModal">
+<div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
+<div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
+<h4 class="font-serif-title text-base sm:text-lg text-ink" id="lightboxTitle">Image Artifact Inspector</h4>
+<button aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
+<img alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" id="lightboxImg" src=""/>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-xs text-ink-soft">
+            © lisa egede • product portfolio
+          </p>
+<div class="flex items-center gap-5 text-ink-mid text-sm">
+<a aria-label="Twitter" class="hover:text-accent" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+<a aria-label="LinkedIn" class="hover:text-accent" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</footer>
+<!-- INTERACTIVE JS -->
+<script>
+        function openProject(index) {
+          const source = document.getElementById('projectStore').content.querySelector('#storedProject' + index);
+          const dialog = document.getElementById('projectDialog');
+          const body = document.getElementById('projectDialogBody');
+          if (!source || !dialog || !body) return;
+          body.replaceChildren(source.firstElementChild.cloneNode(true));
+          dialog.showModal();
+          dialog.scrollTop = 0;
+        }
+        function closeProject() { document.getElementById('projectDialog').close(); }
+        document.addEventListener('click', e => {
+          const dialog = document.getElementById('projectDialog');
+          if (e.target === dialog) dialog.close();
+        });
+        // Mobile Nav
+        function toggleMobileNav() {
+          document.getElementById('mobileNav').classList.toggle('hidden');
+        }
 
-        </div>
+        // Category Filter
+        function filterCategory(cat, evt) {
+          const cards = document.querySelectorAll('.case-card');
+          const btns = document.querySelectorAll('.filter-btn');
 
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
 
-                  <!-- RESEARCH PAPER EXPLORER WIDGET -->
-                  <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-3">
-                    <h3 class="font-serif-title text-lg text-ink flex items-center gap-2">
-                      <i class="fas fa-layer-group text-accent"></i> Highlighted Research
-                    </h3>
-                    <p class="text-xs text-ink-soft">Select a research domain to view key questions, methodologies, and product recommendations:</p>
+          if (evt && evt.target) {
+            evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
+            evt.target.classList.add('bg-accent', 'text-white');
+          }
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      <button onclick="selectPaperTopic('fairness')" id="topic-btn-fairness" class="topic-btn active-topic p-3 rounded-lg border text-left text-xs font-semibold transition bg-accent text-white border-accent">
-                        <i class="fas fa-balance-scale mb-1 text-sm block"></i> Practitioner AI Fairness (CSCW '22)
-                      </button>
-                      <button onclick="selectPaperTopic('cultural')" id="topic-btn-cultural" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
-                        <i class="fas fa-users mb-1 text-sm block"></i> Culturally Informed AI (DIS '24 / CHI EA '25)
-                      </button>
-                      <button onclick="selectPaperTopic('anthropomorphism')" id="topic-btn-anthropomorphism" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
-                        <i class="fas fa-robot mb-1 text-sm block"></i> AI Automatons & Reliance (FAccT '25)
-                      </button>
-                    </div>
+          cards.forEach(card => {
+            if (cat === 'all' || card.getAttribute('data-category') === cat) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
 
-                    <div id="topicDetailBox" class="p-4 rounded-lg bg-cream-50 border border-stone-200 text-xs sm:text-sm text-ink-mid leading-relaxed">
-                      <!-- Populated by JS -->
-                    </div>
-                  </div>
+        // Case Study Tab Switcher
+        function switchTab(projectId, tabName) {
+          const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
+          const contents = document.querySelectorAll(`.${projectId}-tab-content`);
 
-                  <!-- ALL 5 ACM PUBLICATIONS LIST -->
-                  <div class="space-y-4">
-                    <h3 class="font-serif-title text-xl text-ink">✨ Selected Research Publications ✨</h3>
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
 
-                    <div class="space-y-3">
+          contents.forEach(c => c.classList.add('hidden'));
 
-                      <!-- Paper 1: DIS 2024 -->
-                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                        <div class="flex flex-wrap items-start justify-between gap-2">
-                          <div class="flex-1">
-                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300 mb-1">
-                              🏆 DIS 2024 — Honorable Mention
-                            </span>
-                            <h4 class="font-bold text-sm sm:text-base text-ink">
-                              "For Us By Us": Intentionally Designing Technology for Lived Black Experiences
-                            </h4>
-                            <p class="text-xs text-ink-soft mt-0.5">
-                              Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • <em>ACM DIS 2024</em>
-                            </p>
-                          </div>
-                          <a href="https://dl.acm.org/doi/10.1145/3643834.3661535" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                          </a>
-                        </div>
+          const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
+          if (activeBtn) {
+            activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
+            activeBtn.classList.add('bg-accent', 'text-white');
+          }
 
-                        <p class="text-xs text-ink-mid italic">
-                          We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.
-                        </p>
+          const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
+          if (activeContent) {
+            activeContent.classList.remove('hidden');
+          }
+        }
 
-                        <button onclick="togglePaperDrawer('paper-1')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                          <span id="paper-1-btn">Expand Paper Details</span> <i id="paper-1-icon" class="fas fa-chevron-down text-[10px]"></i>
-                        </button>
+        // AI Research Topic Explorer
+        const paperTopics = {
+          fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
+          cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
+          anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
+        };
 
-                        <div id="paper-1-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                          <p><strong>Core Contribution:</strong> Translates qualitative findings into explicit co-design frameworks for AI tools, moving beyond standard inclusion to active community-led tech development.</p>
-                        </div>
-                      </div>
+        function selectPaperTopic(key) {
+          const btns = document.querySelectorAll('.topic-btn');
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white', 'border-accent');
+            b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          });
 
-                      <!-- Paper 2: CSCW 2022 -->
-                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                        <div class="flex flex-wrap items-start justify-between gap-2">
-                          <div class="flex-1">
-                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200 mb-1">
-                              CSCW 2022
-                            </span>
-                            <h4 class="font-bold text-sm sm:text-base text-ink">
-                              Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support
-                            </h4>
-                            <p class="text-xs text-ink-soft mt-0.5">
-                              Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • <em>ACM CSCW 2022</em>
-                            </p>
-                          </div>
-                          <a href="https://dl.acm.org/doi/abs/10.1145/3512899" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                          </a>
-                        </div>
+          const active = document.getElementById(`topic-btn-${key}`);
+          active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          active.classList.add('bg-accent', 'text-white', 'border-accent');
 
-                        <p class="text-xs text-ink-mid italic">
-                          We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.
-                        </p>
+          document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
+        }
 
-                        <button onclick="togglePaperDrawer('paper-2')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                          <span id="paper-2-btn">Expand Paper Details</span> <i id="paper-2-icon" class="fas fa-chevron-down text-[10px]"></i>
-                        </button>
+        selectPaperTopic('fairness');
 
-                        <div id="paper-2-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                          <p><strong>Methodology:</strong> Qualitative analysis of 33 practitioners across major technology enterprises, uncovering workflow bottlenecks in AI evaluation tools.</p>
-                        </div>
-                      </div>
+        // Expandable Paper Drawers
+        function togglePaperDrawer(id) {
+          const drawer = document.getElementById(`${id}-drawer`);
+          const btn = document.getElementById(`${id}-btn`);
+          const icon = document.getElementById(`${id}-icon`);
 
-                      <!-- Paper 3: CHI 2023 -->
-                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                        <div class="flex flex-wrap items-start justify-between gap-2">
-                          <div class="flex-1">
-                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200 mb-1">
-                              CHI 2023
-                            </span>
-                            <h4 class="font-bold text-sm sm:text-base text-ink">
-                              Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking
-                            </h4>
-                            <p class="text-xs text-ink-soft mt-0.5">
-                              Lisa Egede, Christina Harrington • <em>ACM CHI 2023</em>
-                            </p>
-                          </div>
-                          <a href="https://dl.acm.org/doi/10.1145/3544548.3580719" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                          </a>
-                        </div>
+          if (drawer.classList.contains('hidden')) {
+            drawer.classList.remove('hidden');
+            btn.textContent = 'Collapse Paper Details';
+            icon.className = 'fas fa-chevron-up text-[10px]';
+          } else {
+            drawer.classList.add('hidden');
+            btn.textContent = 'Expand Paper Details';
+            icon.className = 'fas fa-chevron-down text-[10px]';
+          }
+        }
 
-                        <p class="text-xs text-ink-mid italic">
-                          We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.
-                        </p>
+        // Metric Counter Animation
+        window.addEventListener('load', () => {
+          const stats = [
+            { id: 'stat-1', val: 600, suffix: '+' },
+            { id: 'stat-2', val: 200, suffix: '+' },
+            { id: 'stat-3', val: 33 },
+            { id: 'stat-4', val: 5 }
+          ];
 
-                        <button onclick="togglePaperDrawer('paper-3')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                          <span id="paper-3-btn">Expand Paper Details</span> <i id="paper-3-icon" class="fas fa-chevron-down text-[10px]"></i>
-                        </button>
-
-                        <div id="paper-3-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                          <p><strong>Key Insight:</strong> Relatability and visual framing directly impact whether users feel safe following health recommendations provided by automated conversational agents.</p>
-                        </div>
-                      </div>
-
-                      <!-- Papers 4 & 5: Full-width rows with matching ACM DL buttons -->
-                      <div class="grid grid-cols-1 gap-3">
-                        <!-- Paper 4: CHI EA 2025 -->
-                        <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                          <div class="flex flex-wrap items-start justify-between gap-2">
-                            <div class="flex-1">
-                              <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200 mb-1">CHI EA 2025</span>
-                              <h4 class="font-bold text-sm sm:text-base text-ink">Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT</h4>
-                              <p class="text-xs text-ink-soft mt-0.5">Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson</p>
-                            </div>
-                            <a href="https://dl.acm.org/doi/10.1145/3706599.3720136" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                              ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
-                          </div>
-                          <p class="text-xs text-ink-mid italic">We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.</p>
-                        </div>
-
-                        <!-- Paper 5: FAccT 2025 -->
-                        <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                          <div class="flex flex-wrap items-start justify-between gap-2">
-                            <div class="flex-1">
-                              <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-200 mb-1">FAccT 2025</span>
-                              <h4 class="font-bold text-sm sm:text-base text-ink">AI Automatons: AI Systems Intended to Imitate Humans</h4>
-                              <p class="text-xs text-ink-soft mt-0.5">Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng</p>
-                            </div>
-                            <a href="https://dl.acm.org/doi/10.1145/3805689.3812377" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                              ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-              </main>
-
-              <!-- LIGHTBOX MODAL -->
-              <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-                <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
-                  <div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
-                    <h4 id="lightboxTitle" class="font-serif-title text-base sm:text-lg text-ink">Image Artifact Inspector</h4>
-                    <button onclick="closeLightbox()" aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
-                  <div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
-                    <img id="lightboxImg" src="" alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- FOOTER -->
-              <footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <p class="text-xs text-ink-soft">
-                    © Lisa Egede • Research, Product, and Technical Portfolio
-                  </p>
-
-                  <div class="flex items-center gap-5 text-ink-mid text-sm">
-                    <a href="https://www.facebook.com/lisa.n.egede" target="_blank" class="hover:text-accent" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/lisaegede/" target="_blank" class="hover:text-accent" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/lisaegede" target="_blank" class="hover:text-accent" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" class="hover:text-accent" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                  </div>
-                </div>
-              </footer>
-
-              <!-- INTERACTIVE JS -->
-              <script>
-                // Mobile Nav
-                function toggleMobileNav() {
-                  document.getElementById('mobileNav').classList.toggle('hidden');
-                }
-
-                // Category Filter
-                function filterCategory(cat, evt) {
-                  const cards = document.querySelectorAll('.case-card');
-                  const btns = document.querySelectorAll('.filter-btn');
-
-                  btns.forEach(b => {
-                    b.classList.remove('bg-accent', 'text-white');
-                    b.classList.add('bg-cream-200', 'text-ink-mid');
-                  });
-
-                  if (evt && evt.target) {
-                    evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
-                    evt.target.classList.add('bg-accent', 'text-white');
-                  }
-
-                  cards.forEach(card => {
-                    if (cat === 'all' || card.getAttribute('data-category') === cat) {
-                      card.style.display = 'block';
-                    } else {
-                      card.style.display = 'none';
-                    }
-                  });
-                }
-
-                // Case Study Tab Switcher
-                function switchTab(projectId, tabName) {
-                  const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
-                  const contents = document.querySelectorAll(`.${projectId}-tab-content`);
-
-                  btns.forEach(b => {
-                    b.classList.remove('bg-accent', 'text-white');
-                    b.classList.add('bg-cream-200', 'text-ink-mid');
-                  });
-
-                  contents.forEach(c => c.classList.add('hidden'));
-
-                  const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
-                  if (activeBtn) {
-                    activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
-                    activeBtn.classList.add('bg-accent', 'text-white');
-                  }
-
-                  const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
-                  if (activeContent) {
-                    activeContent.classList.remove('hidden');
-                  }
-                }
-
-                // AI Research Topic Explorer
-                const paperTopics = {
-                  fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
-                  cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
-                  anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
-                };
-
-                function selectPaperTopic(key) {
-                  const btns = document.querySelectorAll('.topic-btn');
-                  btns.forEach(b => {
-                    b.classList.remove('bg-accent', 'text-white', 'border-accent');
-                    b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
-                  });
-
-                  const active = document.getElementById(`topic-btn-${key}`);
-                  active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
-                  active.classList.add('bg-accent', 'text-white', 'border-accent');
-
-                  document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
-                }
-
-                selectPaperTopic('fairness');
-
-                // Expandable Paper Drawers
-                function togglePaperDrawer(id) {
-                  const drawer = document.getElementById(`${id}-drawer`);
-                  const btn = document.getElementById(`${id}-btn`);
-                  const icon = document.getElementById(`${id}-icon`);
-
-                  if (drawer.classList.contains('hidden')) {
-                    drawer.classList.remove('hidden');
-                    btn.textContent = 'Collapse Paper Details';
-                    icon.className = 'fas fa-chevron-up text-[10px]';
-                  } else {
-                    drawer.classList.add('hidden');
-                    btn.textContent = 'Expand Paper Details';
-                    icon.className = 'fas fa-chevron-down text-[10px]';
-                  }
-                }
-
-                // Metric Counter Animation
-                window.addEventListener('load', () => {
-                  const stats = [
-                    { id: 'stat-1', val: 600, suffix: '+' },
-                    { id: 'stat-2', val: 200, suffix: '+' },
-                    { id: 'stat-3', val: 33 },
-                    { id: 'stat-4', val: 5 }
-                  ];
-
-                  stats.forEach(s => {
-                    const elem = document.getElementById(s.id);
-                    let curr = 0;
-                    const inc = Math.ceil(s.val / 25);
-                    const timer = setInterval(() => {
-                      curr += inc;
-                      if (curr >= s.val) {
-                        elem.textContent = s.val + (s.suffix || '');
-                        clearInterval(timer);
-                      } else {
-                        elem.textContent = curr;
-                      }
-                    }, 35);
-                  });
-                });
-              </script>
-            </body>
-            </html>
+          stats.forEach(s => {
+            const elem = document.getElementById(s.id);
+            if (!elem) return;
+          let curr = 0;
+            const inc = Math.ceil(s.val / 25);
+            const timer = setInterval(() => {
+              curr += inc;
+              if (curr >= s.val) {
+                elem.textContent = s.val + (s.suffix || '');
+                clearInterval(timer);
+              } else {
+                elem.textContent = curr;
+              }
+            }, 35);
+          });
+        });
+      </script>
+</body>
+</html>
