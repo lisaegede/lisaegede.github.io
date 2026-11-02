@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>lisa's product portfolio</title>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/lisa2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -473,306 +473,321 @@ Product Development Impact
 
         </div>
 
-          <!-- RESEARCH PAPER EXPLORER WIDGET -->
-          <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-3">
-            <h3 class="font-serif-title text-lg text-ink flex items-center gap-2">
-              <i class="fas fa-layer-group text-accent"></i> Highlighted Research
-            </h3>
-            <p class="text-xs text-ink-soft">Select a research domain to view key questions, methodologies, and product recommendations:</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <button onclick="selectPaperTopic('fairness')" id="topic-btn-fairness" class="topic-btn active-topic p-3 rounded-lg border text-left text-xs font-semibold transition bg-accent text-white border-accent">
-                <i class="fas fa-balance-scale mb-1 text-sm block"></i> Practitioner AI Fairness (CSCW '22)
-              </button>
-              <button onclick="selectPaperTopic('cultural')" id="topic-btn-cultural" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
-                <i class="fas fa-users mb-1 text-sm block"></i> Culturally Informed AI (DIS '24 / CHI EA '25)
-              </button>
-              <button onclick="selectPaperTopic('anthropomorphism')" id="topic-btn-anthropomorphism" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
-                <i class="fas fa-robot mb-1 text-sm block"></i> AI Automatons & Reliance (FAccT '25)
-              </button>
-            </div>
+                  <!-- RESEARCH PAPER EXPLORER WIDGET -->
+                  <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-3">
+                    <h3 class="font-serif-title text-lg text-ink flex items-center gap-2">
+                      <i class="fas fa-layer-group text-accent"></i> Highlighted Research
+                    </h3>
+                    <p class="text-xs text-ink-soft">Select a research domain to view key questions, methodologies, and product recommendations:</p>
 
-            <div id="topicDetailBox" class="p-4 rounded-lg bg-cream-50 border border-stone-200 text-xs sm:text-sm text-ink-mid leading-relaxed">
-              <!-- Populated by JS -->
-            </div>
-          </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <button onclick="selectPaperTopic('fairness')" id="topic-btn-fairness" class="topic-btn active-topic p-3 rounded-lg border text-left text-xs font-semibold transition bg-accent text-white border-accent">
+                        <i class="fas fa-balance-scale mb-1 text-sm block"></i> Practitioner AI Fairness (CSCW '22)
+                      </button>
+                      <button onclick="selectPaperTopic('cultural')" id="topic-btn-cultural" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
+                        <i class="fas fa-users mb-1 text-sm block"></i> Culturally Informed AI (DIS '24 / CHI EA '25)
+                      </button>
+                      <button onclick="selectPaperTopic('anthropomorphism')" id="topic-btn-anthropomorphism" class="topic-btn p-3 rounded-lg border text-left text-xs font-semibold transition bg-cream-50 text-ink-mid border-stone-200 hover:border-accent">
+                        <i class="fas fa-robot mb-1 text-sm block"></i> AI Automatons & Reliance (FAccT '25)
+                      </button>
+                    </div>
 
-          <!-- ALL 5 ACM PUBLICATIONS LIST -->
-          <div class="space-y-4">
-            <h3 class="font-serif-title text-xl text-ink">✨ Selected Research Publications ✨</h3>
-
-            <div class="space-y-3">
-
-              <!-- Paper 1: DIS 2024 -->
-              <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                <div class="flex flex-wrap items-start justify-between gap-2">
-                  <div class="flex-1">
-                    <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300 mb-1">
-                      🏆 DIS 2024 — Honorable Mention
-                    </span>
-                    <h4 class="font-bold text-sm sm:text-base text-ink">
-                      "For Us By Us": Intentionally Designing Technology for Lived Black Experiences
-                    </h4>
-                    <p class="text-xs text-ink-soft mt-0.5">
-                      Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • <em>ACM DIS 2024</em>
-                    </p>
+                    <div id="topicDetailBox" class="p-4 rounded-lg bg-cream-50 border border-stone-200 text-xs sm:text-sm text-ink-mid leading-relaxed">
+                      <!-- Populated by JS -->
+                    </div>
                   </div>
-                  <a href="https://dl.acm.org/doi/10.1145/3643834.3661535" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                  </a>
-                </div>
 
-                <p class="text-xs text-ink-mid italic">
-                  We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.
-                </p>
+                  <!-- ALL 5 ACM PUBLICATIONS LIST -->
+                  <div class="space-y-4">
+                    <h3 class="font-serif-title text-xl text-ink">✨ Selected Research Publications ✨</h3>
 
-                <button onclick="togglePaperDrawer('paper-1')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                  <span id="paper-1-btn">Expand Paper Details</span> <i id="paper-1-icon" class="fas fa-chevron-down text-[10px]"></i>
-                </button>
+                    <div class="space-y-3">
 
-                <div id="paper-1-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                  <p><strong>Core Contribution:</strong> Translates qualitative findings into explicit co-design frameworks for AI tools, moving beyond standard inclusion to active community-led tech development.</p>
-                </div>
-              </div>
+                      <!-- Paper 1: DIS 2024 -->
+                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+                        <div class="flex flex-wrap items-start justify-between gap-2">
+                          <div class="flex-1">
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300 mb-1">
+                              🏆 DIS 2024 — Honorable Mention
+                            </span>
+                            <h4 class="font-bold text-sm sm:text-base text-ink">
+                              "For Us By Us": Intentionally Designing Technology for Lived Black Experiences
+                            </h4>
+                            <p class="text-xs text-ink-soft mt-0.5">
+                              Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • <em>ACM DIS 2024</em>
+                            </p>
+                          </div>
+                          <a href="https://dl.acm.org/doi/10.1145/3643834.3661535" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
+                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+                          </a>
+                        </div>
 
-              <!-- Paper 2: CSCW 2022 -->
-              <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                <div class="flex flex-wrap items-start justify-between gap-2">
-                  <div class="flex-1">
-                    <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200 mb-1">
-                      CSCW 2022
-                    </span>
-                    <h4 class="font-bold text-sm sm:text-base text-ink">
-                      Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support
-                    </h4>
-                    <p class="text-xs text-ink-soft mt-0.5">
-                      Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • <em>ACM CSCW 2022</em>
-                    </p>
+                        <p class="text-xs text-ink-mid italic">
+                          We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.
+                        </p>
+
+                        <button onclick="togglePaperDrawer('paper-1')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
+                          <span id="paper-1-btn">Expand Paper Details</span> <i id="paper-1-icon" class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+
+                        <div id="paper-1-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
+                          <p><strong>Core Contribution:</strong> Translates qualitative findings into explicit co-design frameworks for AI tools, moving beyond standard inclusion to active community-led tech development.</p>
+                        </div>
+                      </div>
+
+                      <!-- Paper 2: CSCW 2022 -->
+                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+                        <div class="flex flex-wrap items-start justify-between gap-2">
+                          <div class="flex-1">
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200 mb-1">
+                              CSCW 2022
+                            </span>
+                            <h4 class="font-bold text-sm sm:text-base text-ink">
+                              Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support
+                            </h4>
+                            <p class="text-xs text-ink-soft mt-0.5">
+                              Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • <em>ACM CSCW 2022</em>
+                            </p>
+                          </div>
+                          <a href="https://dl.acm.org/doi/abs/10.1145/3512899" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
+                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+                          </a>
+                        </div>
+
+                        <p class="text-xs text-ink-mid italic">
+                          We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.
+                        </p>
+
+                        <button onclick="togglePaperDrawer('paper-2')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
+                          <span id="paper-2-btn">Expand Paper Details</span> <i id="paper-2-icon" class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+
+                        <div id="paper-2-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
+                          <p><strong>Methodology:</strong> Qualitative analysis of 33 practitioners across major technology enterprises, uncovering workflow bottlenecks in AI evaluation tools.</p>
+                        </div>
+                      </div>
+
+                      <!-- Paper 3: CHI 2023 -->
+                      <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+                        <div class="flex flex-wrap items-start justify-between gap-2">
+                          <div class="flex-1">
+                            <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200 mb-1">
+                              CHI 2023
+                            </span>
+                            <h4 class="font-bold text-sm sm:text-base text-ink">
+                              Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking
+                            </h4>
+                            <p class="text-xs text-ink-soft mt-0.5">
+                              Lisa Egede, Christina Harrington • <em>ACM CHI 2023</em>
+                            </p>
+                          </div>
+                          <a href="https://dl.acm.org/doi/10.1145/3544548.3580719" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
+                            ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+                          </a>
+                        </div>
+
+                        <p class="text-xs text-ink-mid italic">
+                          We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.
+                        </p>
+
+                        <button onclick="togglePaperDrawer('paper-3')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
+                          <span id="paper-3-btn">Expand Paper Details</span> <i id="paper-3-icon" class="fas fa-chevron-down text-[10px]"></i>
+                        </button>
+
+                        <div id="paper-3-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
+                          <p><strong>Key Insight:</strong> Relatability and visual framing directly impact whether users feel safe following health recommendations provided by automated conversational agents.</p>
+                        </div>
+                      </div>
+
+                      <!-- Papers 4 & 5: Full-width rows with matching ACM DL buttons -->
+                      <div class="grid grid-cols-1 gap-3">
+                        <!-- Paper 4: CHI EA 2025 -->
+                        <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+                          <div class="flex flex-wrap items-start justify-between gap-2">
+                            <div class="flex-1">
+                              <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200 mb-1">CHI EA 2025</span>
+                              <h4 class="font-bold text-sm sm:text-base text-ink">Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT</h4>
+                              <p class="text-xs text-ink-soft mt-0.5">Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson</p>
+                            </div>
+                            <a href="https://dl.acm.org/doi/10.1145/3706599.3720136" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
+                              ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                          </div>
+                          <p class="text-xs text-ink-mid italic">We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.</p>
+                        </div>
+
+                        <!-- Paper 5: FAccT 2025 -->
+                        <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
+                          <div class="flex flex-wrap items-start justify-between gap-2">
+                            <div class="flex-1">
+                              <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-200 mb-1">FAccT 2025</span>
+                              <h4 class="font-bold text-sm sm:text-base text-ink">AI Automatons: AI Systems Intended to Imitate Humans</h4>
+                              <p class="text-xs text-ink-soft mt-0.5">Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng</p>
+                            </div>
+                            <a href="https://dl.acm.org/doi/10.1145/3805689.3812377" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
+                              ACM DL <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
-                  <a href="https://dl.acm.org/doi/abs/10.1145/3512899" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                  </a>
-                </div>
+                </section>
 
-                <p class="text-xs text-ink-mid italic">
-                  We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.
-                </p>
+              </main>
 
-                <button onclick="togglePaperDrawer('paper-2')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                  <span id="paper-2-btn">Expand Paper Details</span> <i id="paper-2-icon" class="fas fa-chevron-down text-[10px]"></i>
-                </button>
-
-                <div id="paper-2-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                  <p><strong>Methodology:</strong> Qualitative analysis of 33 practitioners across major technology enterprises, uncovering workflow bottlenecks in AI evaluation tools.</p>
-                </div>
-              </div>
-
-              <!-- Paper 3: CHI 2023 -->
-              <div class="bg-white rounded-xl p-5 border border-stone-300/80 shadow-sm space-y-2">
-                <div class="flex flex-wrap items-start justify-between gap-2">
-                  <div class="flex-1">
-                    <span class="inline-block px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-200 mb-1">
-                      CHI 2023
-                    </span>
-                    <h4 class="font-bold text-sm sm:text-base text-ink">
-                      Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking
-                    </h4>
-                    <p class="text-xs text-ink-soft mt-0.5">
-                      Lisa Egede, Christina Harrington • <em>ACM CHI 2023</em>
-                    </p>
+              <!-- LIGHTBOX MODAL -->
+              <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+                <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
+                  <div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
+                    <h4 id="lightboxTitle" class="font-serif-title text-base sm:text-lg text-ink">Image Artifact Inspector</h4>
+                    <button onclick="closeLightbox()" aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl">
+                      <i class="fas fa-times"></i>
+                    </button>
                   </div>
-                  <a href="https://dl.acm.org/doi/10.1145/3544548.3580719" target="_blank" class="px-3 py-1.5 rounded-lg bg-cream-100 border border-stone-300 hover:border-accent text-accent text-xs font-semibold shrink-0">
-                    ACM DL <i class="fas fa-external-link-alt ml-1"></i>
-                  </a>
-                </div>
-
-                <p class="text-xs text-ink-mid italic">
-                  We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.
-                </p>
-
-                <button onclick="togglePaperDrawer('paper-3')" class="text-xs font-semibold text-accent hover:underline flex items-center gap-1 pt-1">
-                  <span id="paper-3-btn">Expand Paper Details</span> <i id="paper-3-icon" class="fas fa-chevron-down text-[10px]"></i>
-                </button>
-
-                <div id="paper-3-drawer" class="hidden pt-3 border-t border-stone-200 text-xs text-ink-mid space-y-2">
-                  <p><strong>Key Insight:</strong> Relatability and visual framing directly impact whether users feel safe following health recommendations provided by automated conversational agents.</p>
+                  <div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
+                    <img id="lightboxImg" src="" alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" />
+                  </div>
                 </div>
               </div>
 
-              <!-- Paper 4 & 5 Grid -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div class="bg-white rounded-xl p-4 border border-stone-300/80 shadow-sm space-y-2">
-                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-900 border border-purple-200">CHI EA 2025</span>
-                  <h4 class="font-bold text-xs sm:text-sm text-ink">Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT</h4>
-                  <p class="text-xs text-ink-soft">Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson</p>
-                  <p class="text-xs text-ink-mid italic">We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.</p>
-                  <a href="https://dl.acm.org/doi/10.1145/3706599.3720136" target="_blank" class="inline-block text-xs font-semibold text-accent hover:underline">ACM DL Entry →</a>
+              <!-- FOOTER -->
+              <footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p class="text-xs text-ink-soft">
+                    © Lisa Egede • Research, Product, and Technical Portfolio
+                  </p>
+
+                  <div class="flex items-center gap-5 text-ink-mid text-sm">
+                    <a href="https://www.facebook.com/lisa.n.egede" target="_blank" class="hover:text-accent" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/lisaegede/" target="_blank" class="hover:text-accent" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/lisaegede" target="_blank" class="hover:text-accent" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" class="hover:text-accent" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
                 </div>
+              </footer>
 
-                <div class="bg-white rounded-xl p-4 border border-stone-300/80 shadow-sm space-y-2">
-                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-900 border border-rose-200">FAccT 2025</span>
-                  <h4 class="font-bold text-xs sm:text-sm text-ink">AI Automatons: AI Systems Intended to Imitate Humans</h4>
-                  <p class="text-xs text-ink-soft">Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng</p>
-                  <a href="https://dl.acm.org/doi/10.1145/3805689.3812377" target="_blank" class="inline-block text-xs font-semibold text-accent hover:underline">ACM DL Entry →</a>
-                </div>
-              </div>
+              <!-- INTERACTIVE JS -->
+              <script>
+                // Mobile Nav
+                function toggleMobileNav() {
+                  document.getElementById('mobileNav').classList.toggle('hidden');
+                }
 
-            </div>
-          </div>
-        </section>
+                // Category Filter
+                function filterCategory(cat, evt) {
+                  const cards = document.querySelectorAll('.case-card');
+                  const btns = document.querySelectorAll('.filter-btn');
 
-      </main>
+                  btns.forEach(b => {
+                    b.classList.remove('bg-accent', 'text-white');
+                    b.classList.add('bg-cream-200', 'text-ink-mid');
+                  });
 
-      <!-- LIGHTBOX MODAL -->
-      <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
-          <div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
-            <h4 id="lightboxTitle" class="font-serif-title text-base sm:text-lg text-ink">Image Artifact Inspector</h4>
-            <button onclick="closeLightbox()" aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
-            <img id="lightboxImg" src="" alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" />
-          </div>
-        </div>
-      </div>
+                  if (evt && evt.target) {
+                    evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
+                    evt.target.classList.add('bg-accent', 'text-white');
+                  }
 
-      <!-- FOOTER -->
-      <footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-xs text-ink-soft">
-            © Lisa Egede • Research, Product, and Technical Portfolio
-          </p>
+                  cards.forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                      card.style.display = 'block';
+                    } else {
+                      card.style.display = 'none';
+                    }
+                  });
+                }
 
-          <div class="flex items-center gap-5 text-ink-mid text-sm">
-            <a href="https://www.facebook.com/lisa.n.egede" target="_blank" class="hover:text-accent" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/lisaegede/" target="_blank" class="hover:text-accent" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/lisaegede" target="_blank" class="hover:text-accent" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" class="hover:text-accent" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </footer>
+                // Case Study Tab Switcher
+                function switchTab(projectId, tabName) {
+                  const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
+                  const contents = document.querySelectorAll(`.${projectId}-tab-content`);
 
-      <!-- INTERACTIVE JS -->
-      <script>
-        // Mobile Nav
-        function toggleMobileNav() {
-          document.getElementById('mobileNav').classList.toggle('hidden');
-        }
+                  btns.forEach(b => {
+                    b.classList.remove('bg-accent', 'text-white');
+                    b.classList.add('bg-cream-200', 'text-ink-mid');
+                  });
 
-        // Category Filter
-        function filterCategory(cat, evt) {
-          const cards = document.querySelectorAll('.case-card');
-          const btns = document.querySelectorAll('.filter-btn');
+                  contents.forEach(c => c.classList.add('hidden'));
 
-          btns.forEach(b => {
-            b.classList.remove('bg-accent', 'text-white');
-            b.classList.add('bg-cream-200', 'text-ink-mid');
-          });
+                  const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
+                  if (activeBtn) {
+                    activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
+                    activeBtn.classList.add('bg-accent', 'text-white');
+                  }
 
-          if (evt && evt.target) {
-            evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
-            evt.target.classList.add('bg-accent', 'text-white');
-          }
+                  const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
+                  if (activeContent) {
+                    activeContent.classList.remove('hidden');
+                  }
+                }
 
-          cards.forEach(card => {
-            if (cat === 'all' || card.getAttribute('data-category') === cat) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        }
+                // AI Research Topic Explorer
+                const paperTopics = {
+                  fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
+                  cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
+                  anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
+                };
 
-        // Case Study Tab Switcher
-        function switchTab(projectId, tabName) {
-          const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
-          const contents = document.querySelectorAll(`.${projectId}-tab-content`);
+                function selectPaperTopic(key) {
+                  const btns = document.querySelectorAll('.topic-btn');
+                  btns.forEach(b => {
+                    b.classList.remove('bg-accent', 'text-white', 'border-accent');
+                    b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+                  });
 
-          btns.forEach(b => {
-            b.classList.remove('bg-accent', 'text-white');
-            b.classList.add('bg-cream-200', 'text-ink-mid');
-          });
+                  const active = document.getElementById(`topic-btn-${key}`);
+                  active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+                  active.classList.add('bg-accent', 'text-white', 'border-accent');
 
-          contents.forEach(c => c.classList.add('hidden'));
+                  document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
+                }
 
-          const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
-          if (activeBtn) {
-            activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
-            activeBtn.classList.add('bg-accent', 'text-white');
-          }
+                selectPaperTopic('fairness');
 
-          const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
-          if (activeContent) {
-            activeContent.classList.remove('hidden');
-          }
-        }
+                // Expandable Paper Drawers
+                function togglePaperDrawer(id) {
+                  const drawer = document.getElementById(`${id}-drawer`);
+                  const btn = document.getElementById(`${id}-btn`);
+                  const icon = document.getElementById(`${id}-icon`);
 
-        // AI Research Topic Explorer
-        const paperTopics = {
-          fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
-          cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
-          anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
-        };
+                  if (drawer.classList.contains('hidden')) {
+                    drawer.classList.remove('hidden');
+                    btn.textContent = 'Collapse Paper Details';
+                    icon.className = 'fas fa-chevron-up text-[10px]';
+                  } else {
+                    drawer.classList.add('hidden');
+                    btn.textContent = 'Expand Paper Details';
+                    icon.className = 'fas fa-chevron-down text-[10px]';
+                  }
+                }
 
-        function selectPaperTopic(key) {
-          const btns = document.querySelectorAll('.topic-btn');
-          btns.forEach(b => {
-            b.classList.remove('bg-accent', 'text-white', 'border-accent');
-            b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
-          });
+                // Metric Counter Animation
+                window.addEventListener('load', () => {
+                  const stats = [
+                    { id: 'stat-1', val: 600, suffix: '+' },
+                    { id: 'stat-2', val: 200, suffix: '+' },
+                    { id: 'stat-3', val: 33 },
+                    { id: 'stat-4', val: 5 }
+                  ];
 
-          const active = document.getElementById(`topic-btn-${key}`);
-          active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
-          active.classList.add('bg-accent', 'text-white', 'border-accent');
-
-          document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
-        }
-
-        selectPaperTopic('fairness');
-
-        // Expandable Paper Drawers
-        function togglePaperDrawer(id) {
-          const drawer = document.getElementById(`${id}-drawer`);
-          const btn = document.getElementById(`${id}-btn`);
-          const icon = document.getElementById(`${id}-icon`);
-
-          if (drawer.classList.contains('hidden')) {
-            drawer.classList.remove('hidden');
-            btn.textContent = 'Collapse Paper Details';
-            icon.className = 'fas fa-chevron-up text-[10px]';
-          } else {
-            drawer.classList.add('hidden');
-            btn.textContent = 'Expand Paper Details';
-            icon.className = 'fas fa-chevron-down text-[10px]';
-          }
-        }
-
-        // Metric Counter Animation
-        window.addEventListener('load', () => {
-          const stats = [
-            { id: 'stat-1', val: 600, suffix: '+' },
-            { id: 'stat-2', val: 200, suffix: '+' },
-            { id: 'stat-3', val: 33 },
-            { id: 'stat-4', val: 5 }
-          ];
-
-          stats.forEach(s => {
-            const elem = document.getElementById(s.id);
-            let curr = 0;
-            const inc = Math.ceil(s.val / 25);
-            const timer = setInterval(() => {
-              curr += inc;
-              if (curr >= s.val) {
-                elem.textContent = s.val + (s.suffix || '');
-                clearInterval(timer);
-              } else {
-                elem.textContent = curr;
-              }
-            }, 35);
-          });
-        });
-      </script>
-    </body>
-    </html>
+                  stats.forEach(s => {
+                    const elem = document.getElementById(s.id);
+                    let curr = 0;
+                    const inc = Math.ceil(s.val / 25);
+                    const timer = setInterval(() => {
+                      curr += inc;
+                      if (curr >= s.val) {
+                        elem.textContent = s.val + (s.suffix || '');
+                        clearInterval(timer);
+                      } else {
+                        elem.textContent = curr;
+                      }
+                    }, 35);
+                  });
+                });
+              </script>
+            </body>
+            </html>
