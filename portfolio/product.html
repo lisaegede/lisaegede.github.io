@@ -143,7 +143,7 @@
 </section>
 <!-- PRODUCT PROJECT GALLERY -->
 <section class="space-y-8" id="projects">
-<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><div><p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">Selected work</p><h2 class="font-serif-title text-3xl sm:text-4xl">Selected Products</h2><p class="text-sm text-ink-mid mt-3 max-w-2xl"> A collection of projects where I've worked across product strategy/user research and design. Pick one to explore!</p></div><span class="text-xs text-ink-soft">Three projects · Click to explore</span></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><div><p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">Selected work</p><h2 class="font-serif-title text-3xl sm:text-4xl">Selected Products</h2><p class="text-sm text-ink-mid mt-3 max-w-2xl"> A collection of projects where I've worked across product strategy/user research and design!</p></div><span class="text-xs text-ink-soft">Three projects · Click to explore</span></div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7"><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="enterprise" onclick="openProject(0)" type="button">
 <div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">01 / 03</span></div>
 <div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Enterprise software · Shipped tool</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Making everyday work less frustrating</h3><p class="text-sm text-ink-mid leading-relaxed">A PowerApps workflow for tracking records, comments, and approvals across teams.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
@@ -367,7 +367,7 @@
 <section class="bg-cream-200 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm" id="impact">
 <div class="text-center mb-6">
 <p class="text-[11px] uppercase tracking-widest font-semibold text-ink-soft mb-2">
-Product Development Impact
+Research &amp; Product Impact
     </p>
 <h2 class="font-serif-title text-2xl sm:text-3xl text-ink">
       By the numbers
@@ -375,23 +375,23 @@ Product Development Impact
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
 <div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-2">0</div>
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-1">600+</div>
+<p class="text-sm text-ink-mid">Research citations</p>
+</div>
+
+<div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-2">200+</div>
 <p class="text-sm text-ink-mid">
-        Workflow users supported
+        Employees supported by product work
       </p>
 </div>
 <div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-3">0</div>
+<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-3">~80</div>
 <p class="text-sm text-ink-mid">
-        AI practitioners interviewed
+        Research participants interviewed
       </p>
 </div>
-<div class="bg-cream-100 rounded-xl border border-stone-300/70 p-6">
-<div class="font-serif-title text-4xl sm:text-5xl text-accent mb-3" id="stat-4">0</div>
-<p class="text-sm text-ink-mid">
-        ACM publications
-      </p>
-</div>
+
 </div>
 </section>
 
@@ -405,7 +405,7 @@ Product Development Impact
             The Questions Behind My AI Research
           </h2>
 <!-- Paragraphs -->
-<div class="text-ink-mid text-sm sm:text-base mt-3 max-w-3xl leading-relaxed space-y-3">
+<div class="text-ink-mid text-base sm:text-lg mt-4 w-full leading-relaxed space-y-4">
 <p>
               A lot of my work starts with a question: does this actually work for the person using it?
             </p>
@@ -695,31 +695,39 @@ Product Development Impact
           }
         }
 
-        // Metric Counter Animation
-        window.addEventListener('load', () => {
+        // Animate only when the impact section enters the viewport.
+        // Display final values by default so they remain visible without JavaScript.
+        (() => {
+          const section = document.getElementById('impact');
+          if (!section) return;
           const stats = [
             { id: 'stat-1', val: 600, suffix: '+' },
             { id: 'stat-2', val: 200, suffix: '+' },
-            { id: 'stat-3', val: 33 },
-            { id: 'stat-4', val: 5 }
+            { id: 'stat-3', val: 80, prefix: '~', suffix: '' }
           ];
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (reducedMotion || !('IntersectionObserver' in window)) return;
 
-          stats.forEach(s => {
-            const elem = document.getElementById(s.id);
-            if (!elem) return;
-          let curr = 0;
-            const inc = Math.ceil(s.val / 25);
-            const timer = setInterval(() => {
-              curr += inc;
-              if (curr >= s.val) {
-                elem.textContent = s.val + (s.suffix || '');
-                clearInterval(timer);
-              } else {
-                elem.textContent = curr;
-              }
-            }, 35);
-          });
-        });
+          let started = false;
+          const observer = new IntersectionObserver((entries) => {
+            if (started || !entries.some(entry => entry.isIntersecting)) return;
+            started = true;
+            observer.disconnect();
+            const duration = 1250;
+            const start = performance.now();
+            function frame(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              stats.forEach(({ id, val, prefix = '', suffix }) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = prefix + Math.floor(val * eased) + suffix;
+              });
+              if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+          }, { threshold: 0.3 });
+          observer.observe(section);
+        })();
       </script>
 </body>
 </html>

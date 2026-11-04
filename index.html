@@ -17,33 +17,34 @@
 body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--blue);text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
-.wrap{max-width:1100px;width:calc(100% - 48px);margin:auto}
+.wrap{max-width:1600px;width:calc(100% - 36px);margin:auto}
 header{background:var(--paper);border-bottom:1px solid var(--line)}
-nav{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.wordmark{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}.wordmark img{display:block;width:75px;height:auto;max-height:62px;object-fit:contain}
+nav{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-left:auto;margin-right:auto}
+.signature{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}
+.signature img{display:block;width:75px;height:auto}
 
 .navlinks{display:flex;gap:27px;align-items:center}
 .navlinks a{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
 .navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--blue)}
 main{flex:1;display:flex;align-items:center;padding:70px 0}
-.bio{display:grid;grid-template-columns:minmax(230px,340px) minmax(0,1fr);align-items:center;gap:clamp(38px,7vw,95px);width:100%;max-width:970px;margin:auto}
+.bio{display:grid;grid-template-columns:340px minmax(0,1fr);align-items:center;gap:clamp(38px,7vw,95px);width:100%;max-width:1080px;margin:0 auto}
 .portrait{display:flex;align-items:center;justify-content:center}
 .portrait img{display:block;width:100%;max-width:340px;height:auto;object-fit:contain}
 h1{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(44px,5vw,66px);font-weight:400;letter-spacing:-1px;margin:0 0 24px}
-.copy{font-size:15.5px;line-height:1.9;color:var(--muted)}
+.copy{font-size:15.5px;line-height:1.9;color:var(--muted);max-width:690px}
 .copy p{margin:0 0 17px}
 .copy p:last-child{margin-bottom:0}
 footer{padding:22px 0 32px}
 .social{display:flex;justify-content:center;align-items:center;gap:37px}
 .social a{font-size:24px;color:var(--ink);text-decoration:none;transition:color .15s}
 .social a:hover{color:var(--blue)}
-@media(max-width:720px){.wrap{width:calc(100% - 36px)}nav{min-height:70px}.wordmark img{width:65px;max-height:56px}.navlinks{gap:15px}.navlinks a{font-size:12px}main{padding:38px 0 28px}.bio{grid-template-columns:1fr;gap:18px}.portrait img{max-width:230px}h1{text-align:center;font-size:48px;margin-bottom:18px}.copy{font-size:15px}.social{gap:33px}}
+@media(max-width:600px){.wrap{width:calc(100% - 36px)}nav{min-height:70px}.signature img{width:67px}.navlinks{gap:15px}.navlinks a{font-size:12px}main{padding:38px 0 28px}.bio{grid-template-columns:1fr;gap:18px}.portrait img{max-width:230px}h1{text-align:center;font-size:48px;margin-bottom:18px}.copy{font-size:15px}.social{gap:33px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <header><nav class="wrap" aria-label="Main navigation">
-<a href="https://www.lisaegede.com/" class="wordmark" aria-label="Lisa Egede home"><img src="images/lisa2.png" alt="Lisa Egede signature"></a>
+<a href="https://www.lisaegede.com/" class="signature" aria-label="Lisa Egede home"><img src="images/lisa2.png" alt="Lisa Egede signature"></a>
 <div class="navlinks">
 <a href="https://www.lisaegede.com/photos">photography</a>
 <a href="https://www.lisaegede.com/" aria-current="page">about me</a>
@@ -55,10 +56,10 @@ footer{padding:22px 0 32px}
 <div>
 <h1>Hello!*~</h1>
 <div class="copy">
-<p>My name is <b>Lisa Egede</b> and I'm a PhD candidate in the <a href="https://hcii.cmu.edu/people/lisa-egede" target="_blank" class="link">Human Computer Interaction Institute (HCII)</a> at Carnegie Mellon University. I recieved my undergraduate degree in Computer Science from the <a href="https://oudatalab.com/people#msualum" target="_blank" class="link">University of Oklahoma</a>.</p>
-<p>Grounded in societal computing, my research is oriented around understanding how diverse user groups interpret and trust AI systems. <a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&hl=en" target="_blank" class="link">My research</a> has been published at various conference venues including CHI, CSCW, DIS, and FAccT!</p>
+<p>My name is <b>Lisa Egede</b> and I'm a mixed-methods researcher and PhD candidate in the <a href="https://hcii.cmu.edu/people/lisa-egede" target="_blank" rel="noopener noreferrer" class="link">Human-Computer Interaction Institute (HCII)</a> at Carnegie Mellon University. I received my undergraduate degree in Computer Science from the <a href="https://oudatalab.com/people#msualum" target="_blank" rel="noopener noreferrer" class="link">University of Oklahoma</a>.</p>
+<p>Grounded in societal computing, <a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="link">my research</a> explores how diverse users experience and make sense of emerging AI systems, particularly in high-stakes contexts. I'm interested in connecting what we learn from users to how technology is designed and evaluated, bringing a human perspective to technical and product decisions!</p>
 <p>In my free time I enjoy making Spotify playlists and <a href="https://www.lisaegede.com/photos" class="link">taking pictures</a> on my film camera.</p>
-<p>You can reach me at lisaegede [at] cmu [dot] edu!</p>
+<p>You can reach me at lisaegede96 [at] gmail [dot] com!</p>
 </div>
 </div>
 </section>
