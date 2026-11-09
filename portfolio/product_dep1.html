@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Lisa Egede — Product &amp; Research</title>
+<link href="/images/lisa2.png" rel="icon" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FCFBF9',
+              100: '#FAF8F5',
+              200: '#F3EFEA',
+              300: '#E8E4DC',
+              400: '#D6D0C4',
+            },
+            ink: {
+              DEFAULT: '#1C1B18',
+              mid: '#4A4943',
+              soft: '#78766F',
+            },
+            accent: {
+              DEFAULT: '#1D4ED8',
+              hover: '#1E40AF',
+              light: '#EFF6FF',
+            }
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #EFECE6;
+      color: #1C1B18;
+    }
+    .font-serif-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+    .img-zoom-hover {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-zoom-hover:hover {
+      transform: scale(1.015);
+    }
+    #projectDialog::backdrop { background: rgba(28,27,24,.66); backdrop-filter: blur(5px); }
+    #projectDialog .case-card { display:block !important; box-shadow:none; }
+    #projectDialog .case-card .tab-navigation { display:none; }
+    #projectDialog .case-card [class*="-tab-content"] { display:block !important; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid #e7e5e4; }
+    #projectDialog .case-card [class*="-tab-content"]:first-of-type { margin-top:0; }
+    #projectDialog .case-card .bg-white > .flex.flex-wrap.gap-2.border-b { display:none; }
+    #projectDialog iframe { max-width:100%; }
+
+    #projectDialog::backdrop { backdrop-filter:none; }
+    .project-tile { will-change:auto; }
+    @media (prefers-reduced-motion: reduce) { .project-tile, .project-tile img { transition:none!important; } }
+</style>
+<style>
+:root{--accent:#a53b47;--paper:#f7f3ef;--ink:#241b1c}
+html{scroll-behavior:smooth}body{background:var(--paper)!important;color:var(--ink)!important}
+header{background:var(--paper)!important;backdrop-filter:none!important;border-color:var(--ink)!important}
+main{max-width:1240px!important;padding-top:42px!important}
+#about{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:46px 0 55px!important}
+#about h1{font-size:clamp(2.3rem,4.4vw,4.6rem)!important;line-height:1.1!important;letter-spacing:-.035em!important;max-width:900px}
+#about p{max-width:740px;line-height:1.8!important}
+#about .lg\:col-span-4{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+#about .lg\:col-span-4 .w-28{width:150px!important;height:150px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;overflow:visible!important}
+#about .lg\:col-span-4 img{width:100%!important;height:100%!important;object-fit:contain!important;border-radius:0!important}
+#about a[href='#projects'],#about a[href='#research']{border-radius:0!important;box-shadow:none!important}
+#impact{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-top:26px!important;padding-bottom:26px!important}
+#projects{padding-top:36px!important}
+#projects>div:first-child{border-color:var(--ink)!important}
+#projects>div:nth-child(2){display:grid!important;grid-template-columns:1fr!important;gap:0!important}
+#projects .project-tile{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center;text-align:left!important;border-radius:0!important;border:0!important;border-bottom:1px solid var(--ink)!important;background:transparent!important;box-shadow:none!important;transform:none!important;min-height:320px}
+#projects .project-tile>div:first-child{height:100%;min-height:310px;display:flex;align-items:center;justify-content:center;border:0!important;background:#e9e7e3!important;padding:28px!important}
+#projects .project-tile>div:nth-child(2){padding:clamp(22px,5vw,75px)!important}
+#projects .project-tile img{max-height:260px!important;object-fit:contain!important}
+#projects .project-tile h3{font-size:clamp(1.6rem,3vw,2.7rem)!important;line-height:1.12!important}
+#projects .project-tile p{line-height:1.75!important}
+#projects .project-tile:hover img{transform:scale(1.035)}
+#research{background:transparent!important;border:1px solid var(--ink)!important;border-radius:0!important;box-shadow:none!important}
+#research .r-kicker,#research .r-link,#research .r-action{color:var(--accent)!important}
+#research .r-tab.active{background:var(--accent)!important;border-color:var(--accent)!important}
+.text-accent{color:var(--accent)!important}.bg-accent{background:var(--accent)!important}.border-accent{border-color:var(--accent)!important}
+#projectDialog{border-radius:0!important}#projectDialog .case-card{border-radius:0!important}
+@media(max-width:750px){#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:220px}#about{padding:15px 0 35px!important}#about h1{font-size:2.5rem!important}#projects .project-tile>div:nth-child(2){padding:28px!important}}
+#about h1,#projects h2,#projects .project-tile h3{font-family:Georgia,serif!important;font-weight:400!important;font-style:italic}#about h1{max-width:800px}#projects .project-tile:nth-child(2)>div:first-child{order:2}#projects .project-tile:nth-child(2)>div:nth-child(2){order:1}#projects .project-tile>div:first-child{background:#eee1dc!important}#projects .project-tile:nth-child(2)>div:first-child{background:#d6d8dc!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f0e4c9!important}#projects .project-tile h3{font-size:3rem!important}#projects .project-tile>div:nth-child(2){padding-left:8vw!important}#about a[href='#projects']{background:#a53b47!important}#research .r-tab{border-radius:0!important}</style><style id="warm-monochrome-refresh">
+:root{color-scheme:light}
+body{background:#eeeae3!important;color:#24221f!important}
+header{background:rgba(249,247,243,.96)!important;border-color:#d5d0c8!important}
+#about{background:#faf8f4!important;border-color:#d6d1c8!important}
+#about h1{color:#25221f!important;font-size:clamp(2rem,3.25vw,3.15rem)!important;line-height:1.13!important;font-style:normal!important;letter-spacing:-.035em}
+#about .lg\:col-span-4{background:#f1ece5!important;border-color:#d8d2c8!important}
+#about .rounded-full.overflow-hidden{border:0!important;background:transparent!important;padding:0!important;overflow:visible!important;width:112px!important;height:112px!important}
+#about img[alt="Lisa Egede"]{object-fit:contain!important;border-radius:0!important}
+.text-accent,.hover\:text-accent:hover,#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:#65594e!important}
+.bg-accent,#about a[href="#projects"],#research .r-tab.active{background:#292622!important;color:#fff!important;border-color:#292622!important}
+#projects .project-tile>div:first-child{background:#e9e3da!important}
+#projects .project-tile:nth-child(2)>div:first-child{background:#dcd8d1!important}
+#projects .project-tile:nth-child(3)>div:first-child{background:#e8dfd1!important}
+#projects .project-tile{border-color:#d5cec4!important;background:#faf8f4!important}
+#projects .project-tile h3{color:#25221f!important}
+#research.research-redesign{background:#faf8f4!important;border-color:#d6d1c8!important}
+#research .r-tab.active{color:#fff!important}
+#research .r-tab{border-color:#d3ccc2!important}
+footer{background:#f7f4ee!important;border-color:#d6d1c8!important}
+/* Bio should read as part of the page, not a white card. */
+#about, #about .lg\:col-span-4 {background:transparent!important;border:0!important;box-shadow:none!important}
+#about {padding-left:0!important;padding-right:0!important}
+#about .lg\:col-span-4 {padding:0!important}
+#about p {background:transparent!important}
+/* Editorial portrait and a small human hello. */
+#about .portrait-holder{width:min(100%,270px);height:auto;max-width:270px;margin:0 auto 20px;overflow:visible;border:0;background:transparent;padding:0}
+#about .portrait-image{display:block;width:100%;height:auto;max-height:330px;object-fit:contain;border-radius:0;filter:grayscale(8%)}
+#about .intro-note{font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.4;color:#302a26;margin-bottom:10px}
+#about .intro-note span{font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#83776c;margin-left:7px}
+#about h1{font-size:clamp(30px,3.2vw,43px)!important;line-height:1.18!important}
+@media(max-width:700px){#about .portrait-holder{max-width:230px}#about .intro-note span{display:block;margin:3px 0 0}}
+</style><style>/* Unified editorial introduction */
+#about h1{font-family:Georgia,serif!important;font-size:clamp(28px,3.15vw,43px)!important;font-weight:400!important;font-style:italic!important;letter-spacing:-.035em!important;line-height:1.2!important;max-width:none!important;margin:0 0 22px!important;color:#25221f!important}
+#about .lg\:col-span-8{min-width:0}
+@media(min-width:1024px){#about h1{white-space:nowrap;font-size:clamp(27px,2.8vw,40px)!important}}
+@media(max-width:1023px){#about h1{white-space:normal}}
+</style><style>
+/* Warm editorial palette across all interactive states, including JS-switched tabs. */
+:root{--editorial-ink:#292622;--editorial-muted:#645c53;--editorial-paper:#f7f3ed;--editorial-line:#d6cec3}
+#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:var(--editorial-muted)!important}
+#research .r-tab{background:var(--editorial-paper)!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
+#research .r-tab.active{background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important}
+#research .r-tab:hover:not(.active){background:#e8e0d6!important}
+#research .r-input,#research .r-select{background:#fbf9f5!important;border-color:var(--editorial-line)!important}
+#research .r-input:focus,#research .r-select:focus{outline-color:#86786a!important}
+#research .r-paper{color:var(--editorial-ink)!important}
+#research .r-chip{background:#eae4dc!important;color:#4d453e!important}
+#projectDialog,#projectDialogBody{background:#f4efe8!important;color:var(--editorial-ink)!important}
+#projectDialog .case-card,#projectDialog .case-card .bg-white{background:#faf8f4!important;color:var(--editorial-ink)!important}
+#projectDialog button.bg-accent,#projectDialog .bg-accent,#projectDialog .tab-btn.bg-accent,
+.topic-btn.bg-accent,.chevron-tab-btn.bg-accent,.ambrosia-tab-btn.bg-accent,.oua-tab-btn.bg-accent{
+ background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important;
+}
+#projectDialog button.bg-cream-200,.topic-btn.bg-cream-50,.chevron-tab-btn.bg-cream-200,.ambrosia-tab-btn.bg-cream-200,.oua-tab-btn.bg-cream-200{
+ background:#eae3da!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important;
+}
+#projectDialog button.bg-cream-200:hover,.topic-btn.bg-cream-50:hover{background:#ded4c8!important}
+#projectDialog a.text-accent,#projectDialog .text-accent{color:#5c5146!important}
+#projectDialog button:focus-visible,.topic-btn:focus-visible,#research button:focus-visible{outline:2px solid #8c7d6b!important;outline-offset:3px}
+#topicDetailBox{background:#f1ebe3!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
+</style></head>
+<body class="min-h-screen flex flex-col antialiased">
+<!-- TOP NAVIGATION HEADER -->
+<header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<a class="font-serif-title text-2xl sm:text-3xl text-ink tracking-tight group" href="#">
+        Lisa <span class="italic text-accent group-hover:underline">Egede</span>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-ink-mid">
+<a class="hover:text-accent transition" href="#about">About</a>
+<a class="hover:text-accent transition" href="#projects">Projects</a>
+<a class="hover:text-accent transition" href="#research">AI Research</a>
+<a class="hover:text-accent transition" href="#impact">Impact Stats</a>
+<a class="px-4 py-2 rounded-full border border-stone-300 hover:border-accent hover:text-accent text-xs font-semibold bg-white transition shadow-sm" href="https://www.lisaegede.com/" target="_blank">
+          lisaegede.com <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+</a>
+</nav>
+<!-- Mobile Button -->
+<button class="md:hidden p-2 text-ink text-xl" onclick="toggleMobileNav()">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+<!-- Mobile Dropdown Nav -->
+<div class="hidden md:hidden border-b border-stone-300 bg-cream-100 px-6 py-4 space-y-3" id="mobileNav">
+<a class="block font-medium text-ink-mid" href="#about" onclick="toggleMobileNav()">About</a>
+<a class="block font-medium text-ink-mid" href="#projects" onclick="toggleMobileNav()">Projects</a>
+<a class="block font-medium text-ink-mid" href="#research" onclick="toggleMobileNav()">AI Research</a>
+<a class="block font-medium text-ink-mid" href="#impact" onclick="toggleMobileNav()">Impact Stats</a>
+<a class="block font-bold text-accent" href="https://www.lisaegede.com/" target="_blank">lisaegede.com →</a>
+</div>
+</header>
+<!-- MAIN PORTFOLIO WRAPPER -->
+<main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+<!-- HERO / ABOUT SECTION -->
+<section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 space-y-5">
+<h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">Hi, I'm Lisa.</h1><p class="text-ink-mid text-base sm:text-lg leading-relaxed">
+I'm a professionally curious product-focused researcher with a background in computer science and 7+ years of experience exploring how people interact with emerging technologies. My experience spans UX research, AI evaluation, and product development!          </p>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+Over the years, I've worked on everything from internal enterprise tools to evaluating generative AI systems. A lot of my work comes back to the same question: how do we make sure the technologies we're building work well for the people using them? Lately, I've been interested in understanding how people evaluate and make sense of AI-generated information in high-stakes information-seeking contexts!          </p>
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="px-5 py-3 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-sm transition shadow-sm flex items-center gap-2" href="#projects">
+              Explore Interactive Case Studies <i class="fas fa-arrow-down text-xs"></i>
+</a>
+<a class="px-5 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-ink font-medium text-sm transition border border-stone-300 flex items-center gap-2" href="#research">
+              View AI Research <i class="fas fa-book-open text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Profile / Social Card -->
+<div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
+<div class="portrait-holder">
+<img alt="Lisa Egede" class="portrait-image" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
+</div>
+<h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
+<p class="text-xs text-ink-soft mt-1">Product Researcher | AI Evaluation &amp; Product Development</p>
+<div class="mt-5 flex gap-4 text-ink-mid text-base">
+<a aria-label="LinkedIn" class="hover:text-accent p-1" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a aria-label="Twitter" class="hover:text-accent p-1" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIENCE: SPLIT EDITORIAL -->
+<section class="mx-auto max-w-6xl py-5 px-4 sm:px-7" id="impact"><div class="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-5 lg:gap-8 items-center"><div><p class="text-[10px] uppercase tracking-[.18em] text-ink-soft mb-3">Previously at</p><div class="flex flex-wrap items-center gap-x-7 gap-y-4">
+<div class="flex items-center gap-2"><svg class="w-6 h-6 shrink-0" viewbox="0 0 21 21"><path d="M0 0h10v10H0z" fill="#F25022"></path><path d="M11 0h10v10H11z" fill="#7FBA00"></path><path d="M0 11h10v10H0z" fill="#00A4EF"></path><path d="M11 11h10v10H11z" fill="#FFB900"></path></svg><div><div class="text-[18px] font-semibold tracking-tight text-[#5E5E5E] leading-tight">Microsoft</div><div class="text-[10px] text-ink-soft">Research</div></div></div>
+<div class="flex items-center gap-2"><span class="text-[39px] font-black tracking-[-.075em] leading-none" style="font-family:Arial,Helvetica,sans-serif;background:repeating-linear-gradient(to bottom,#1261A0 0px,#1261A0 3px,transparent 3px,transparent 6px);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent">IBM</span><span class="text-[10px] text-ink-soft">Research</span></div>
+<div class="text-[#C41230] font-bold leading-[.96] tracking-[-.055em] text-[20px]" style="font-family:Georgia,'Times New Roman',serif">Carnegie Mellon<br/>University</div></div></div><div class="lg:border-l lg:border-stone-300/70 lg:pl-8 border-t lg:border-t-0 pt-4 lg:pt-0"><p class="text-[10px] uppercase tracking-[.18em] text-ink-soft mb-3">By the numbers</p><div class="flex flex-wrap items-center gap-x-6 gap-y-3"><div><span class="font-serif-title text-2xl text-accent" id="stat-1">600+</span><span class="block text-[10px] text-ink-soft">Research citations</span></div><div><span class="font-serif-title text-2xl text-accent" id="stat-2">200+</span><span class="block text-[10px] text-ink-soft">Employees supported</span></div><div><span class="font-serif-title text-2xl text-accent" id="stat-3">~80</span><span class="block text-[10px] text-ink-soft">Research participants</span></div></div></div></div></section>
+<!-- PRODUCT PROJECT GALLERY -->
+<section class="space-y-8" id="projects">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><div><p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">Selected work</p><h2 class="font-serif-title text-3xl sm:text-4xl">Selected Products</h2><p class="text-sm text-ink-mid mt-3 max-w-2xl"> A collection of projects where I've worked across product strategy/user research and design!</p><p class="text-xs text-ink-soft mt-2 max-w-2xl leading-relaxed">This portfolio highlights selected public work. Additional industry projects are not featured due to confidentiality restrictions.</p></div><span class="text-xs text-ink-soft">Three projects · Click to explore</span></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7"><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="enterprise" onclick="openProject(0)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">01 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Enterprise software · Shipped tool</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Enterprise Workflow Management Tool</h3><p class="text-sm text-ink-mid leading-relaxed">An internal application built to simplify how employees track performance metrics and manage approvals.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Ambrosia game launcher screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/ambrosia-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">02 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Consumer product · UX design</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Ambrosia Game Launcher</h3><p class="text-sm text-ink-mid leading-relaxed">Bringing scattered game libraries into one place, so players can spend less time navigating launchers.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="public-systems" onclick="openProject(2)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Arezzo campus kiosk interface" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/arezzo-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">03 / 03</span></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Campus services · Digital experience</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Interactive Campus Information Kiosk</h3><p class="text-sm text-ink-mid leading-relaxed">Reimagining an underused campus touchscreen as a practical resource for students studying abroad.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button></div>
+</section>
+<template id="projectStore"><div id="storedProject0"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="enterprise">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Product Development and Design | Houston, TX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Chevron: Building a tool employees could depend on</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+          When I joined Chevron, the IT department was in the middle of a move to cloud tools. Longtime employees were adjusting to new systems, and the application they used to track performance metrics had some frustrating problems: comments disappeared, records had no timestamps, and there wasn’t a clear way to tell who had changed what. My summer project was to build a better way to manage those records using Microsoft PowerApps.
+        </p>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="chevron-tab-overview" onclick="switchTab('chevron', 'overview')">Development Process</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-persona" onclick="switchTab('chevron', 'persona')">User Personas</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-journey" onclick="switchTab('chevron', 'journey')">Journey Architecture Flow</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-hackathon" onclick="switchTab('chevron', 'hackathon')">Bonus: Hackathon app!</button>
+</div>
+<!-- Tab Content: Overview -->
+<div class="chevron-tab-content space-y-6 text-sm text-ink-mid" id="chevron-content-overview">
+<p class="leading-relaxed">
+              As the sole developer on the application, I worked with full-time Chevron employees across four Agile sprints, gathering feedback as I built and bringing it into the next round of changes.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')">
+<img alt="Typography Reference Parameters" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x450/1d4ed8/ffffff?text=Typography+Reference+Specs'" src="images/font.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Typography reference parameters &amp; design specs</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')">
+<img alt="Application Homepage Layout" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e3a8a/ffffff?text=Application+Homepage+Layout'" src="images/theHomepage.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Application Homepage Environment Layout</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Persona -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-persona">
+<p class="leading-relaxed">
+              To ensure the app served real enterprise needs, we modeled <strong>Jessie</strong>—a full-time Chevron employee in a manager/sponsor role who needs to quickly verify metrics created by her direct reports during busy periods.
+            </p>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')">
+<img alt="User Persona Framework" class="w-full h-auto max-h-[550px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x550/334155/ffffff?text=User+Persona+Framework:+Jessie'" src="images/jessie.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Our user persona: Jessie</p>
+</div>
+</div>
+<!-- Tab Content: Journey Flow -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-journey">
+<p class="leading-relaxed">
+              Jessie's step-by-step metric review, comment thread validation, and approval journey flow map:
+            </p>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')">
+<img alt="User Journey Map Architecture Flow" class="w-full h-auto max-h-[600px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1100x600/0f172a/ffffff?text=User+Journey+Map+Architecture+Flow'" src="images/journeyFlow.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Jessie's end-to-end milestone tracking journey flow map</p>
+</div>
+</div>
+<!-- Tab Content: Hackathon -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-hackathon">
+<p class="leading-relaxed">
+              During a 3-week intern hackathon with four other interns across IT departments, we built the <strong>TTA Tracker</strong> for volunteer event registration and administration.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')">
+<img alt="TTA Tracker Application Interface Overview" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker1.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> TTA Tracker Event History Dashboard</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant &amp; Problem Description')">
+<img alt="TTA Interface layout variant" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Volunteer Problem Statement &amp; Overview Layout</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-xs text-ink-soft bg-cream-200/60 p-4 rounded-xl border border-stone-300">
+<strong>Outcome:</strong> Delivered the Functional Excellence Framework app used by 30 IT power-users, supporting metric tracking for nearly 200 employees, presented to 15 key technical stakeholders.
+        </div>
+</article>
+</div><div id="storedProject1"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="gaming">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Collaborative Project • Front-End &amp; UX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Ambrosia: Making it easier to get to the game</h3>
+</div>
+<div class="text-ink-mid text-sm sm:text-base leading-relaxed space-y-3">
+<p>If you've ever used emulators, you know that getting to the actual game can sometimes involve navigating multiple launchers, folders, and settings. A few friends and I wanted to make that process easier.
+
+          <p>We started Ambrosia as a way to organize and launch games from one place. Before jumping into development, we surveyed gamers in computer science classes and Discord communities to understand how they managed their game libraries and what frustrated them.
+
+          <p>We used that feedback to prioritize features, map out user flows, and design the interface together. My work focused on the research and front-end experience, including translating early ideas into wireframes and interactive mockups.</p>
+</p></p></div>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="ambrosia-tab-research" onclick="switchTab('ambrosia', 'research')">User Research &amp; Whiteboarding</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-prototyping" onclick="switchTab('ambrosia', 'prototyping')">Figma &amp; Interface Layouts</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-interactive" onclick="switchTab('ambrosia', 'interactive')">Interactive Flow &amp; Mockups</button>
+</div>
+<!-- Tab Content: Research & Whiteboarding -->
+<div class="ambrosia-tab-content space-y-6 text-sm text-ink-mid" id="ambrosia-content-research">
+<p class="leading-relaxed">
+              Before writing code, we surveyed gamers across computer science courses and Discord communities to prioritize features.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')">
+<img alt="Ambrosia Flow Whiteboard" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-22-at-11.44.34-PM.png'" src="Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> User Flow Architecture Whiteboard Sketch</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')">
+<img alt="Team Brainstorming Session" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.07.24-AM.png'" src="Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Collaborative Planning Session (Library, Settings &amp; Detail View)</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Figma & Interface Layouts -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-prototyping">
+<p class="leading-relaxed">
+              Iterating on wireframes in Figma and tracking component features through GitHub Issues.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')">
+<img alt="Figma Layout Exploration Canvas" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e293b/ffffff?text=Figma+Layout+Exploration+Canvas'" src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Figma design canvas exploration</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')">
+<img alt="Ambrosia Modal Dialog" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png'" src="Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Add Game Library modal flow</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Interactive Flow & Desktop Mockups -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-interactive">
+<p class="leading-relaxed">
+              Desktop application prototype rendering and dynamic game addition GIF animation:
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')">
+<img alt="Ambrosia Mac Laptop Desktop" class="w-full h-auto max-h-[520px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-16-at-3.34.52-PM.png'" src="Screen-Shot-2019-09-16-at-3.34.52-PM.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Desktop Application Sign-in Frame Mockup</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')">
+<img alt="Interactive Component Animation" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Ambrosia+Interactive+Prototype+GIF'" src="images/ambrosia1.gif"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Interactive prototyping component: Dynamic Game Addition flow animation</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div><div id="storedProject2"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="public-systems">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Marketing &amp; Media Intern | Fall 2017 | Arezzo, Italy</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">University of Oklahoma: A campus resource students had a reason to use</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+          Studying abroad in Italy came with small daily questions: <em>Where’s the nearest pharmacy? How do I get groceries? Will a transit strike affect my weekend plans?</em> Our campus had a touchscreen in the monastery lobby, but students wasn't using it. During my media internship, I worked with the campus director to turn it into an engaging, practical resource.
+        </p>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="oua-tab-environment" onclick="switchTab('oua', 'environment')">Kiosk Physical Setup</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-newsstand" onclick="switchTab('oua', 'newsstand')">Newsstand UI Evolution</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-feeds" onclick="switchTab('oua', 'feeds')">Live Twitter Feed &amp; Video Demo</button>
+</div>
+<!-- Tab Content: Physical Setup -->
+<div class="oua-tab-content space-y-6 text-sm text-ink-mid" id="oua-content-environment">
+<p class="leading-relaxed">
+              The touch kiosk was situated directly in the monastery lobby. I set up a dedicated UX workstation area to rapid-prototype content updates during the semester.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')">
+<img alt="Monastery Lobby Kiosk" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/854d0e/ffffff?text=Monastery+Lobby+Kiosk'" src="images/screen.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Physical Kiosk Installation View inside Monastery Lobby</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/work.png', 'UX Workstation &amp; Interface Layout Workspace')">
+<img alt="UX Workstation" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/475569/ffffff?text=UX+Workstation'" src="images/work.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Production Workstation Workspace</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Newsstand UI Evolution -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-newsstand">
+<p class="leading-relaxed">
+              I designed practical local information, travel advisories, campus updates, and news from home. Because I lived there too, I could see the questions my classmates were running into and keep updating the content throughout the semester.
+            </p>
+<div class="space-y-6">
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')">
+<img alt="Newsstand Concept UI" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/3f6212/ffffff?text=Newsstand+Sketched+UI'" src="images/newsstand.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature conception sketch UI layout</p>
+</div>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')">
+<img alt="Newsstand Final UI" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/b45309/ffffff?text=Newsstand+Production+UI'" src="images/NewsStandFinal.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature high-fidelity production shelf view</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Live Twitter Feed & Video -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-feeds">
+<p class="leading-relaxed">
+              Real-time feed integration allowed students to check campus Twitter updates directly on the touch screen:
+            </p>
+<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory &amp; News Feed UI')">
+<img alt="Twitter Integrated Feed" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x500/0369a1/ffffff?text=Twitter+Integrated+Feed+UI'" src="images/twitterSamp.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Integrated Twitter real-time feed UI showcase</p>
+</div>
+<div class="space-y-2 pt-2">
+<h4 class="font-serif-title text-lg text-ink">Touchscreen Demo Video</h4>
+<div class="relative w-full rounded-xl overflow-hidden shadow-sm border border-stone-300 bg-black aspect-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/g_O4eAUG5Ss?si=26POW-6DjQW4Z84U" title="YouTube video player" width="560"></iframe> </div>
+</div>
+</div>
+</div>
+</article>
+</div></template>
+<dialog aria-label="Project details" class="w-[min(94vw,980px)] max-h-[90vh] rounded-2xl p-0 border border-stone-300 shadow-2xl backdrop:bg-stone-950/65" id="projectDialog">
+<div class="sticky top-0 z-20 flex items-center justify-between bg-cream-100/95 backdrop-blur-md border-b border-stone-300 px-5 sm:px-8 py-4"><span class="font-serif-title text-xl">Project details</span><button aria-label="Close project" class="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-semibold hover:text-accent" onclick="closeProject()">Close <i class="fas fa-times ml-2"></i></button></div>
+<div class="bg-[#EFECE6] p-3 sm:p-7" id="projectDialogBody"></div>
+</dialog>
+<!-- AI RESEARCH HUB -->
+<section class="research-redesign rounded-2xl shadow-sm" id="research"><style>
+#research.research-redesign{padding:28px 30px!important; background:#FAF8F5; border:1px solid #ded9d0;}
+#research .research-editorial-intro{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(0,1.6fr);gap:28px;align-items:start;padding-bottom:23px;margin-bottom:21px;border-bottom:1px solid #e4dfd8}
+#research .research-intro-heading .r-title{font-size:29px;margin-top:9px;line-height:1.2}
+#research .research-intro-copy{font-size:13px;line-height:1.75;color:#4A4943;display:grid;gap:10px}
+#research .research-intro-copy p{margin:0}
+#research .research-explorer-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
+#research .research-explorer-caption{font-size:11px;color:#78766F}
+@media(max-width:700px){#research .research-editorial-intro{grid-template-columns:1fr;gap:14px}#research .research-intro-heading .r-title{font-size:27px}#research .research-explorer-heading{display:block}}
+#research .r-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#1D4ED8;font-weight:800}
+#research .r-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:16px}
+#research .r-title{font-family:'DM Serif Display',Georgia,serif;font-size:32px;line-height:1.15}
+#research .r-intro{font-size:13px;color:#78766F;max-width:550px;line-height:1.65;margin:8px 0 0}
+#research .r-action{color:#1D4ED8;font-size:12px;font-weight:700;white-space:nowrap}
+#research .r-input,#research .r-select{background:#fff;border:1px solid #d9d4cc;border-radius:9px;padding:10px 12px;font-size:12px;color:#1C1B18;max-width:100%;outline-offset:2px}
+#research .r-tabs{display:flex;flex-wrap:wrap;gap:6px}
+#research .r-tab{border:1px solid #d9d4cc;border-radius:100px;padding:7px 12px;font-size:11px;color:#4A4943;background:#fff;cursor:pointer}
+#research .r-tab.active{background:#1D4ED8;color:white;border-color:#1D4ED8}
+#research .r-row{border-bottom:1px solid #e9e5df;padding:14px 0;display:flex;gap:14px;align-items:start}
+#research .r-row:last-child{border:0}
+#research .r-paper{font-size:13px;font-weight:700;line-height:1.45;color:#1C1B18}
+#research .r-meta{font-size:11px;color:#78766F;margin-top:5px;line-height:1.5}
+#research .r-link{font-size:11px;font-weight:700;color:#1D4ED8;white-space:nowrap}
+#research .r-chip{font-size:10px;color:#6e6b64;background:#f1eee9;border-radius:4px;padding:4px 7px;white-space:nowrap}
+#research .r-details{font-size:12px;color:#4A4943;line-height:1.7;margin-top:10px}
+#research .r-details summary{cursor:pointer;color:#1D4ED8;font-weight:600;font-size:11px}
+@media(max-width:700px){#research.research-redesign{padding:20px!important}#research .r-head{display:block}#research .r-action{display:inline-block;margin-top:10px}#research .r-title{font-size:27px}}
+</style><div class="research-editorial-intro"><div class="research-intro-heading"><div class="r-kicker">AI RESEARCH</div><h2 class="r-title">The Research Behind the Products</h2></div><div class="research-intro-copy"><p>
+              A lot of my work starts with a question: does this actually work for the person using it?
+            </p><p>
+              With AI, that question gets complicated. A response can sound convincing without being accurate or useful. People can interpret the same system differently depending on their experiences, expectations, and the situation they're using it in.
+            </p><p>
+              I've explored these questions from a few angles, including how AI practitioners evaluate fairness, how people from different communities experience AI assistants, and how design choices influence trust and reliance. Lately, I've been really interested in what these findings mean for the people building and evaluating AI products!
+            </p></div></div><div class="research-explorer-heading" style="align-items:center;margin:8px 0 16px"><h3 class="font-serif-title text-2xl text-ink">Selected Research</h3><a aria-label="Find Lisa Egede publications on Google Scholar" class="r-action" href="https://scholar.google.com/scholar?q=Lisa+Egede" rel="noopener noreferrer" target="_blank">Google Scholar ↗</a></div><div class="grid grid-cols-1 md:grid-cols-[175px_minmax(0,1fr)] gap-5"><aside class="md:border-r border-stone-200 md:pr-4"><div aria-label="Research themes" class="flex flex-row md:flex-col flex-wrap gap-2" id="r-theme-nav"></div></aside><div><div class="mb-4"><h3 class="font-serif-title text-xl" id="r-theme-title"></h3><p class="text-sm text-stone-500 mt-1" id="r-theme-desc"></p></div><div id="r-theme-papers"></div></div></div><script>const researchPapers=[{"title": "\"For Us By Us\": Intentionally Designing Technology for Lived Black Experiences", "venue": "🏆 DIS 2024 — Honorable Mention", "year": "2024", "authors": "Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • ACM DIS 2024", "desc": "We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.", "link": "https://dl.acm.org/doi/10.1145/3643834.3661535", "topic": "Culture & Design"}, {"title": "Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support", "venue": "CSCW 2022", "year": "2022", "authors": "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • ACM CSCW 2022", "desc": "We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.", "link": "https://dl.acm.org/doi/abs/10.1145/3512899", "topic": "Fairness"}, {"title": "Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking", "venue": "CHI 2023", "year": "2023", "authors": "Lisa Egede, Christina Harrington • ACM CHI 2023", "desc": "We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.", "link": "https://dl.acm.org/doi/10.1145/3544548.3580719", "topic": "Health & Trust"}, {"title": "Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT", "venue": "CHI EA 2025", "year": "2025", "authors": "Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson", "desc": "We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.", "link": "https://dl.acm.org/doi/10.1145/3706599.3720136", "topic": "Culture & Design"}, {"title": "AI Automatons: AI Systems Intended to Imitate Humans", "venue": "FAccT 2025", "year": "2025", "authors": "Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng", "desc": "", "link": "https://dl.acm.org/doi/10.1145/3805689.3812377", "topic": "AI & Trust"}];</script><script>(function(){const topics=[['Fairness','How do practitioners assess AI fairness in real-world workflows?'],['Culture & Design','How do lived experiences and cultural context shape technology design?'],['Health & Trust','What makes AI health information feel trustworthy and useful?'],['AI & Trust','How do humanlike AI systems influence trust and reliance?']];const nav=document.getElementById('r-theme-nav');nav.innerHTML=topics.map((t,i)=>`<button type="button" class="r-tab text-left ${i===0?'active':''}" data-i="${i}">${t[0]}</button>`).join('');function draw(i){const [topic,desc]=topics[i];document.getElementById('r-theme-title').textContent=topic;document.getElementById('r-theme-desc').textContent=desc;document.getElementById('r-theme-papers').innerHTML=researchPapers.filter(p=>p.topic===topic).map(p=>`<article class="r-row"><div class="flex-1"><div class="r-paper">${p.title}</div><div class="r-meta">${p.venue} · ${p.authors}</div><p class="r-details">${p.desc}</p></div><a class="r-link" href="${p.link}" target="_blank" rel="noopener">Read ↗</a></article>`).join('');nav.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('active',i===j))}nav.addEventListener('click',e=>{let b=e.target.closest('[data-i]');if(b)draw(Number(b.dataset.i))});draw(0)})();</script></section>
+</main>
+<!-- LIGHTBOX MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4" id="lightboxModal">
+<div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
+<div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
+<h4 class="font-serif-title text-base sm:text-lg text-ink" id="lightboxTitle">Image Artifact Inspector</h4>
+<button aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
+<img alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" id="lightboxImg" src=""/>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-xs text-ink-soft">
+            © lisa egede • product portfolio
+          </p>
+<div class="flex items-center gap-5 text-ink-mid text-sm">
+<a aria-label="Twitter" class="hover:text-accent" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+<a aria-label="LinkedIn" class="hover:text-accent" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</footer>
+<!-- INTERACTIVE JS -->
+<script>
+        function openProject(index) {
+          const source = document.getElementById('projectStore').content.querySelector('#storedProject' + index);
+          const dialog = document.getElementById('projectDialog');
+          const body = document.getElementById('projectDialogBody');
+          if (!source || !dialog || !body) return;
+          body.replaceChildren(source.firstElementChild.cloneNode(true));
+          dialog.showModal();
+          dialog.scrollTop = 0;
+        }
+        function closeProject() { document.getElementById('projectDialog').close(); }
+        document.addEventListener('click', e => {
+          const dialog = document.getElementById('projectDialog');
+          if (e.target === dialog) dialog.close();
+        });
+        // Mobile Nav
+        function toggleMobileNav() {
+          document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        // Category Filter
+        function filterCategory(cat, evt) {
+          const cards = document.querySelectorAll('.case-card');
+          const btns = document.querySelectorAll('.filter-btn');
+
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
+
+          if (evt && evt.target) {
+            evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
+            evt.target.classList.add('bg-accent', 'text-white');
+          }
+
+          cards.forEach(card => {
+            if (cat === 'all' || card.getAttribute('data-category') === cat) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+
+        // Case Study Tab Switcher
+        function switchTab(projectId, tabName) {
+          const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
+          const contents = document.querySelectorAll(`.${projectId}-tab-content`);
+
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
+
+          contents.forEach(c => c.classList.add('hidden'));
+
+          const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
+          if (activeBtn) {
+            activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
+            activeBtn.classList.add('bg-accent', 'text-white');
+          }
+
+          const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
+          if (activeContent) {
+            activeContent.classList.remove('hidden');
+          }
+        }
+
+        // AI Research Topic Explorer
+        const paperTopics = {
+          fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
+          cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
+          anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
+        };
+
+        function selectPaperTopic(key) {
+          const btns = document.querySelectorAll('.topic-btn');
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white', 'border-accent');
+            b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          });
+
+          const active = document.getElementById(`topic-btn-${key}`);
+          active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          active.classList.add('bg-accent', 'text-white', 'border-accent');
+
+          document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
+        }
+
+        // Research section replaced with standalone interactive explorer.
+
+        // Expandable Paper Drawers
+        function togglePaperDrawer(id) {
+          const drawer = document.getElementById(`${id}-drawer`);
+          const btn = document.getElementById(`${id}-btn`);
+          const icon = document.getElementById(`${id}-icon`);
+
+          if (drawer.classList.contains('hidden')) {
+            drawer.classList.remove('hidden');
+            btn.textContent = 'Collapse Paper Details';
+            icon.className = 'fas fa-chevron-up text-[10px]';
+          } else {
+            drawer.classList.add('hidden');
+            btn.textContent = 'Expand Paper Details';
+            icon.className = 'fas fa-chevron-down text-[10px]';
+          }
+        }
+
+        // Animate only when the impact section enters the viewport.
+        // Display final values by default so they remain visible without JavaScript.
+        (() => {
+          const section = document.getElementById('impact');
+          if (!section) return;
+          const stats = [
+            { id: 'stat-1', val: 600, suffix: '+' },
+            { id: 'stat-2', val: 200, suffix: '+' },
+            { id: 'stat-3', val: 80, prefix: '~', suffix: '' }
+          ];
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+          let started = false;
+          const observer = new IntersectionObserver((entries) => {
+            if (started || !entries.some(entry => entry.isIntersecting)) return;
+            started = true;
+            observer.disconnect();
+            const duration = 1250;
+            const start = performance.now();
+            function frame(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              stats.forEach(({ id, val, prefix = '', suffix }) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = prefix + Math.floor(val * eased) + suffix;
+              });
+              if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+          }, { threshold: 0.3 });
+          observer.observe(section);
+        })();
+      </script>
+</body>
+</html>

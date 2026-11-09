@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Lisa's product portfolio</title>
+<title>lisa's product portfolio</title>
 <link href="/images/lisa2.png" rel="icon" type="image/png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Tailwind CSS -->
@@ -71,21 +71,116 @@
     .project-tile { will-change:auto; }
     @media (prefers-reduced-motion: reduce) { .project-tile, .project-tile img { transition:none!important; } }
 </style>
-</head>
+<style>
+:root{--accent:#a53b47;--paper:#f7f3ef;--ink:#241b1c}
+html{scroll-behavior:smooth}body{background:var(--paper)!important;color:var(--ink)!important}
+header{background:var(--paper)!important;backdrop-filter:none!important;border-color:var(--ink)!important}
+main{max-width:1240px!important;padding-top:42px!important}
+#about{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:46px 0 55px!important}
+#about h1{font-size:clamp(2.3rem,4.4vw,4.6rem)!important;line-height:1.1!important;letter-spacing:-.035em!important;max-width:900px}
+#about p{max-width:740px;line-height:1.8!important}
+#about .lg\:col-span-4{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+#about .lg\:col-span-4 .w-28{width:150px!important;height:150px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;overflow:visible!important}
+#about .lg\:col-span-4 img{width:100%!important;height:100%!important;object-fit:contain!important;border-radius:0!important}
+#about a[href='#projects'],#about a[href='#research']{border-radius:0!important;box-shadow:none!important}
+#impact{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-top:26px!important;padding-bottom:26px!important}
+#projects{padding-top:36px!important}
+#projects>div:first-child{border-color:var(--ink)!important}
+#projects>div:nth-child(2){display:grid!important;grid-template-columns:1fr!important;gap:0!important}
+#projects .project-tile{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center;text-align:left!important;border-radius:0!important;border:0!important;border-bottom:1px solid var(--ink)!important;background:transparent!important;box-shadow:none!important;transform:none!important;min-height:320px}
+#projects .project-tile>div:first-child{height:100%;min-height:310px;display:flex;align-items:center;justify-content:center;border:0!important;background:#e9e7e3!important;padding:28px!important}
+#projects .project-tile>div:nth-child(2){padding:clamp(22px,5vw,75px)!important}
+#projects .project-tile img{max-height:260px!important;object-fit:contain!important}
+#projects .project-tile h3{font-size:clamp(1.6rem,3vw,2.7rem)!important;line-height:1.12!important}
+#projects .project-tile p{line-height:1.75!important}
+#projects .project-tile:hover img{transform:scale(1.035)}
+#research{background:transparent!important;border:1px solid var(--ink)!important;border-radius:0!important;box-shadow:none!important}
+#research .r-kicker,#research .r-link,#research .r-action{color:var(--accent)!important}
+#research .r-tab.active{background:var(--accent)!important;border-color:var(--accent)!important}
+.text-accent{color:var(--accent)!important}.bg-accent{background:var(--accent)!important}.border-accent{border-color:var(--accent)!important}
+#projectDialog{border-radius:0!important}#projectDialog .case-card{border-radius:0!important}
+@media(max-width:750px){#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:220px}#about{padding:15px 0 35px!important}#about h1{font-size:2.5rem!important}#projects .project-tile>div:nth-child(2){padding:28px!important}}
+#about h1,#projects h2,#projects .project-tile h3{font-family:Georgia,serif!important;font-weight:400!important;font-style:italic}#about h1{max-width:800px}#projects .project-tile:nth-child(2)>div:first-child{order:2}#projects .project-tile:nth-child(2)>div:nth-child(2){order:1}#projects .project-tile>div:first-child{background:#eee1dc!important}#projects .project-tile:nth-child(2)>div:first-child{background:#d6d8dc!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f0e4c9!important}#projects .project-tile h3{font-size:3rem!important}#projects .project-tile>div:nth-child(2){padding-left:8vw!important}#about a[href='#projects']{background:#a53b47!important}#research .r-tab{border-radius:0!important}</style><style id="warm-monochrome-refresh">
+:root{color-scheme:light}
+body{background:#eeeae3!important;color:#24221f!important}
+header{background:rgba(249,247,243,.96)!important;border-color:#d5d0c8!important}
+#about{background:#faf8f4!important;border-color:#d6d1c8!important}
+#about h1{color:#25221f!important;font-size:clamp(2rem,3.25vw,3.15rem)!important;line-height:1.13!important;font-style:normal!important;letter-spacing:-.035em}
+#about .lg\:col-span-4{background:#f1ece5!important;border-color:#d8d2c8!important}
+#about .rounded-full.overflow-hidden{border:0!important;background:transparent!important;padding:0!important;overflow:visible!important;width:112px!important;height:112px!important}
+#about img[alt="Lisa Egede"]{object-fit:contain!important;border-radius:0!important}
+.text-accent,.hover\:text-accent:hover,#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:#65594e!important}
+.bg-accent,#about a[href="#projects"],#research .r-tab.active{background:#292622!important;color:#fff!important;border-color:#292622!important}
+#projects .project-tile>div:first-child{background:#e9e3da!important}
+#projects .project-tile:nth-child(2)>div:first-child{background:#dcd8d1!important}
+#projects .project-tile:nth-child(3)>div:first-child{background:#e8dfd1!important}
+#projects .project-tile{border-color:#d5cec4!important;background:#faf8f4!important}
+#projects .project-tile h3{color:#25221f!important}
+#research.research-redesign{background:#faf8f4!important;border-color:#d6d1c8!important}
+#research .r-tab.active{color:#fff!important}
+#research .r-tab{border-color:#d3ccc2!important}
+footer{background:#f7f4ee!important;border-color:#d6d1c8!important}
+/* Bio should read as part of the page, not a white card. */
+#about, #about .lg\:col-span-4 {background:transparent!important;border:0!important;box-shadow:none!important}
+#about {padding-left:0!important;padding-right:0!important}
+#about .lg\:col-span-4 {padding:0!important}
+#about p {background:transparent!important}
+/* Editorial portrait and a small human hello. */
+#about .portrait-holder{width:min(100%,270px);height:auto;max-width:270px;margin:0 auto 20px;overflow:visible;border:0;background:transparent;padding:0}
+#about .portrait-image{display:block;width:100%;height:auto;max-height:330px;object-fit:contain;border-radius:0;filter:grayscale(8%)}
+#about .intro-note{font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.4;color:#302a26;margin-bottom:10px}
+#about .intro-note span{font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#83776c;margin-left:7px}
+#about h1{font-size:clamp(30px,3.2vw,43px)!important;line-height:1.18!important}
+@media(max-width:700px){#about .portrait-holder{max-width:230px}#about .intro-note span{display:block;margin:3px 0 0}}
+</style><style>/* Unified editorial introduction */
+#about h1{font-family:Georgia,serif!important;font-size:clamp(28px,3.15vw,43px)!important;font-weight:400!important;font-style:italic!important;letter-spacing:-.035em!important;line-height:1.2!important;max-width:none!important;margin:0 0 22px!important;color:#25221f!important}
+#about .lg\:col-span-8{min-width:0}
+@media(min-width:1024px){#about h1{white-space:nowrap;font-size:clamp(27px,2.8vw,40px)!important}}
+@media(max-width:1023px){#about h1{white-space:normal}}
+</style><style>
+/* Warm editorial palette across all interactive states, including JS-switched tabs. */
+:root{--editorial-ink:#292622;--editorial-muted:#645c53;--editorial-paper:#f7f3ed;--editorial-line:#d6cec3}
+#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:var(--editorial-muted)!important}
+#research .r-tab{background:var(--editorial-paper)!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
+#research .r-tab.active{background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important}
+#research .r-tab:hover:not(.active){background:#e8e0d6!important}
+#research .r-input,#research .r-select{background:#fbf9f5!important;border-color:var(--editorial-line)!important}
+#research .r-input:focus,#research .r-select:focus{outline-color:#86786a!important}
+#research .r-paper{color:var(--editorial-ink)!important}
+#research .r-chip{background:#eae4dc!important;color:#4d453e!important}
+#projectDialog,#projectDialogBody{background:#f4efe8!important;color:var(--editorial-ink)!important}
+#projectDialog .case-card,#projectDialog .case-card .bg-white{background:#faf8f4!important;color:var(--editorial-ink)!important}
+#projectDialog button.bg-accent,#projectDialog .bg-accent,#projectDialog .tab-btn.bg-accent,
+.topic-btn.bg-accent,.chevron-tab-btn.bg-accent,.ambrosia-tab-btn.bg-accent,.oua-tab-btn.bg-accent{
+ background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important;
+}
+#projectDialog button.bg-cream-200,.topic-btn.bg-cream-50,.chevron-tab-btn.bg-cream-200,.ambrosia-tab-btn.bg-cream-200,.oua-tab-btn.bg-cream-200{
+ background:#eae3da!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important;
+}
+#projectDialog button.bg-cream-200:hover,.topic-btn.bg-cream-50:hover{background:#ded4c8!important}
+#projectDialog a.text-accent,#projectDialog .text-accent{color:#5c5146!important}
+#projectDialog button:focus-visible,.topic-btn:focus-visible,#research button:focus-visible{outline:2px solid #8c7d6b!important;outline-offset:3px}
+#topicDetailBox{background:#f1ebe3!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
+</style><style id="seamless-navigation">
+/* The navigation is part of the page, not a separate white ribbon. */
+body > header {position:relative!important;top:auto!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;}
+body > header > div:first-child {height:74px;}
+body > header nav a:last-child {background:transparent!important;box-shadow:none!important;border-radius:0!important;}
+#mobileNav {background:#eeeae3!important;border-color:#d5d0c8!important;}
+main {padding-top:16px!important;}
+</style></head>
 <body class="min-h-screen flex flex-col antialiased">
 <!-- TOP NAVIGATION HEADER -->
-<header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<a class="font-serif-title text-2xl sm:text-3xl text-ink tracking-tight group" href="#">
-        Lisa <span class="italic text-accent group-hover:underline">Egede</span>
-</a>
+<header class="relative z-40 w-full">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end">
+
 <!-- Desktop Nav -->
 <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-ink-mid">
 <a class="hover:text-accent transition" href="#about">About</a>
 <a class="hover:text-accent transition" href="#projects">Projects</a>
 <a class="hover:text-accent transition" href="#research">AI Research</a>
 <a class="hover:text-accent transition" href="#impact">Impact Stats</a>
-<a class="px-4 py-2 rounded-full border border-stone-300 hover:border-accent hover:text-accent text-xs font-semibold bg-white transition shadow-sm" href="https://www.lisaegede.com/" target="_blank">
+<a class="px-4 py-2 border-b border-stone-500 hover:text-accent text-xs font-semibold transition" href="https://www.lisaegede.com/" target="_blank">
           lisaegede.com <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
 </a>
 </nav>
@@ -109,11 +204,8 @@
 <section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm" id="about">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 <div class="lg:col-span-8 space-y-5">
-<h1 class="font-serif-title text-4xl sm:text-5xl text-ink leading-tight">
-            Hi, my name is Lisa!
-          </h1>
-<p class="text-ink-mid text-base sm:text-lg leading-relaxed">
-I'm a product-focused researcher with a background in computer science and 7+ years of experience exploring how people interact with emerging technologies! My experience spans UX research, AI evaluation, and product development.          </p>
+<h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">Hi, I'm Lisa.</h1><p class="text-ink-mid text-base sm:text-lg leading-relaxed">
+I'm a professionally curious product-focused researcher with a background in computer science and 7+ years of experience exploring how people interact with emerging technologies. My experience spans UX research, AI evaluation, and product development!          </p>
 <p class="text-ink-mid text-sm sm:text-base leading-relaxed">
 Over the years, I've worked on everything from internal enterprise tools to evaluating generative AI systems. A lot of my work comes back to the same question: how do we make sure the technologies we're building work well for the people using them? Lately, I've been interested in understanding how people evaluate and make sense of AI-generated information in high-stakes information-seeking contexts!          </p>
 <div class="pt-2 flex flex-wrap gap-3">
@@ -127,8 +219,8 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 </div>
 <!-- Profile / Social Card -->
 <div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
-<div class="w-28 h-28 rounded-full overflow-hidden mb-4 border-2 border-accent/20 p-1 bg-cream-100">
-<img alt="Lisa Egede" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
+<div class="portrait-holder">
+<img alt="Lisa Egede" class="portrait-image" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
 </div>
 <h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
 <p class="text-xs text-ink-soft mt-1">Product Researcher | AI Evaluation &amp; Product Development</p>
@@ -400,7 +492,7 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               With AI, that question gets complicated. A response can sound convincing without being accurate or useful. People can interpret the same system differently depending on their experiences, expectations, and the situation they're using it in.
             </p><p>
               I've explored these questions from a few angles, including how AI practitioners evaluate fairness, how people from different communities experience AI assistants, and how design choices influence trust and reliance. Lately, I've been really interested in what these findings mean for the people building and evaluating AI products!
-            </p></div></div><div class="research-explorer-heading" style="align-items:center;margin:8px 0 16px"><h3 class="font-serif-title text-2xl text-ink">Selected Research</h3><a class="r-action" href="https://scholar.google.com/scholar?q=Lisa+Egede" target="_blank" rel="noopener noreferrer" aria-label="Find Lisa Egede publications on Google Scholar">Google Scholar ↗</a></div><div class="grid grid-cols-1 md:grid-cols-[175px_minmax(0,1fr)] gap-5"><aside class="md:border-r border-stone-200 md:pr-4"><div class="flex flex-row md:flex-col flex-wrap gap-2" id="r-theme-nav" aria-label="Research themes"></div></aside><div><div class="mb-4"><h3 class="font-serif-title text-xl" id="r-theme-title"></h3><p class="text-sm text-stone-500 mt-1" id="r-theme-desc"></p></div><div id="r-theme-papers"></div></div></div><script>const researchPapers=[{"title": "\"For Us By Us\": Intentionally Designing Technology for Lived Black Experiences", "venue": "🏆 DIS 2024 — Honorable Mention", "year": "2024", "authors": "Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • ACM DIS 2024", "desc": "We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.", "link": "https://dl.acm.org/doi/10.1145/3643834.3661535", "topic": "Culture & Design"}, {"title": "Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support", "venue": "CSCW 2022", "year": "2022", "authors": "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • ACM CSCW 2022", "desc": "We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.", "link": "https://dl.acm.org/doi/abs/10.1145/3512899", "topic": "Fairness"}, {"title": "Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking", "venue": "CHI 2023", "year": "2023", "authors": "Lisa Egede, Christina Harrington • ACM CHI 2023", "desc": "We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.", "link": "https://dl.acm.org/doi/10.1145/3544548.3580719", "topic": "Health & Trust"}, {"title": "Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT", "venue": "CHI EA 2025", "year": "2025", "authors": "Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson", "desc": "We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.", "link": "https://dl.acm.org/doi/10.1145/3706599.3720136", "topic": "Culture & Design"}, {"title": "AI Automatons: AI Systems Intended to Imitate Humans", "venue": "FAccT 2025", "year": "2025", "authors": "Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng", "desc": "", "link": "https://dl.acm.org/doi/10.1145/3805689.3812377", "topic": "AI & Trust"}];</script><script>(function(){const topics=[['Fairness','How do practitioners assess AI fairness in real-world workflows?'],['Culture & Design','How do lived experiences and cultural context shape technology design?'],['Health & Trust','What makes AI health information feel trustworthy and useful?'],['AI & Trust','How do humanlike AI systems influence trust and reliance?']];const nav=document.getElementById('r-theme-nav');nav.innerHTML=topics.map((t,i)=>`<button type="button" class="r-tab text-left ${i===0?'active':''}" data-i="${i}">${t[0]}</button>`).join('');function draw(i){const [topic,desc]=topics[i];document.getElementById('r-theme-title').textContent=topic;document.getElementById('r-theme-desc').textContent=desc;document.getElementById('r-theme-papers').innerHTML=researchPapers.filter(p=>p.topic===topic).map(p=>`<article class="r-row"><div class="flex-1"><div class="r-paper">${p.title}</div><div class="r-meta">${p.venue} · ${p.authors}</div><p class="r-details">${p.desc}</p></div><a class="r-link" href="${p.link}" target="_blank" rel="noopener">Read ↗</a></article>`).join('');nav.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('active',i===j))}nav.addEventListener('click',e=>{let b=e.target.closest('[data-i]');if(b)draw(Number(b.dataset.i))});draw(0)})();</script></section>
+            </p></div></div><div class="research-explorer-heading" style="align-items:center;margin:8px 0 16px"><h3 class="font-serif-title text-2xl text-ink">Selected Research</h3><a aria-label="Find Lisa Egede publications on Google Scholar" class="r-action" href="https://scholar.google.com/scholar?q=Lisa+Egede" rel="noopener noreferrer" target="_blank">Google Scholar ↗</a></div><div class="grid grid-cols-1 md:grid-cols-[175px_minmax(0,1fr)] gap-5"><aside class="md:border-r border-stone-200 md:pr-4"><div aria-label="Research themes" class="flex flex-row md:flex-col flex-wrap gap-2" id="r-theme-nav"></div></aside><div><div class="mb-4"><h3 class="font-serif-title text-xl" id="r-theme-title"></h3><p class="text-sm text-stone-500 mt-1" id="r-theme-desc"></p></div><div id="r-theme-papers"></div></div></div><script>const researchPapers=[{"title": "\"For Us By Us\": Intentionally Designing Technology for Lived Black Experiences", "venue": "🏆 DIS 2024 — Honorable Mention", "year": "2024", "authors": "Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • ACM DIS 2024", "desc": "We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.", "link": "https://dl.acm.org/doi/10.1145/3643834.3661535", "topic": "Culture & Design"}, {"title": "Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support", "venue": "CSCW 2022", "year": "2022", "authors": "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • ACM CSCW 2022", "desc": "We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.", "link": "https://dl.acm.org/doi/abs/10.1145/3512899", "topic": "Fairness"}, {"title": "Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking", "venue": "CHI 2023", "year": "2023", "authors": "Lisa Egede, Christina Harrington • ACM CHI 2023", "desc": "We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.", "link": "https://dl.acm.org/doi/10.1145/3544548.3580719", "topic": "Health & Trust"}, {"title": "Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT", "venue": "CHI EA 2025", "year": "2025", "authors": "Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson", "desc": "We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.", "link": "https://dl.acm.org/doi/10.1145/3706599.3720136", "topic": "Culture & Design"}, {"title": "AI Automatons: AI Systems Intended to Imitate Humans", "venue": "FAccT 2025", "year": "2025", "authors": "Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng", "desc": "", "link": "https://dl.acm.org/doi/10.1145/3805689.3812377", "topic": "AI & Trust"}];</script><script>(function(){const topics=[['Fairness','How do practitioners assess AI fairness in real-world workflows?'],['Culture & Design','How do lived experiences and cultural context shape technology design?'],['Health & Trust','What makes AI health information feel trustworthy and useful?'],['AI & Trust','How do humanlike AI systems influence trust and reliance?']];const nav=document.getElementById('r-theme-nav');nav.innerHTML=topics.map((t,i)=>`<button type="button" class="r-tab text-left ${i===0?'active':''}" data-i="${i}">${t[0]}</button>`).join('');function draw(i){const [topic,desc]=topics[i];document.getElementById('r-theme-title').textContent=topic;document.getElementById('r-theme-desc').textContent=desc;document.getElementById('r-theme-papers').innerHTML=researchPapers.filter(p=>p.topic===topic).map(p=>`<article class="r-row"><div class="flex-1"><div class="r-paper">${p.title}</div><div class="r-meta">${p.venue} · ${p.authors}</div><p class="r-details">${p.desc}</p></div><a class="r-link" href="${p.link}" target="_blank" rel="noopener">Read ↗</a></article>`).join('');nav.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('active',i===j))}nav.addEventListener('click',e=>{let b=e.target.closest('[data-i]');if(b)draw(Number(b.dataset.i))});draw(0)})();</script></section>
 </main>
 <!-- LIGHTBOX MODAL -->
 <div class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4" id="lightboxModal">
