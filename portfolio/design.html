@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Lisa Egede | Product Design Portfolio</title>
+<link href="/images/lisa2.png" rel="icon" type="image/png"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FCFBF9',
+              100: '#FAF8F5',
+              200: '#F3EFEA',
+              300: '#E8E4DC',
+              400: '#D6D0C4',
+            },
+            ink: {
+              DEFAULT: '#1C1B18',
+              mid: '#4A4943',
+              soft: '#78766F',
+            },
+            accent: {
+              DEFAULT: '#1D4ED8',
+              hover: '#1E40AF',
+              light: '#EFF6FF',
+            }
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #EFECE6;
+      color: #1C1B18;
+    }
+    .font-serif-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+    .img-zoom-hover {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-zoom-hover:hover {
+      transform: scale(1.015);
+    }
+    #projectDialog::backdrop { background: rgba(28,27,24,.66); backdrop-filter: blur(5px); }
+    #projectDialog .case-card { display:block !important; box-shadow:none; }
+    #projectDialog .case-card .tab-navigation { display:none; }
+    #projectDialog .case-card [class*="-tab-content"] { display:block !important; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid #e7e5e4; }
+    #projectDialog .case-card [class*="-tab-content"]:first-of-type { margin-top:0; }
+    #projectDialog .case-card .bg-white > .flex.flex-wrap.gap-2.border-b { display:none; }
+    #projectDialog iframe { max-width:100%; }
+
+    #projectDialog::backdrop { backdrop-filter:none; }
+    .project-tile { will-change:auto; }
+    @media (prefers-reduced-motion: reduce) { .project-tile, .project-tile img { transition:none!important; } }
+</style>
+<style>
+:root{--accent:#a53b47;--paper:#f7f3ef;--ink:#241b1c}
+html{scroll-behavior:smooth}body{background:var(--paper)!important;color:var(--ink)!important}
+header{background:var(--paper)!important;backdrop-filter:none!important;border-color:var(--ink)!important}
+main{max-width:1240px!important;padding-top:42px!important}
+#about{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:46px 0 55px!important}
+#about h1{font-size:clamp(2.3rem,4.4vw,4.6rem)!important;line-height:1.1!important;letter-spacing:-.035em!important;max-width:900px}
+#about p{max-width:740px;line-height:1.8!important}
+#about .lg\:col-span-4{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+#about .lg\:col-span-4 .w-28{width:150px!important;height:150px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;overflow:visible!important}
+#about .lg\:col-span-4 img{width:100%!important;height:100%!important;object-fit:contain!important;border-radius:0!important}
+#about a[href='#projects'],#about a[href='#research']{border-radius:0!important;box-shadow:none!important}
+#impact{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-top:26px!important;padding-bottom:26px!important}
+#projects{padding-top:36px!important}
+#projects>div:first-child{border-color:var(--ink)!important}
+#projects>div:nth-child(2){display:grid!important;grid-template-columns:1fr!important;gap:0!important}
+#projects .project-tile{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center;text-align:left!important;border-radius:0!important;border:0!important;border-bottom:1px solid var(--ink)!important;background:transparent!important;box-shadow:none!important;transform:none!important;min-height:320px}
+#projects .project-tile>div:first-child{height:100%;min-height:310px;display:flex;align-items:center;justify-content:center;border:0!important;background:#e9e7e3!important;padding:28px!important}
+#projects .project-tile>div:nth-child(2){padding:clamp(22px,5vw,75px)!important}
+#projects .project-tile img{max-height:260px!important;object-fit:contain!important}
+#projects .project-tile h3{font-size:clamp(1.6rem,3vw,2.7rem)!important;line-height:1.12!important}
+#projects .project-tile p{line-height:1.75!important}
+#projects .project-tile:hover img{transform:scale(1.035)}
+#research{background:transparent!important;border:1px solid var(--ink)!important;border-radius:0!important;box-shadow:none!important}
+#research .r-kicker,#research .r-link,#research .r-action{color:var(--accent)!important}
+#research .r-tab.active{background:var(--accent)!important;border-color:var(--accent)!important}
+.text-accent{color:var(--accent)!important}.bg-accent{background:var(--accent)!important}.border-accent{border-color:var(--accent)!important}
+#projectDialog{border-radius:0!important}#projectDialog .case-card{border-radius:0!important}
+@media(max-width:750px){#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:220px}#about{padding:15px 0 35px!important}#about h1{font-size:2.5rem!important}#projects .project-tile>div:nth-child(2){padding:28px!important}}
+#about h1,#projects h2,#projects .project-tile h3{font-family:Georgia,serif!important;font-weight:400!important;font-style:italic}#about h1{max-width:800px}#projects .project-tile:nth-child(2)>div:first-child{order:2}#projects .project-tile:nth-child(2)>div:nth-child(2){order:1}#projects .project-tile>div:first-child{background:#eee1dc!important}#projects .project-tile:nth-child(2)>div:first-child{background:#d6d8dc!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f0e4c9!important}#projects .project-tile h3{font-size:3rem!important}#projects .project-tile>div:nth-child(2){padding-left:8vw!important}#about a[href='#projects']{background:#a53b47!important}#research .r-tab{border-radius:0!important}</style><style>
+:root{--accent:#a53b47!important;--paper:#f7f3ef!important}
+body{background:#f7f3ef!important}
+.text-accent{color:#a53b47!important}.bg-accent{background:#a53b47!important}#research .r-tab.active{background:#a53b47!important;border-color:#a53b47!important}
+#about{border-top:3px double #241b1c!important}#about h1{font-size:clamp(2rem,3.7vw,3.75rem)!important;font-style:normal!important;letter-spacing:-.045em!important}#about .lg\:col-span-4{align-self:start!important}#projects .project-tile:nth-child(2)>div:first-child{order:0!important}#projects .project-tile:nth-child(2)>div:nth-child(2){order:0!important}#projects .project-tile h3{font-size:clamp(1.7rem,3vw,2.6rem)!important}#projects .project-tile>div:nth-child(2){padding-left:5vw!important}
+</style>
+<style id="apple-product-design-final">
+:root { --accent:#111!important; --paper:#fff!important; --ink:#111!important; color-scheme:light; }
+html,body{background:#fff!important;color:#111!important;font-family:'DM Sans',Arial,sans-serif!important}
+header{background:#fff!important;border-color:#e5e5e5!important}
+header a,header nav{color:#161616!important}
+main{max-width:1230px!important;padding-top:30px!important}
+#about{background:#fff!important;border:0!important;border-top:1px solid #111!important;box-shadow:none!important;padding:78px 0 90px!important}
+#about .grid{gap:60px!important}
+#about .lg\\:col-span-4{background:#fff!important;border:0!important;box-shadow:none!important}
+#about .apple-eyebrow{font-size:11px!important;letter-spacing:.17em!important;font-weight:700!important;color:#555!important;margin-bottom:28px!important}
+#about .apple-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:650!important;font-style:normal!important;letter-spacing:-.055em!important;font-size:clamp(39px,5.1vw,76px)!important;line-height:1.09!important;max-width:800px!important}
+#about .apple-title em{font-style:normal!important}
+#about .apple-summary{font-size:clamp(16px,1.5vw,19px)!important;line-height:1.75!important;max-width:730px!important;color:#494949!important;margin:26px 0 20px!important}
+#about .apple-work-link{display:inline-block;margin-top:15px;font-size:12px;letter-spacing:.1em;font-weight:700;border-bottom:1px solid #111;padding-bottom:8px}
+#about .lg\\:col-span-4 .w-28{border:0!important;background:transparent!important}
+#about .lg\\:col-span-4 img{filter:grayscale(1);border-radius:50%!important}
+#impact{background:#fff!important;border-top:1px solid #ddd!important;border-bottom:1px solid #ddd!important}
+#projects{padding-top:80px!important}
+#projects>div:first-child{display:block!important;border-color:#111!important;padding-bottom:26px!important}
+#projects .apple-section-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:650!important;font-style:normal!important;font-size:clamp(36px,4.5vw,61px)!important;letter-spacing:-.055em!important;line-height:1.1!important}
+#projects .apple-nda{font-size:14px!important;color:#666!important;margin-top:16px!important;line-height:1.6!important}
+#projects>div:nth-child(2){display:grid!important;grid-template-columns:1fr!important;gap:0!important}
+#projects .project-tile{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;min-height:290px!important;border:0!important;border-bottom:1px solid #dedede!important;border-radius:0!important;box-shadow:none!important;background:#fff!important;transform:none!important}
+#projects .project-tile>div:first-child{background:#f5f5f5!important;min-height:285px!important;height:100%!important;padding:25px!important;border:0!important;display:flex;align-items:center;justify-content:center}
+#projects .project-tile:nth-child(2)>div:first-child{background:#f0f2f4!important}
+#projects .project-tile:nth-child(3)>div:first-child{background:#f6f5f3!important}
+#projects .project-tile img{max-height:250px!important;width:100%!important;height:100%!important;object-fit:contain!important;filter:none!important}
+#projects .project-tile>div:nth-child(2){padding:clamp(26px,5vw,68px)!important}
+#projects .project-tile h3{font-family:'DM Sans',Arial,sans-serif!important;font-style:normal!important;font-weight:650!important;font-size:clamp(26px,3vw,42px)!important;letter-spacing:-.05em!important;color:#111!important}
+#projects .project-tile p{color:#555!important}
+#projects .project-tile .text-accent,.text-accent{color:#111!important}
+#research{background:#fff!important;border-color:#e0e0e0!important;border-radius:0!important}
+#research .r-tab.active,.bg-accent{background:#111!important;border-color:#111!important;color:#fff!important}
+#research .r-kicker,#research .r-link,#research .r-action,#research .r-details summary{color:#111!important}
+#projectDialog{background:#fff!important;color:#111!important;border-radius:8px!important}
+#projectDialog .case-card,#projectDialog .case-card .bg-white{background:#fff!important;color:#111!important}
+#projectDialog .case-card h3{color:#111!important}
+footer{background:#fff!important;border-color:#ddd!important}
+@media(max-width:750px){#about{padding:40px 0 60px!important}#about .apple-title{font-size:clamp(36px,9vw,55px)!important}#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:230px!important}#projects .project-tile>div:nth-child(2){padding:26px 8px 36px!important}}
+</style><style id="copy-and-writing-final">
+#about .apple-eyebrow{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid #ddd;padding-bottom:17px}
+#about .availability{font-size:10px;font-weight:650;letter-spacing:.12em;color:#555}
+#projects>div:first-child{display:flex!important;align-items:baseline!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:14px!important}
+#projects .work-section-meta{font-size:11px;font-weight:650;letter-spacing:.12em;color:#555}
+#projects .apple-nda{flex-basis:100%;margin-top:0!important}
+#projects .project-tile .work-number{font-size:11px!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:#666!important;margin-bottom:12px!important}
+#projects .project-tile>div:nth-child(2)>p.text-\[11px\]{font-size:14px!important;font-weight:650!important;letter-spacing:0!important;text-transform:none!important;color:#222!important;margin-top:13px!important}
+#projects .project-tile>div:nth-child(2)>span.inline-flex{font-size:13px!important;text-decoration:underline!important;text-underline-offset:5px!important;margin-top:20px!important}
+.portfolio-writing{border-top:1px solid #111;padding:80px 0 100px;max-width:1160px;margin:70px auto 0}
+.portfolio-writing .writing-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;color:#666;margin-bottom:35px}
+.portfolio-writing .writing-columns{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:end}
+.portfolio-writing h2{font-family:'DM Sans',sans-serif;font-size:clamp(35px,4.5vw,64px);font-weight:650;letter-spacing:-.055em;line-height:1.13;color:#111}
+.portfolio-writing h2 em{font-family:Georgia,serif;font-weight:400}
+.portfolio-writing .writing-copy p{font-size:16px;line-height:1.8;color:#555;margin-bottom:25px}
+.portfolio-writing .writing-copy a{display:inline-block;border-bottom:1px solid #111;padding-bottom:7px;font-size:14px;font-weight:700;color:#111}
+@media(max-width:750px){.portfolio-writing{padding:55px 0 70px;margin-top:40px}.portfolio-writing .writing-columns{grid-template-columns:1fr;gap:24px}}
+</style><style id="reference-hero-compact">
+/* Reference screenshot: fine top rule, expressive serif hello, bold sans headline. */
+#about{padding:38px 0 75px!important;border-top:0!important}
+#about .grid{display:block!important}
+#about .lg\:col-span-8{max-width:1050px!important;width:100%!important}
+#about .lg\:col-span-4{display:none!important}
+#about .apple-eyebrow{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:20px!important;width:100%!important;max-width:none!important;border-bottom:1px solid #171717!important;padding:0 0 19px!important;margin:0 0 65px!important;color:#171717!important;font:700 11px/1.5 'DM Sans',Arial,sans-serif!important;letter-spacing:.13em!important}
+#about .apple-eyebrow .availability{margin-left:auto!important;white-space:nowrap!important}
+#about .apple-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:800!important;font-style:normal!important;font-size:clamp(40px,5.1vw,73px)!important;line-height:1.12!important;letter-spacing:-.065em!important;max-width:1000px!important;margin:0 0 34px!important;color:#111!important}
+#about .apple-title em{display:inline-block!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;font-style:italic!important;font-size:1.13em!important;letter-spacing:-.065em!important;line-height:1.15!important;margin-bottom:9px!important}
+#about .apple-summary{font-size:clamp(15px,1.3vw,18px)!important;max-width:740px!important;margin:0 0 14px!important}
+@media(max-width:700px){#about{padding:22px 0 50px!important}#about .apple-eyebrow{font-size:9px!important;flex-wrap:wrap!important;gap:8px!important;margin-bottom:40px!important}#about .apple-eyebrow .availability{margin-left:0!important}#about .apple-title{font-size:clamp(36px,8.1vw,54px)!important;letter-spacing:-.06em!important}}
+</style><style id="editorial-header-final">
+body > header{display:block!important;position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;background:#fff!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;z-index:1000!important}
+body > header .editorial-header-inner{box-sizing:border-box!important;max-width:none!important;margin:0 auto!important;padding:48px 0 26px!important;width:calc(100% - 80px)!important;border-bottom:1px solid #111!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:24px!important;font:700 clamp(10px,1.05vw,14px)/1.5 'DM Sans',Arial,sans-serif!important;letter-spacing:.13em!important;color:#171717!important}
+body > header .editorial-header-inner a:last-child{color:#666!important;white-space:nowrap!important}
+main{padding-top:125px!important}body > header .editorial-header-inner a{color:inherit;text-decoration:none}body > header .editorial-header-inner a:hover{text-decoration:underline}#about{padding-top:72px!important;border-top:0!important}
+#about .apple-eyebrow{display:none!important}
+@media(max-width:700px){body > header .editorial-header-inner{width:calc(100% - 36px)!important;padding:24px 0 17px!important;gap:10px!important;font-size:9px!important;letter-spacing:.08em!important;align-items:flex-start!important}body > header .editorial-header-inner a:last-child{white-space:normal!important;text-align:right!important;max-width:36%!important}main{padding-top:76px!important}#about{padding-top:45px!important}}
+</style><style id="pure-white-refresh">html,body,main,.hero,.works,#projects,#writing,footer{background-color:#fff!important;background-image:none!important} body>header,.editorial-header,header{background-color:#fff!important;background-image:none!important} .hero::before,.hero::after{background-color:transparent!important}</style><style id="work-number-outside-image">#projects .project-tile .work-number{display:block!important;margin:0 0 12px!important;color:#666!important;font-size:11px!important;line-height:1.5!important;letter-spacing:.12em!important;font-weight:700!important;text-transform:uppercase!important}#projects .project-tile>div:first-child{padding:12px!important}#projects .project-tile>div:first-child img{max-height:280px!important}</style><style id="publication-list-style">#writing .selected-publications{margin-top:64px;border-top:1px solid #171717;padding-top:17px}#writing .pub-topline{display:flex;justify-content:space-between;gap:12px;font-size:11px;font-weight:700;letter-spacing:.12em;margin-bottom:12px}#writing .selected-publications>a{display:flex;justify-content:space-between;align-items:baseline;gap:26px;padding:19px 0;border-bottom:1px solid #e6e6e6;color:#171717;text-decoration:none}#writing .selected-publications>a span{font-size:15px;font-weight:550;line-height:1.5;max-width:760px}#writing .selected-publications>a small{font-size:12px;color:#666;white-space:nowrap}#writing .selected-publications>a:hover span{text-decoration:underline;text-underline-offset:4px}@media(max-width:650px){#writing .selected-publications>a{display:block}#writing .selected-publications>a small{display:block;margin-top:7px}}</style><style id="case-study-editorial-refresh">
+/* Case studies share the main portfolio's clean editorial visual language */
+#projectDialog{width:min(94vw,1040px)!important;max-height:92dvh!important;border:1px solid #d8d8d8!important;border-radius:0!important;background:#fff!important;color:#111!important;box-shadow:0 24px 80px #0003!important}
+#projectDialog::backdrop{background:rgba(0,0,0,.58)!important;backdrop-filter:blur(3px)!important}
+#projectDialog>div:first-child{background:#fff!important;border-bottom:1px solid #151515!important;padding:18px clamp(18px,4vw,46px)!important;border-radius:0!important}
+#projectDialog>div:first-child span{font:700 11px/1.5 'DM Sans',sans-serif!important;text-transform:uppercase!important;letter-spacing:.16em!important}
+#projectDialog>div:first-child button{background:#fff!important;color:#111!important;border:1px solid #aaa!important;border-radius:0!important;font-size:12px!important}
+#projectDialogBody{background:#fff!important;padding:clamp(22px,5vw,60px)!important}
+#projectDialog .case-card{background:#fff!important;border:0!important;border-radius:0!important;padding:0!important;color:#171717!important}
+#projectDialog .case-card h3{font-family:'DM Sans',sans-serif!important;font-size:clamp(28px,4.1vw,48px)!important;letter-spacing:-.055em!important;line-height:1.12!important;font-weight:800!important;color:#111!important}
+#projectDialog .case-card h4,#projectDialog .case-card h5{font-family:'DM Sans',sans-serif!important;color:#111!important;letter-spacing:-.025em!important}
+#projectDialog .case-card p,#projectDialog .case-card li{color:#424242!important;line-height:1.75!important}
+#projectDialog .case-card [class*="bg-cream"],#projectDialog .case-card .bg-white{background:#fff!important}
+#projectDialog .case-card [class*="border-stone"]{border-color:#dedede!important}
+#projectDialog .case-card [class*="rounded"]{border-radius:0!important}
+#projectDialog .case-card [class*="shadow"]{box-shadow:none!important}
+#projectDialog .case-card [class*="text-accent"]{color:#171717!important}
+#projectDialog .case-card .cursor-pointer:has(img){cursor:zoom-in!important;position:relative;transition:opacity .18s ease!important;padding:10px!important;border:1px solid #e4e4e4!important}
+#projectDialog .case-card .cursor-pointer:has(img):hover{opacity:.75!important}
+#projectDialog .case-card .cursor-pointer:has(img):focus-visible{outline:2px solid #111;outline-offset:3px}
+#projectDialog .case-card .cursor-pointer img{max-width:100%;height:auto;object-fit:contain}
+#projectDialog .case-card .cursor-pointer:has(img)::after{content:'↗  VIEW IMAGE';position:absolute;right:12px;top:12px;padding:5px 8px;background:#fff;color:#111;border:1px solid #ddd;font:700 9px 'DM Sans',sans-serif;letter-spacing:.08em;pointer-events:none}
+#lightboxModal{z-index:1000!important;background:rgba(0,0,0,.88)!important;backdrop-filter:blur(4px)!important}
+#lightboxModal>div{border:1px solid #ddd!important;border-radius:0!important;background:#fff!important;max-width:min(95vw,1200px)!important}
+#lightboxModal>div>div:first-child{background:#fff!important;border-bottom:1px solid #ddd!important}
+#lightboxTitle{font:700 12px 'DM Sans',sans-serif!important;letter-spacing:.02em!important;color:#111!important}
+#lightboxModal>div>div:last-child{background:#fff!important;min-height:120px!important;max-height:84dvh!important;overflow:auto!important}
+#lightboxImg{max-height:76dvh!important;border-radius:0!important;cursor:zoom-out!important}
+@media(max-width:640px){#projectDialog{width:100vw!important;max-height:100dvh!important;height:100dvh!important}#projectDialogBody{padding:22px!important}}
+</style><style id="bio-work-link">#about .portfolio-work-link{display:inline-block;margin-top:23px;color:#151515;font-family:"DM Sans",Arial,sans-serif;font-size:13px;font-weight:650;letter-spacing:.015em;text-decoration:none;border-bottom:1px solid #151515;padding-bottom:5px;transition:opacity .2s}#about .portfolio-work-link:hover{opacity:.55}#projects{scroll-margin-top:115px}html{scroll-behavior:smooth}</style><style id="work-link-transparent">#about a.portfolio-work-link,#about a.portfolio-work-link:hover,#about a.portfolio-work-link:focus{background:transparent!important;background-color:transparent!important;box-shadow:none!important;border-radius:0!important;border:0!important;border-bottom:1px solid currentColor!important;padding:0 0 4px!important}</style></head>
+<body class="min-h-screen flex flex-col antialiased">
+<!-- TOP NAVIGATION HEADER -->
+<header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70"><div class="editorial-header-inner"><span>LISA EGEDE // PRODUCT DESIGNER &amp; CREATIVE TECHNOLOGIST</span><a aria-label="Get in touch by email" href="mailto:lisaegede96@gmail.com">GET IN TOUCH ↗</a></div></header>
+<!-- MAIN PORTFOLIO WRAPPER -->
+<main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+<!-- HERO / ABOUT SECTION -->
+<section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 space-y-5"><h1 class="apple-title"><em>Hi, I'm Lisa.</em><br/>I design things. I build things. I study how people use them.</h1><p class="apple-summary">I'm a professionally curious product designer with a background in computer science. I've spent the last 7+ years exploring how people interact with emerging technologies, which has taken me from building enterprise software to developing conversational AI.</p><a class="portfolio-work-link" href="#projects">Take a peek at my work ↓</a></div>
+<!-- Profile / Social Card -->
+<div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
+<div class="w-28 h-28 rounded-full overflow-hidden mb-4 border-2 border-accent/20 p-1 bg-cream-100">
+<img alt="Lisa Egede" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
+</div>
+<h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
+<p class="text-xs text-ink-soft mt-1">Product Designer &amp; Creative Technologist</p>
+<div class="mt-5 flex gap-4 text-ink-mid text-base">
+<a aria-label="LinkedIn" class="hover:text-accent p-1" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a aria-label="Twitter" class="hover:text-accent p-1" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIENCE: SPLIT EDITORIAL -->
+<!-- PRODUCT PROJECT GALLERY -->
+<section class="space-y-8" id="projects">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><h2 class="apple-section-title">Selected work</h2><span class="work-section-meta">DESIGNED / BUILT / EVALUATED</span><p class="apple-nda">A little peek at what I've been working on. Some projects are staying behind the NDA curtain.</p></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7"><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="enterprise" onclick="openProject(0)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">01 / B2B enterprise software</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Chevron · Enterprise Workflow Design</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Enterprise Workflow Management Tool</h3><p class="text-sm text-ink-mid leading-relaxed">Designed and developed an internal workflow application to bring records, comments, and approvals into one place.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Ambrosia game launcher screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/ambrosia-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">02 / Interaction design</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Consumer product · Interactive prototype</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Ambrosia Game Launcher</h3><p class="text-sm text-ink-mid leading-relaxed">A game launcher concept bringing scattered game libraries into one place.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="public-systems" onclick="openProject(2)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Arezzo campus kiosk interface" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/arezzo-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">03 / Physical + digital</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">University of Oklahoma · Arezzo</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Interactive Campus Information Kiosk</h3><p class="text-sm text-ink-mid leading-relaxed">Redesigned a campus touchscreen to make information easier to find for students studying abroad.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button></div>
+</section><section class="portfolio-writing" id="writing"><div class="writing-eyebrow">A LITTLE SOMETHING EXTRA / 001</div><div class="writing-columns"><h2>Sometimes I write about<br/><em>what I learn from designing products.</em></h2><div class="writing-copy"><p>I also turn some of those lessons into research and recommendations for other designers and researchers.</p><a href="https://scholar.google.com/citations?hl=en&amp;user=FtECS7YAAAAJ" rel="noopener noreferrer" target="_blank">Find my writing on Google Scholar ↗</a></div></div></section>
+<template id="projectStore"><div id="storedProject0"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="enterprise">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Product Development and Design | Houston, TX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Chevron: Building a tool employees could depend on</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+          When I joined Chevron, the IT department was in the middle of a move to cloud tools. Longtime employees were adjusting to new systems, and the application they used to track performance metrics had some frustrating problems: comments disappeared, records had no timestamps, and there wasn’t a clear way to tell who had changed what. My summer project was to build a better way to manage those records using Microsoft PowerApps.
+        </p>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="chevron-tab-overview" onclick="switchTab('chevron', 'overview')">Development Process</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-persona" onclick="switchTab('chevron', 'persona')">User Personas</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-journey" onclick="switchTab('chevron', 'journey')">Journey Architecture Flow</button>
+<button class="chevron-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="chevron-tab-hackathon" onclick="switchTab('chevron', 'hackathon')">Bonus: Hackathon app!</button>
+</div>
+<!-- Tab Content: Overview -->
+<div class="chevron-tab-content space-y-6 text-sm text-ink-mid" id="chevron-content-overview">
+<p class="leading-relaxed">
+              As the sole developer on the application, I worked with full-time Chevron employees across four Agile sprints, gathering feedback as I built and bringing it into the next round of changes.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Typography Reference Parameters" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x450/1d4ed8/ffffff?text=Typography+Reference+Specs'" src="images/font.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Typography reference parameters &amp; design specs</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Application Homepage Layout" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e3a8a/ffffff?text=Application+Homepage+Layout'" src="images/theHomepage.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Application Homepage Environment Layout</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Persona -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-persona">
+<p class="leading-relaxed">
+              To ensure the app served real enterprise needs, we modeled <strong>Jessie</strong>—a full-time Chevron employee in a manager/sponsor role who needs to quickly verify metrics created by her direct reports during busy periods.
+            </p>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="User Persona Framework" class="w-full h-auto max-h-[550px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x550/334155/ffffff?text=User+Persona+Framework:+Jessie'" src="images/jessie.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Our user persona: Jessie</p>
+</div>
+</div>
+<!-- Tab Content: Journey Flow -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-journey">
+<p class="leading-relaxed">
+              Jessie's step-by-step metric review, comment thread validation, and approval journey flow map:
+            </p>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="User Journey Map Architecture Flow" class="w-full h-auto max-h-[600px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1100x600/0f172a/ffffff?text=User+Journey+Map+Architecture+Flow'" src="images/journeyFlow.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Jessie's end-to-end milestone tracking journey flow map</p>
+</div>
+</div>
+<!-- Tab Content: Hackathon -->
+<div class="chevron-tab-content hidden space-y-6 text-sm text-ink-mid" id="chevron-content-hackathon">
+<p class="leading-relaxed">
+              During a 3-week intern hackathon with four other interns across IT departments, we built the <strong>TTA Tracker</strong> for volunteer event registration and administration.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="TTA Tracker Application Interface Overview" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker1.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> TTA Tracker Event History Dashboard</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant &amp; Problem Description')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="TTA Interface layout variant" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Volunteer Problem Statement &amp; Overview Layout</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-xs text-ink-soft bg-cream-200/60 p-4 rounded-xl border border-stone-300">
+<strong>Outcome:</strong> Delivered the Functional Excellence Framework app used by 30 IT power-users, supporting metric tracking for nearly 200 employees, presented to 15 key technical stakeholders.
+        </div>
+</article>
+</div><div id="storedProject1"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="gaming">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Collaborative Project • Front-End &amp; UX</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">Ambrosia: Making it easier to get to the game</h3>
+</div>
+<div class="text-ink-mid text-sm sm:text-base leading-relaxed space-y-3">
+<p>If you've ever used emulators, you know that getting to the actual game can sometimes involve navigating multiple launchers, folders, and settings. A few friends and I wanted to make that process easier.
+
+          <p>We started Ambrosia as a way to organize and launch games from one place. Before jumping into development, we surveyed gamers in computer science classes and Discord communities to understand how they managed their game libraries and what frustrated them.
+
+          <p>We used that feedback to prioritize features, map out user flows, and design the interface together. My work focused on the research and front-end experience, including translating early ideas into wireframes and interactive mockups.</p>
+</p></p></div>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="ambrosia-tab-research" onclick="switchTab('ambrosia', 'research')">User Research &amp; Whiteboarding</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-prototyping" onclick="switchTab('ambrosia', 'prototyping')">Figma &amp; Interface Layouts</button>
+<button class="ambrosia-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="ambrosia-tab-interactive" onclick="switchTab('ambrosia', 'interactive')">Interactive Flow &amp; Mockups</button>
+</div>
+<!-- Tab Content: Research & Whiteboarding -->
+<div class="ambrosia-tab-content space-y-6 text-sm text-ink-mid" id="ambrosia-content-research">
+<p class="leading-relaxed">
+              Before writing code, we surveyed gamers across computer science courses and Discord communities to prioritize features.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Ambrosia Flow Whiteboard" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-22-at-11.44.34-PM.png'" src="Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> User Flow Architecture Whiteboard Sketch</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Team Brainstorming Session" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.07.24-AM.png'" src="Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Collaborative Planning Session (Library, Settings &amp; Detail View)</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Figma & Interface Layouts -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-prototyping">
+<p class="leading-relaxed">
+              Iterating on wireframes in Figma and tracking component features through GitHub Issues.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Figma Layout Exploration Canvas" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e293b/ffffff?text=Figma+Layout+Exploration+Canvas'" src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Figma design canvas exploration</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Ambrosia Modal Dialog" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png'" src="Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Add Game Library modal flow</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Interactive Flow & Desktop Mockups -->
+<div class="ambrosia-tab-content hidden space-y-6 text-sm text-ink-mid" id="ambrosia-content-interactive">
+<p class="leading-relaxed">
+              Desktop application prototype rendering and dynamic game addition GIF animation:
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Ambrosia Mac Laptop Desktop" class="w-full h-auto max-h-[520px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-16-at-3.34.52-PM.png'" src="Screen-Shot-2019-09-16-at-3.34.52-PM.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Desktop Application Sign-in Frame Mockup</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Interactive Component Animation" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Ambrosia+Interactive+Prototype+GIF'" src="images/ambrosia1.gif"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Interactive prototyping component: Dynamic Game Addition flow animation</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div><div id="storedProject2"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="public-systems">
+<div class="border-b border-stone-200 pb-4">
+<span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Marketing &amp; Media Intern | Fall 2017 | Arezzo, Italy</span>
+<h3 class="font-serif-title text-2xl sm:text-3xl text-ink mt-1">University of Oklahoma: A campus resource students had a reason to use</h3>
+</div>
+<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
+          Studying abroad in Italy came with small daily questions: <em>Where’s the nearest pharmacy? How do I get groceries? Will a transit strike affect my weekend plans?</em> Our campus had a touchscreen in the monastery lobby, but students wasn't using it. During my media internship, I worked with the campus director to turn it into an engaging, practical resource.
+        </p>
+<!-- Dynamic Case Tabs -->
+<div class="bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm space-y-6">
+<div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3">
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-accent text-white transition" id="oua-tab-environment" onclick="switchTab('oua', 'environment')">Kiosk Physical Setup</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-newsstand" onclick="switchTab('oua', 'newsstand')">Newsstand UI Evolution</button>
+<button class="oua-tab-btn px-4 py-2 rounded-lg text-xs font-semibold bg-cream-200 text-ink-mid hover:bg-cream-300 transition" id="oua-tab-feeds" onclick="switchTab('oua', 'feeds')">Live Twitter Feed &amp; Video Demo</button>
+</div>
+<!-- Tab Content: Physical Setup -->
+<div class="oua-tab-content space-y-6 text-sm text-ink-mid" id="oua-content-environment">
+<p class="leading-relaxed">
+              The touch kiosk was situated directly in the monastery lobby. I set up a dedicated UX workstation area to rapid-prototype content updates during the semester.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Monastery Lobby Kiosk" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/854d0e/ffffff?text=Monastery+Lobby+Kiosk'" src="images/screen.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Physical Kiosk Installation View inside Monastery Lobby</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/work.png', 'UX Workstation &amp; Interface Layout Workspace')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="UX Workstation" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/475569/ffffff?text=UX+Workstation'" src="images/work.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Production Workstation Workspace</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Newsstand UI Evolution -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-newsstand">
+<p class="leading-relaxed">
+              I designed practical local information, travel advisories, campus updates, and news from home. Because I lived there too, I could see the questions my classmates were running into and keep updating the content throughout the semester.
+            </p>
+<div class="space-y-6">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Newsstand Concept UI" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/3f6212/ffffff?text=Newsstand+Sketched+UI'" src="images/newsstand.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature conception sketch UI layout</p>
+</div>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Newsstand Final UI" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/b45309/ffffff?text=Newsstand+Production+UI'" src="images/NewsStandFinal.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature high-fidelity production shelf view</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Live Twitter Feed & Video -->
+<div class="oua-tab-content hidden space-y-6 text-sm text-ink-mid" id="oua-content-feeds">
+<p class="leading-relaxed">
+              Real-time feed integration allowed students to check campus Twitter updates directly on the touch screen:
+            </p>
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory &amp; News Feed UI')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
+<img alt="Twitter Integrated Feed" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x500/0369a1/ffffff?text=Twitter+Integrated+Feed+UI'" src="images/twitterSamp.png"/>
+<p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Integrated Twitter real-time feed UI showcase</p>
+</div>
+<div class="space-y-2 pt-2">
+<h4 class="font-serif-title text-lg text-ink">Touchscreen Demo Video</h4>
+<div class="relative w-full rounded-xl overflow-hidden shadow-sm border border-stone-300 bg-black aspect-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/g_O4eAUG5Ss?si=26POW-6DjQW4Z84U" title="YouTube video player" width="560"></iframe> </div>
+</div>
+</div>
+</div>
+</article>
+</div></template>
+<dialog aria-label="Project details" class="w-[min(94vw,980px)] max-h-[90vh] rounded-2xl p-0 border border-stone-300 shadow-2xl backdrop:bg-stone-950/65" id="projectDialog">
+<div class="sticky top-0 z-20 flex items-center justify-between bg-cream-100/95 backdrop-blur-md border-b border-stone-300 px-5 sm:px-8 py-4"><span class="font-serif-title text-xl">Project details</span><button aria-label="Close project" class="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-semibold hover:text-accent" onclick="closeProject()">Close <i class="fas fa-times ml-2"></i></button></div>
+<div class="bg-[#EFECE6] p-3 sm:p-7" id="projectDialogBody"></div>
+</dialog>
+<!-- AI RESEARCH HUB -->
+</main>
+<!-- LIGHTBOX MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4" id="lightboxModal">
+<div class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-300">
+<div class="flex items-center justify-between px-5 py-3 border-b border-stone-200 bg-cream-100">
+<h4 class="font-serif-title text-base sm:text-lg text-ink" id="lightboxTitle">Image Artifact Inspector</h4>
+<button aria-label="Close Lightbox" class="p-1 rounded-lg text-ink-soft hover:text-ink text-xl" onclick="closeLightbox()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="p-4 bg-stone-900 flex items-center justify-center min-h-[350px]">
+<img alt="Artifact View" class="max-h-[80vh] w-auto max-w-full object-contain rounded" id="lightboxImg" src=""/>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-xs text-ink-soft">lisa egede • product design portfolio</p>
+<div class="flex items-center gap-5 text-ink-mid text-sm">
+<a aria-label="Twitter" class="hover:text-accent" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
+<a aria-label="LinkedIn" class="hover:text-accent" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</footer>
+<!-- INTERACTIVE JS -->
+<script>
+        function openProject(index) {
+          const source = document.getElementById('projectStore').content.querySelector('#storedProject' + index);
+          const dialog = document.getElementById('projectDialog');
+          const body = document.getElementById('projectDialogBody');
+          if (!source || !dialog || !body) return;
+          body.replaceChildren(source.firstElementChild.cloneNode(true));
+          dialog.showModal();
+          dialog.scrollTop = 0;
+        }
+        function closeProject() { document.getElementById('projectDialog').close(); }
+        document.addEventListener('click', e => {
+          const dialog = document.getElementById('projectDialog');
+          if (e.target === dialog) dialog.close();
+        });
+        // Mobile Nav
+        function toggleMobileNav() {
+          document.getElementById('mobileNav').classList.toggle('hidden');
+        }
+
+        // Category Filter
+        function filterCategory(cat, evt) {
+          const cards = document.querySelectorAll('.case-card');
+          const btns = document.querySelectorAll('.filter-btn');
+
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
+
+          if (evt && evt.target) {
+            evt.target.classList.remove('bg-cream-200', 'text-ink-mid');
+            evt.target.classList.add('bg-accent', 'text-white');
+          }
+
+          cards.forEach(card => {
+            if (cat === 'all' || card.getAttribute('data-category') === cat) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+
+        // Case Study Tab Switcher
+        function switchTab(projectId, tabName) {
+          const btns = document.querySelectorAll(`.${projectId}-tab-btn`);
+          const contents = document.querySelectorAll(`.${projectId}-tab-content`);
+
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white');
+            b.classList.add('bg-cream-200', 'text-ink-mid');
+          });
+
+          contents.forEach(c => c.classList.add('hidden'));
+
+          const activeBtn = document.getElementById(`${projectId}-tab-${tabName}`);
+          if (activeBtn) {
+            activeBtn.classList.remove('bg-cream-200', 'text-ink-mid');
+            activeBtn.classList.add('bg-accent', 'text-white');
+          }
+
+          const activeContent = document.getElementById(`${projectId}-content-${tabName}`);
+          if (activeContent) {
+            activeContent.classList.remove('hidden');
+          }
+        }
+
+        // AI Research Topic Explorer
+        const paperTopics = {
+          fairness: `<strong>Practitioner AI Fairness (CSCW 2022):</strong> Intersecting AI engineering with UX requirements. Uncovered how practitioners measure, audit, and evaluate fairness tools during real-world product deployment.`,
+          cultural: `<strong>Culturally Informed AI (DIS 2024 / CHI EA 2025):</strong> Establishes the "For Us By Us" design framework. Demonstrates how culturally tailored prompting and evaluation (e.g. ChatBlackGPT vs ChatGPT) increase trust and alignment for underrepresented users.`,
+          anthropomorphism: `<strong>AI Automatons (FAccT 2025):</strong> Investigates risks when AI systems imitate human emotional states. Offers guidelines to prevent user over-reliance and unwarranted trust in high-stakes contexts.`
+        };
+
+        function selectPaperTopic(key) {
+          const btns = document.querySelectorAll('.topic-btn');
+          btns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white', 'border-accent');
+            b.classList.add('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          });
+
+          const active = document.getElementById(`topic-btn-${key}`);
+          active.classList.remove('bg-cream-50', 'text-ink-mid', 'border-stone-200');
+          active.classList.add('bg-accent', 'text-white', 'border-accent');
+
+          document.getElementById('topicDetailBox').innerHTML = paperTopics[key];
+        }
+
+        // Research section replaced with standalone interactive explorer.
+
+        // Expandable Paper Drawers
+        function togglePaperDrawer(id) {
+          const drawer = document.getElementById(`${id}-drawer`);
+          const btn = document.getElementById(`${id}-btn`);
+          const icon = document.getElementById(`${id}-icon`);
+
+          if (drawer.classList.contains('hidden')) {
+            drawer.classList.remove('hidden');
+            btn.textContent = 'Collapse Paper Details';
+            icon.className = 'fas fa-chevron-up text-[10px]';
+          } else {
+            drawer.classList.add('hidden');
+            btn.textContent = 'Expand Paper Details';
+            icon.className = 'fas fa-chevron-down text-[10px]';
+          }
+        }
+
+        // Animate only when the impact section enters the viewport.
+        // Display final values by default so they remain visible without JavaScript.
+        (() => {
+          const section = document.getElementById('impact');
+          if (!section) return;
+          const stats = [
+            { id: 'stat-1', val: 600, suffix: '+' },
+            { id: 'stat-2', val: 200, suffix: '+' },
+            { id: 'stat-3', val: 80, prefix: '~', suffix: '' }
+          ];
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+          let started = false;
+          const observer = new IntersectionObserver((entries) => {
+            if (started || !entries.some(entry => entry.isIntersecting)) return;
+            started = true;
+            observer.disconnect();
+            const duration = 1250;
+            const start = performance.now();
+            function frame(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              stats.forEach(({ id, val, prefix = '', suffix }) => {
+                const element = document.getElementById(id);
+                if (element) element.textContent = prefix + Math.floor(val * eased) + suffix;
+              });
+              if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+          }, { threshold: 0.3 });
+          observer.observe(section);
+        })();
+      </script>
+<script id="working-image-lightbox">
+function openLightbox(source, title) {
+  const modal=document.getElementById('lightboxModal');
+  const image=document.getElementById('lightboxImg');
+  const heading=document.getElementById('lightboxTitle');
+  if(!modal||!image)return;
+  // Use the visible thumbnail's actual source if it differs from the original argument.
+  const trigger=window.event?.currentTarget;
+  const actual=trigger?.querySelector?.('img')?.getAttribute('src');
+  image.src=source||actual||'';
+  image.alt=title||'Expanded project image';
+  if(heading)heading.textContent=title||'Project image';
+  modal.classList.remove('hidden');
+  modal.style.display='flex';
+  document.body.style.overflow='hidden';
+  image.onerror=()=>{image.alt='Image not available. Check that the image assets are uploaded alongside this HTML file.'};
+}
+function closeLightbox(){
+  const modal=document.getElementById('lightboxModal');
+  if(!modal)return;
+  modal.classList.add('hidden');modal.style.display='';
+  document.body.style.overflow='';
+  const image=document.getElementById('lightboxImg');if(image)image.removeAttribute('src');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('lightboxModal')?.classList.contains('hidden')){e.preventDefault();closeLightbox()}});
+document.getElementById('lightboxModal')?.addEventListener('click',e=>{if(e.target.id==='lightboxModal'||e.target.id==='lightboxImg')closeLightbox()});
+</script></body>
+</html>
