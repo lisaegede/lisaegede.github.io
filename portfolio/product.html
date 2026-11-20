@@ -100,153 +100,167 @@ main{max-width:1240px!important;padding-top:42px!important}
 .text-accent{color:var(--accent)!important}.bg-accent{background:var(--accent)!important}.border-accent{border-color:var(--accent)!important}
 #projectDialog{border-radius:0!important}#projectDialog .case-card{border-radius:0!important}
 @media(max-width:750px){#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:220px}#about{padding:15px 0 35px!important}#about h1{font-size:2.5rem!important}#projects .project-tile>div:nth-child(2){padding:28px!important}}
-#about h1,#projects h2,#projects .project-tile h3{font-family:Georgia,serif!important;font-weight:400!important;font-style:italic}#about h1{max-width:800px}#projects .project-tile:nth-child(2)>div:first-child{order:2}#projects .project-tile:nth-child(2)>div:nth-child(2){order:1}#projects .project-tile>div:first-child{background:#eee1dc!important}#projects .project-tile:nth-child(2)>div:first-child{background:#d6d8dc!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f0e4c9!important}#projects .project-tile h3{font-size:3rem!important}#projects .project-tile>div:nth-child(2){padding-left:8vw!important}#about a[href='#projects']{background:#a53b47!important}#research .r-tab{border-radius:0!important}</style><style id="warm-monochrome-refresh">
-:root{color-scheme:light}
-body{background:#eeeae3!important;color:#24221f!important}
-header{background:rgba(249,247,243,.96)!important;border-color:#d5d0c8!important}
-#about{background:#faf8f4!important;border-color:#d6d1c8!important}
-#about h1{color:#25221f!important;font-size:clamp(2rem,3.25vw,3.15rem)!important;line-height:1.13!important;font-style:normal!important;letter-spacing:-.035em}
-#about .lg\:col-span-4{background:#f1ece5!important;border-color:#d8d2c8!important}
-#about .rounded-full.overflow-hidden{border:0!important;background:transparent!important;padding:0!important;overflow:visible!important;width:112px!important;height:112px!important}
-#about img[alt="Lisa Egede"]{object-fit:contain!important;border-radius:0!important}
-.text-accent,.hover\:text-accent:hover,#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:#65594e!important}
-.bg-accent,#about a[href="#projects"],#research .r-tab.active{background:#292622!important;color:#fff!important;border-color:#292622!important}
-#projects .project-tile>div:first-child{background:#e9e3da!important}
-#projects .project-tile:nth-child(2)>div:first-child{background:#dcd8d1!important}
-#projects .project-tile:nth-child(3)>div:first-child{background:#e8dfd1!important}
-#projects .project-tile{border-color:#d5cec4!important;background:#faf8f4!important}
-#projects .project-tile h3{color:#25221f!important}
-#research.research-redesign{background:#faf8f4!important;border-color:#d6d1c8!important}
-#research .r-tab.active{color:#fff!important}
-#research .r-tab{border-color:#d3ccc2!important}
-footer{background:#f7f4ee!important;border-color:#d6d1c8!important}
-/* Bio should read as part of the page, not a white card. */
-#about, #about .lg\:col-span-4 {background:transparent!important;border:0!important;box-shadow:none!important}
-#about {padding-left:0!important;padding-right:0!important}
-#about .lg\:col-span-4 {padding:0!important}
-#about p {background:transparent!important}
-/* Editorial portrait and a small human hello. */
-#about .portrait-holder{width:min(100%,270px);height:auto;max-width:270px;margin:0 auto 20px;overflow:visible;border:0;background:transparent;padding:0}
-#about .portrait-image{display:block;width:100%;height:auto;max-height:330px;object-fit:contain;border-radius:0;filter:grayscale(8%)}
-#about .intro-note{font-family:Georgia,serif;font-style:italic;font-size:19px;line-height:1.4;color:#302a26;margin-bottom:10px}
-#about .intro-note span{font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#83776c;margin-left:7px}
-#about h1{font-size:clamp(30px,3.2vw,43px)!important;line-height:1.18!important}
-@media(max-width:700px){#about .portrait-holder{max-width:230px}#about .intro-note span{display:block;margin:3px 0 0}}
-</style><style>/* Unified editorial introduction */
-#about h1{font-family:Georgia,serif!important;font-size:clamp(28px,3.15vw,43px)!important;font-weight:400!important;font-style:italic!important;letter-spacing:-.035em!important;line-height:1.2!important;max-width:none!important;margin:0 0 22px!important;color:#25221f!important}
-#about .lg\:col-span-8{min-width:0}
-@media(min-width:1024px){#about h1{white-space:nowrap;font-size:clamp(27px,2.8vw,40px)!important}}
-@media(max-width:1023px){#about h1{white-space:normal}}
-</style><style>
-/* Warm editorial palette across all interactive states, including JS-switched tabs. */
-:root{--editorial-ink:#292622;--editorial-muted:#645c53;--editorial-paper:#f7f3ed;--editorial-line:#d6cec3}
-#research .r-kicker,#research .r-action,#research .r-link,#research .r-details summary{color:var(--editorial-muted)!important}
-#research .r-tab{background:var(--editorial-paper)!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
-#research .r-tab.active{background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important}
-#research .r-tab:hover:not(.active){background:#e8e0d6!important}
-#research .r-input,#research .r-select{background:#fbf9f5!important;border-color:var(--editorial-line)!important}
-#research .r-input:focus,#research .r-select:focus{outline-color:#86786a!important}
-#research .r-paper{color:var(--editorial-ink)!important}
-#research .r-chip{background:#eae4dc!important;color:#4d453e!important}
-#projectDialog,#projectDialogBody{background:#f4efe8!important;color:var(--editorial-ink)!important}
-#projectDialog .case-card,#projectDialog .case-card .bg-white{background:#faf8f4!important;color:var(--editorial-ink)!important}
-#projectDialog button.bg-accent,#projectDialog .bg-accent,#projectDialog .tab-btn.bg-accent,
-.topic-btn.bg-accent,.chevron-tab-btn.bg-accent,.ambrosia-tab-btn.bg-accent,.oua-tab-btn.bg-accent{
- background:var(--editorial-ink)!important;color:#fff!important;border-color:var(--editorial-ink)!important;
-}
-#projectDialog button.bg-cream-200,.topic-btn.bg-cream-50,.chevron-tab-btn.bg-cream-200,.ambrosia-tab-btn.bg-cream-200,.oua-tab-btn.bg-cream-200{
- background:#eae3da!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important;
-}
-#projectDialog button.bg-cream-200:hover,.topic-btn.bg-cream-50:hover{background:#ded4c8!important}
-#projectDialog a.text-accent,#projectDialog .text-accent{color:#5c5146!important}
-#projectDialog button:focus-visible,.topic-btn:focus-visible,#research button:focus-visible{outline:2px solid #8c7d6b!important;outline-offset:3px}
-#topicDetailBox{background:#f1ebe3!important;color:var(--editorial-ink)!important;border-color:var(--editorial-line)!important}
-</style><style id="seamless-navigation">
-/* The navigation is part of the page, not a separate white ribbon. */
-body > header {position:relative!important;top:auto!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;}
-body > header > div:first-child {height:74px;}
-body > header nav a:last-child {background:transparent!important;box-shadow:none!important;border-radius:0!important;}
-#mobileNav {background:#eeeae3!important;border-color:#d5d0c8!important;}
-main {padding-top:16px!important;}
+#about h1,#projects h2,#projects .project-tile h3{font-family:Georgia,serif!important;font-weight:400!important;font-style:italic}#about h1{max-width:800px}#projects .project-tile:nth-child(2)>div:first-child{order:2}#projects .project-tile:nth-child(2)>div:nth-child(2){order:1}#projects .project-tile>div:first-child{background:#eee1dc!important}#projects .project-tile:nth-child(2)>div:first-child{background:#d6d8dc!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f0e4c9!important}#projects .project-tile h3{font-size:3rem!important}#projects .project-tile>div:nth-child(2){padding-left:8vw!important}#about a[href='#projects']{background:#a53b47!important}#research .r-tab{border-radius:0!important}</style><style>
+:root{--accent:#a53b47!important;--paper:#f7f3ef!important}
+body{background:#f7f3ef!important}
+.text-accent{color:#a53b47!important}.bg-accent{background:#a53b47!important}#research .r-tab.active{background:#a53b47!important;border-color:#a53b47!important}
+#about{border-top:3px double #241b1c!important}#about h1{font-size:clamp(2rem,3.7vw,3.75rem)!important;font-style:normal!important;letter-spacing:-.045em!important}#about .lg\:col-span-4{align-self:start!important}#projects .project-tile:nth-child(2)>div:first-child{order:0!important}#projects .project-tile:nth-child(2)>div:nth-child(2){order:0!important}#projects .project-tile h3{font-size:clamp(1.7rem,3vw,2.6rem)!important}#projects .project-tile>div:nth-child(2){padding-left:5vw!important}
+</style>
+<style id="apple-product-design-final">
+:root { --accent:#111!important; --paper:#fff!important; --ink:#111!important; color-scheme:light; }
+html,body{background:#fff!important;color:#111!important;font-family:'DM Sans',Arial,sans-serif!important}
+header{background:#fff!important;border-color:#e5e5e5!important}
+header a,header nav{color:#161616!important}
+main{max-width:1230px!important;padding-top:30px!important}
+#about{background:#fff!important;border:0!important;border-top:1px solid #111!important;box-shadow:none!important;padding:78px 0 90px!important}
+#about .grid{gap:60px!important}
+#about .lg\\:col-span-4{background:#fff!important;border:0!important;box-shadow:none!important}
+#about .apple-eyebrow{font-size:11px!important;letter-spacing:.17em!important;font-weight:700!important;color:#555!important;margin-bottom:28px!important}
+#about .apple-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:650!important;font-style:normal!important;letter-spacing:-.055em!important;font-size:clamp(39px,5.1vw,76px)!important;line-height:1.09!important;max-width:800px!important}
+#about .apple-title em{font-style:normal!important}
+#about .apple-summary{font-size:clamp(16px,1.5vw,19px)!important;line-height:1.75!important;max-width:730px!important;color:#494949!important;margin:26px 0 20px!important}
+#about .apple-work-link{display:inline-block;margin-top:15px;font-size:12px;letter-spacing:.1em;font-weight:700;border-bottom:1px solid #111;padding-bottom:8px}
+#about .lg\\:col-span-4 .w-28{border:0!important;background:transparent!important}
+#about .lg\\:col-span-4 img{filter:grayscale(1);border-radius:50%!important}
+#impact{background:#fff!important;border-top:1px solid #ddd!important;border-bottom:1px solid #ddd!important}
+#projects{padding-top:80px!important}
+#projects>div:first-child{display:block!important;border-color:#111!important;padding-bottom:26px!important}
+#projects .apple-section-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:650!important;font-style:normal!important;font-size:clamp(36px,4.5vw,61px)!important;letter-spacing:-.055em!important;line-height:1.1!important}
+#projects .apple-nda{font-size:14px!important;color:#666!important;margin-top:16px!important;line-height:1.6!important}
+#projects>div:nth-child(2){display:grid!important;grid-template-columns:1fr!important;gap:0!important}
+#projects .project-tile{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;min-height:290px!important;border:0!important;border-bottom:1px solid #dedede!important;border-radius:0!important;box-shadow:none!important;background:#fff!important;transform:none!important}
+#projects .project-tile>div:first-child{background:#f5f5f5!important;min-height:285px!important;height:100%!important;padding:25px!important;border:0!important;display:flex;align-items:center;justify-content:center}
+#projects .project-tile:nth-child(2)>div:first-child{background:#f0f2f4!important}
+#projects .project-tile:nth-child(3)>div:first-child{background:#f6f5f3!important}
+#projects .project-tile img{max-height:250px!important;width:100%!important;height:100%!important;object-fit:contain!important;filter:none!important}
+#projects .project-tile>div:nth-child(2){padding:clamp(26px,5vw,68px)!important}
+#projects .project-tile h3{font-family:'DM Sans',Arial,sans-serif!important;font-style:normal!important;font-weight:650!important;font-size:clamp(26px,3vw,42px)!important;letter-spacing:-.05em!important;color:#111!important}
+#projects .project-tile p{color:#555!important}
+#projects .project-tile .text-accent,.text-accent{color:#111!important}
+#research{background:#fff!important;border-color:#e0e0e0!important;border-radius:0!important}
+#research .r-tab.active,.bg-accent{background:#111!important;border-color:#111!important;color:#fff!important}
+#research .r-kicker,#research .r-link,#research .r-action,#research .r-details summary{color:#111!important}
+#projectDialog{background:#fff!important;color:#111!important;border-radius:8px!important}
+#projectDialog .case-card,#projectDialog .case-card .bg-white{background:#fff!important;color:#111!important}
+#projectDialog .case-card h3{color:#111!important}
+footer{background:#fff!important;border-color:#ddd!important}
+@media(max-width:750px){#about{padding:40px 0 60px!important}#about .apple-title{font-size:clamp(36px,9vw,55px)!important}#projects .project-tile{grid-template-columns:1fr!important}#projects .project-tile>div:first-child{min-height:230px!important}#projects .project-tile>div:nth-child(2){padding:26px 8px 36px!important}}
+</style><style id="copy-and-writing-final">
+#about .apple-eyebrow{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid #ddd;padding-bottom:17px}
+#about .availability{font-size:10px;font-weight:650;letter-spacing:.12em;color:#555}
+#projects>div:first-child{display:flex!important;align-items:baseline!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:14px!important}
+#projects .work-section-meta{font-size:11px;font-weight:650;letter-spacing:.12em;color:#555}
+#projects .apple-nda{flex-basis:100%;margin-top:0!important}
+#projects .project-tile .work-number{font-size:11px!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:#666!important;margin-bottom:12px!important}
+#projects .project-tile>div:nth-child(2)>p.text-\[11px\]{font-size:14px!important;font-weight:650!important;letter-spacing:0!important;text-transform:none!important;color:#222!important;margin-top:13px!important}
+#projects .project-tile>div:nth-child(2)>span.inline-flex{font-size:13px!important;text-decoration:underline!important;text-underline-offset:5px!important;margin-top:20px!important}
+.portfolio-writing{border-top:1px solid #111;padding:80px 0 100px;max-width:1160px;margin:70px auto 0}
+.portfolio-writing .writing-eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;color:#666;margin-bottom:35px}
+.portfolio-writing .writing-columns{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:end}
+.portfolio-writing h2{font-family:'DM Sans',sans-serif;font-size:clamp(35px,4.5vw,64px);font-weight:650;letter-spacing:-.055em;line-height:1.13;color:#111}
+.portfolio-writing h2 em{font-family:Georgia,serif;font-weight:400}
+.portfolio-writing .writing-copy p{font-size:16px;line-height:1.8;color:#555;margin-bottom:25px}
+.portfolio-writing .writing-copy a{display:inline-block;border-bottom:1px solid #111;padding-bottom:7px;font-size:14px;font-weight:700;color:#111}
+@media(max-width:750px){.portfolio-writing{padding:55px 0 70px;margin-top:40px}.portfolio-writing .writing-columns{grid-template-columns:1fr;gap:24px}}
+</style><style id="reference-hero-compact">
+/* Reference screenshot: fine top rule, expressive serif hello, bold sans headline. */
+#about{padding:38px 0 75px!important;border-top:0!important}
+#about .grid{display:block!important}
+#about .lg\:col-span-8{max-width:1050px!important;width:100%!important}
+#about .lg\:col-span-4{display:none!important}
+#about .apple-eyebrow{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:20px!important;width:100%!important;max-width:none!important;border-bottom:1px solid #171717!important;padding:0 0 19px!important;margin:0 0 65px!important;color:#171717!important;font:700 11px/1.5 'DM Sans',Arial,sans-serif!important;letter-spacing:.13em!important}
+#about .apple-eyebrow .availability{margin-left:auto!important;white-space:nowrap!important}
+#about .apple-title{font-family:'DM Sans',Arial,sans-serif!important;font-weight:800!important;font-style:normal!important;font-size:clamp(40px,5.1vw,73px)!important;line-height:1.12!important;letter-spacing:-.065em!important;max-width:1000px!important;margin:0 0 34px!important;color:#111!important}
+#about .apple-title em{display:inline-block!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;font-style:italic!important;font-size:1.13em!important;letter-spacing:-.065em!important;line-height:1.15!important;margin-bottom:9px!important}
+#about .apple-summary{font-size:clamp(15px,1.3vw,18px)!important;max-width:740px!important;margin:0 0 14px!important}
+@media(max-width:700px){#about{padding:22px 0 50px!important}#about .apple-eyebrow{font-size:9px!important;flex-wrap:wrap!important;gap:8px!important;margin-bottom:40px!important}#about .apple-eyebrow .availability{margin-left:0!important}#about .apple-title{font-size:clamp(36px,8.1vw,54px)!important;letter-spacing:-.06em!important}}
+</style><style id="editorial-header-final">
+body > header{display:block!important;position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;background:#fff!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;z-index:1000!important}
+body > header .editorial-header-inner{box-sizing:border-box!important;max-width:none!important;margin:0 auto!important;padding:48px 0 26px!important;width:calc(100% - 80px)!important;border-bottom:1px solid #111!important;display:flex!important;justify-content:space-between!important;align-items:center!important;gap:24px!important;font:700 clamp(10px,1.05vw,14px)/1.5 'DM Sans',Arial,sans-serif!important;letter-spacing:.13em!important;color:#171717!important}
+body > header .editorial-header-inner a:last-child{color:#666!important;white-space:nowrap!important}
+main{padding-top:125px!important}body > header .editorial-header-inner a{color:inherit;text-decoration:none}body > header .editorial-header-inner a:hover{text-decoration:underline}#about{padding-top:72px!important;border-top:0!important}
+#about .apple-eyebrow{display:none!important}
+@media(max-width:700px){body > header .editorial-header-inner{width:calc(100% - 36px)!important;padding:24px 0 17px!important;gap:10px!important;font-size:9px!important;letter-spacing:.08em!important;align-items:flex-start!important}body > header .editorial-header-inner a:last-child{white-space:normal!important;text-align:right!important;max-width:36%!important}main{padding-top:76px!important}#about{padding-top:45px!important}}
+</style><style id="pure-white-refresh">html,body,main,.hero,.works,#projects,#writing,footer{background-color:#fff!important;background-image:none!important} body>header,.editorial-header,header{background-color:#fff!important;background-image:none!important} .hero::before,.hero::after{background-color:transparent!important}</style><style id="work-number-outside-image">#projects .project-tile .work-number{display:block!important;margin:0 0 12px!important;color:#666!important;font-size:11px!important;line-height:1.5!important;letter-spacing:.12em!important;font-weight:700!important;text-transform:uppercase!important}#projects .project-tile>div:first-child{padding:12px!important}#projects .project-tile>div:first-child img{max-height:280px!important}</style><style id="publication-list-style">#writing .selected-publications{margin-top:64px;border-top:1px solid #171717;padding-top:17px}#writing .pub-topline{display:flex;justify-content:space-between;gap:12px;font-size:11px;font-weight:700;letter-spacing:.12em;margin-bottom:12px}#writing .selected-publications>a{display:flex;justify-content:space-between;align-items:baseline;gap:26px;padding:19px 0;border-bottom:1px solid #e6e6e6;color:#171717;text-decoration:none}#writing .selected-publications>a span{font-size:15px;font-weight:550;line-height:1.5;max-width:760px}#writing .selected-publications>a small{font-size:12px;color:#666;white-space:nowrap}#writing .selected-publications>a:hover span{text-decoration:underline;text-underline-offset:4px}@media(max-width:650px){#writing .selected-publications>a{display:block}#writing .selected-publications>a small{display:block;margin-top:7px}}</style><style id="case-study-editorial-refresh">
+/* Case studies share the main portfolio's clean editorial visual language */
+#projectDialog{width:min(94vw,1040px)!important;max-height:92dvh!important;border:1px solid #d8d8d8!important;border-radius:0!important;background:#fff!important;color:#111!important;box-shadow:0 24px 80px #0003!important}
+#projectDialog::backdrop{background:rgba(0,0,0,.58)!important;backdrop-filter:blur(3px)!important}
+#projectDialog>div:first-child{background:#fff!important;border-bottom:1px solid #151515!important;padding:18px clamp(18px,4vw,46px)!important;border-radius:0!important}
+#projectDialog>div:first-child span{font:700 11px/1.5 'DM Sans',sans-serif!important;text-transform:uppercase!important;letter-spacing:.16em!important}
+#projectDialog>div:first-child button{background:#fff!important;color:#111!important;border:1px solid #aaa!important;border-radius:0!important;font-size:12px!important}
+#projectDialogBody{background:#fff!important;padding:clamp(22px,5vw,60px)!important}
+#projectDialog .case-card{background:#fff!important;border:0!important;border-radius:0!important;padding:0!important;color:#171717!important}
+#projectDialog .case-card h3{font-family:'DM Sans',sans-serif!important;font-size:clamp(28px,4.1vw,48px)!important;letter-spacing:-.055em!important;line-height:1.12!important;font-weight:800!important;color:#111!important}
+#projectDialog .case-card h4,#projectDialog .case-card h5{font-family:'DM Sans',sans-serif!important;color:#111!important;letter-spacing:-.025em!important}
+#projectDialog .case-card p,#projectDialog .case-card li{color:#424242!important;line-height:1.75!important}
+#projectDialog .case-card [class*="bg-cream"],#projectDialog .case-card .bg-white{background:#fff!important}
+#projectDialog .case-card [class*="border-stone"]{border-color:#dedede!important}
+#projectDialog .case-card [class*="rounded"]{border-radius:0!important}
+#projectDialog .case-card [class*="shadow"]{box-shadow:none!important}
+#projectDialog .case-card [class*="text-accent"]{color:#171717!important}
+#projectDialog .case-card .cursor-pointer:has(img){cursor:zoom-in!important;position:relative;transition:opacity .18s ease!important;padding:10px!important;border:1px solid #e4e4e4!important}
+#projectDialog .case-card .cursor-pointer:has(img):hover{opacity:.75!important}
+#projectDialog .case-card .cursor-pointer:has(img):focus-visible{outline:2px solid #111;outline-offset:3px}
+#projectDialog .case-card .cursor-pointer img{max-width:100%;height:auto;object-fit:contain}
+#projectDialog .case-card .cursor-pointer:has(img)::after{content:'↗  VIEW IMAGE';position:absolute;right:12px;top:12px;padding:5px 8px;background:#fff;color:#111;border:1px solid #ddd;font:700 9px 'DM Sans',sans-serif;letter-spacing:.08em;pointer-events:none}
+#lightboxModal{z-index:1000!important;background:rgba(0,0,0,.88)!important;backdrop-filter:blur(4px)!important}
+#lightboxModal>div{border:1px solid #ddd!important;border-radius:0!important;background:#fff!important;max-width:min(95vw,1200px)!important}
+#lightboxModal>div>div:first-child{background:#fff!important;border-bottom:1px solid #ddd!important}
+#lightboxTitle{font:700 12px 'DM Sans',sans-serif!important;letter-spacing:.02em!important;color:#111!important}
+#lightboxModal>div>div:last-child{background:#fff!important;min-height:120px!important;max-height:84dvh!important;overflow:auto!important}
+#lightboxImg{max-height:76dvh!important;border-radius:0!important;cursor:zoom-out!important}
+@media(max-width:640px){#projectDialog{width:100vw!important;max-height:100dvh!important;height:100dvh!important}#projectDialogBody{padding:22px!important}}
+</style><style id="bio-work-link">#about .portfolio-work-link{display:inline-block;margin-top:23px;color:#151515;font-family:"DM Sans",Arial,sans-serif;font-size:13px;font-weight:650;letter-spacing:.015em;text-decoration:none;border-bottom:1px solid #151515;padding-bottom:5px;transition:opacity .2s}#about .portfolio-work-link:hover{opacity:.55}#projects{scroll-margin-top:115px}html{scroll-behavior:smooth}</style><style id="work-link-transparent">#about a.portfolio-work-link,#about a.portfolio-work-link:hover,#about a.portfolio-work-link:focus{background:transparent!important;background-color:transparent!important;box-shadow:none!important;border-radius:0!important;border:0!important;border-bottom:1px solid currentColor!important;padding:0 0 4px!important}</style><style>
+/* Product-research editorial layer */
+html{scroll-padding-top:105px} body{font-family:'DM Sans',sans-serif!important;color:#111!important;background:#fff!important}
+body>header .editorial-header-inner{max-width:1320px!important;width:calc(100% - 80px)!important;padding:26px 0!important;letter-spacing:.05em!important}
+body>header .brand{font-size:12px;font-weight:800;white-space:nowrap}.brand-slash{color:#aaa;padding:0 7px}.new-nav{display:flex;gap:clamp(12px,2vw,30px);align-items:center;flex-wrap:wrap}.new-nav a{font-size:10px;font-weight:750;letter-spacing:.08em!important;color:#333!important}.new-nav a:hover{text-decoration:underline}
+main{max-width:1320px!important;padding-top:100px!important}.new-hero{padding:50px 0 95px;border:0!important;background:#fff!important}.eyebrow,.section-topline,.research-header{font-size:11px;letter-spacing:.15em;font-weight:750;display:flex;justify-content:space-between;gap:20px;border-top:1px solid #111;padding-top:17px;color:#444}.hero-grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(220px,.8fr);gap:clamp(45px,7vw,110px);margin-top:68px}.new-hero h1{font-size:clamp(44px,5.4vw,82px);letter-spacing:-.067em;line-height:1.08;font-weight:800;max-width:940px}.new-hero h1 em{font-family:Georgia,serif;font-size:1.04em;font-weight:400;letter-spacing:-.07em}.serif-accent{font-family:Georgia,serif;font-weight:400;font-style:italic}.hero-lede,.hero-secondary{font-family:"DM Sans",Arial,sans-serif;font-size:18px;line-height:1.7;color:#404040;max-width:760px;font-weight:400}.hero-lede{margin-top:38px}.hero-secondary{margin-top:22px}.hero-actions{display:flex;flex-wrap:wrap;gap:30px;margin-top:32px}.hero-actions a,.text-link{font-size:13px;font-weight:750;border-bottom:1px solid #111;padding-bottom:7px}.hero-side{border-top:1px solid #ddd;padding-top:17px;align-self:start}.side-label{font-size:10px;letter-spacing:.16em;font-weight:750;color:#777;margin-bottom:23px}.employer{font-size:22px;letter-spacing:-.045em;font-weight:750;border-bottom:1px solid #e5e5e5;padding:12px 0}.employer span{font-size:13px;font-weight:400;color:#777;display:block;letter-spacing:0}.side-role{font-size:11px;font-weight:750;letter-spacing:.08em;line-height:1.7;margin-top:35px}.side-role span{font-size:12px;color:#777;letter-spacing:0;font-weight:400}
+.impact-section{padding:12px 0 85px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:43px}.stat-grid>div{border-right:1px solid #ddd;padding:10px 22px 12px 0}.stat-grid>div:last-child{border:0}.stat-grid strong{display:block;font-size:clamp(50px,6vw,86px);letter-spacing:-.075em;font-weight:750;line-height:1}.stat-grid span{display:block;margin-top:14px;font-size:14px;color:#666}
+#projects{padding-top:20px!important}#projects .apple-section-title{font-size:clamp(43px,5.3vw,72px)!important}#projects .apple-nda{max-width:750px!important}#projects .project-tile>div:first-child{background:#f6f6f6!important}#projects .project-tile:nth-child(2)>div:first-child{background:#f3f3f3!important}#projects .project-tile:nth-child(3)>div:first-child{background:#f7f7f7!important}
+.research-section{margin-top:95px;padding:10px 0 115px}.research-intro{display:grid;grid-template-columns:1fr 1fr;gap:8%;padding:65px 0 75px}.research-intro h2{font-size:clamp(42px,5vw,72px);font-weight:750;line-height:1.08;letter-spacing:-.065em}.research-intro h2 em{font-family:Georgia,serif;font-weight:400}.research-intro p{font-size:16px;line-height:1.85;color:#555;margin-bottom:20px}.research-intro .text-link{display:inline-block;margin-top:5px}.research-bottom{border-top:1px solid #111;padding-top:24px}.research-header{border:0;padding:0}.research-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0}.research-tabs button{padding:12px 17px;border:1px solid #ccc;background:#fff;font-size:12px;font-weight:650;cursor:pointer}.research-tabs button.active,.research-tabs button:hover{background:#111;color:#fff;border-color:#111}.research-panel{padding:40px 0 50px;border-top:1px solid #ddd;max-width:950px}.research-tag{font-size:11px;font-weight:750;letter-spacing:.14em;color:#777}.research-panel h3{font-size:clamp(27px,3vw,43px);letter-spacing:-.045em;font-weight:750;margin:18px 0}.research-panel h4{font-size:18px;font-weight:650;line-height:1.5}.research-panel p{font-size:15px;line-height:1.8;color:#555;margin-top:16px}.research-panel .research-meta{font-size:12px;color:#777}.research-panel a{display:inline-block;font-size:13px;font-weight:700;border-bottom:1px solid #111;margin-top:23px;padding-bottom:5px}
+@media(max-width:950px){body>header .editorial-header-inner{width:calc(100% - 36px)!important;align-items:flex-start!important}.new-nav{justify-content:flex-end;gap:10px}.new-nav a{font-size:9px}.hero-grid{grid-template-columns:1fr;gap:45px}.hero-side{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.hero-side .side-label,.side-role{grid-column:1/-1}.research-intro{grid-template-columns:1fr;gap:30px}}
+@media(max-width:650px){body>header{position:relative!important}body>header .editorial-header-inner{display:block!important;padding:20px 0!important}.new-nav{justify-content:flex-start;margin-top:15px;gap:11px 16px}main{padding-top:0!important}.new-hero{padding:35px 0 65px}.eyebrow,.section-topline{font-size:9px}.hero-grid{margin-top:40px}.new-hero h1{font-size:clamp(40px,10vw,58px)}.hero-side{grid-template-columns:1fr}.impact-section{padding-bottom:45px}.stat-grid{gap:12px}.stat-grid strong{font-size:42px}.stat-grid span{font-size:11px}.research-section{margin-top:45px;padding-bottom:60px}.research-intro{padding:45px 0}.research-tabs button{font-size:11px;padding:10px}}
+</style><style id="compact-publications-v3">
+#research.research-section{border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;padding-left:0!important;padding-right:0!important}
+#research .research-intro{padding-bottom:42px!important}
+#research .compact-publications{border:0!important;padding:0!important;background:transparent!important;box-shadow:none!important}
+#research .research-header{margin-bottom:15px!important;padding:0 0 15px!important;border-bottom:1px solid #111!important}
+#research .publication-list{display:block}
+#research .publication-row{border-bottom:1px solid #e4e4e4;margin:0;padding:0;background:transparent}
+#research .publication-row summary{list-style:none;display:grid;grid-template-columns:38px minmax(0,1fr) 145px 20px;align-items:baseline;gap:18px;cursor:pointer;padding:18px 0}
+#research .publication-row summary::-webkit-details-marker{display:none}
+#research .pub-index,#research .pub-topic,#research .pub-venue{font-size:11px;letter-spacing:.03em;color:#777;font-weight:550}
+#research .pub-main{display:flex;flex-direction:column;gap:5px}
+#research .pub-main strong{font-size:clamp(14px,1.35vw,17px);font-weight:650;letter-spacing:-.025em;line-height:1.4;color:#111}
+#research .pub-venue{text-align:right}
+#research .pub-toggle{font-size:20px;font-weight:350;color:#555;line-height:1}
+#research .publication-row[open] .pub-toggle{transform:rotate(45deg)}
+#research .publication-row summary:hover .pub-main strong{text-decoration:underline;text-underline-offset:4px}
+#research .pub-expanded{margin:0 170px 19px 56px;max-width:690px}
+#research .pub-expanded p{font-size:14px;line-height:1.65;color:#555;margin-bottom:9px}
+#research .pub-expanded a{font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:650px){#research .publication-row summary{grid-template-columns:24px minmax(0,1fr) 16px;gap:9px}#research .pub-venue{display:none}#research .pub-expanded{margin:0 10px 17px 33px}}
 </style></head>
 <body class="min-h-screen flex flex-col antialiased">
 <!-- TOP NAVIGATION HEADER -->
-<header class="relative z-40 w-full">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end">
-
-<!-- Desktop Nav -->
-<nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-ink-mid">
-<a class="hover:text-accent transition" href="#about">About</a>
-<a class="hover:text-accent transition" href="#projects">Projects</a>
-<a class="hover:text-accent transition" href="#research">AI Research</a>
-<a class="hover:text-accent transition" href="#impact">Impact Stats</a>
-<a class="px-4 py-2 border-b border-stone-500 hover:text-accent text-xs font-semibold transition" href="https://www.lisaegede.com/" target="_blank">
-          lisaegede.com <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-</a>
-</nav>
-<!-- Mobile Button -->
-<button class="md:hidden p-2 text-ink text-xl" onclick="toggleMobileNav()">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-<!-- Mobile Dropdown Nav -->
-<div class="hidden md:hidden border-b border-stone-300 bg-cream-100 px-6 py-4 space-y-3" id="mobileNav">
-<a class="block font-medium text-ink-mid" href="#about" onclick="toggleMobileNav()">About</a>
-<a class="block font-medium text-ink-mid" href="#projects" onclick="toggleMobileNav()">Projects</a>
-<a class="block font-medium text-ink-mid" href="#research" onclick="toggleMobileNav()">AI Research</a>
-<a class="block font-medium text-ink-mid" href="#impact" onclick="toggleMobileNav()">Impact Stats</a>
-<a class="block font-bold text-accent" href="https://www.lisaegede.com/" target="_blank">lisaegede.com →</a>
-</div>
-</header>
+<header class="sticky top-0 z-40 w-full bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-300/70"><div class="editorial-header-inner"><a class="brand" href="#about">LISA EGEDE <span class="brand-slash">/</span> PRODUCT RESEARCH</a><nav class="new-nav"><a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#research">AI RESEARCH</a><a href="https://www.lisaegede.com" rel="noopener" target="_blank">LISAEGEDE.COM ↗</a></nav></div></header>
 <!-- MAIN PORTFOLIO WRAPPER -->
 <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
 <!-- HERO / ABOUT SECTION -->
-<section class="bg-cream-100 rounded-2xl p-6 sm:p-10 border border-stone-300/80 shadow-sm" id="about">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-<div class="lg:col-span-8 space-y-5">
-<h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight">Hi, I'm Lisa.</h1><p class="text-ink-mid text-base sm:text-lg leading-relaxed">
-I'm a professionally curious product-focused researcher with a background in computer science and 7+ years of experience exploring how people interact with emerging technologies. My experience spans UX research, AI evaluation, and product development!          </p>
-<p class="text-ink-mid text-sm sm:text-base leading-relaxed">
-Over the years, I've worked on everything from internal enterprise tools to evaluating generative AI systems. A lot of my work comes back to the same question: how do we make sure the technologies we're building work well for the people using them? Lately, I've been interested in understanding how people evaluate and make sense of AI-generated information in high-stakes information-seeking contexts!          </p>
-<div class="pt-2 flex flex-wrap gap-3">
-<a class="px-5 py-3 rounded-xl bg-accent hover:bg-accent-hover text-white font-medium text-sm transition shadow-sm flex items-center gap-2" href="#projects">
-              Explore Interactive Case Studies <i class="fas fa-arrow-down text-xs"></i>
-</a>
-<a class="px-5 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-ink font-medium text-sm transition border border-stone-300 flex items-center gap-2" href="#research">
-              View AI Research <i class="fas fa-book-open text-xs"></i>
-</a>
-</div>
-</div>
-<!-- Profile / Social Card -->
-<div class="lg:col-span-4 bg-white rounded-xl p-6 border border-stone-300/80 shadow-sm text-center flex flex-col items-center justify-center">
-<div class="portrait-holder">
-<img alt="Lisa Egede" class="portrait-image" onerror="this.src='https://placehold.co/300x300/1d4ed8/ffffff?text=Lisa+Egede'" src="images/headshot_circle.png"/>
-</div>
-<h2 class="font-serif-title text-xl text-ink">Lisa Egede</h2>
-<p class="text-xs text-ink-soft mt-1">Product Researcher | AI Evaluation &amp; Product Development</p>
-<div class="mt-5 flex gap-4 text-ink-mid text-base">
-<a aria-label="LinkedIn" class="hover:text-accent p-1" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a aria-label="Twitter" class="hover:text-accent p-1" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
-</div>
-</div>
-</div>
-</section>
+<section class="new-hero" id="about"><div class="eyebrow">PRODUCT RESEARCHER / AI EVALUATION &amp; PRODUCT DEVELOPMENT <span>01 — INTRODUCTION</span></div><div class="hero-grid"><div><h1><em>Hi, I'm Lisa.</em><br/>I'm a professionally curious <span class="serif-accent">product-focused researcher.</span></h1><p class="hero-lede">I have a background in computer science and 7+ years of experience exploring how people interact with emerging technologies. My experience spans UX research, AI evaluation, and product development!</p><p class="hero-secondary">Over the years, I've worked on everything from internal enterprise tools to evaluating generative AI systems. A lot of my work comes back to the same question: how do we make sure the technologies we're building work well for the people using them? Lately, I've been interested in understanding how people evaluate and make sense of AI-generated information in high-stakes information-seeking contexts!</p></div><aside class="hero-side"><div class="side-label">PREVIOUSLY AT</div><div class="employer">Microsoft <span>Research</span></div><div class="employer">IBM <span>Research</span></div><div class="employer">Carnegie Mellon <span>University</span></div><div class="side-role">LISA EGEDE<br/><span>Product Researcher | AI Evaluation &amp; Product Development</span></div></aside></div></section>
 <!-- EXPERIENCE: SPLIT EDITORIAL -->
-<section class="mx-auto max-w-6xl py-5 px-4 sm:px-7" id="impact"><div class="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-5 lg:gap-8 items-center"><div><p class="text-[10px] uppercase tracking-[.18em] text-ink-soft mb-3">Previously at</p><div class="flex flex-wrap items-center gap-x-7 gap-y-4">
-<div class="flex items-center gap-2"><svg class="w-6 h-6 shrink-0" viewbox="0 0 21 21"><path d="M0 0h10v10H0z" fill="#F25022"></path><path d="M11 0h10v10H11z" fill="#7FBA00"></path><path d="M0 11h10v10H0z" fill="#00A4EF"></path><path d="M11 11h10v10H11z" fill="#FFB900"></path></svg><div><div class="text-[18px] font-semibold tracking-tight text-[#5E5E5E] leading-tight">Microsoft</div><div class="text-[10px] text-ink-soft">Research</div></div></div>
-<div class="flex items-center gap-2"><span class="text-[39px] font-black tracking-[-.075em] leading-none" style="font-family:Arial,Helvetica,sans-serif;background:repeating-linear-gradient(to bottom,#1261A0 0px,#1261A0 3px,transparent 3px,transparent 6px);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent">IBM</span><span class="text-[10px] text-ink-soft">Research</span></div>
-<div class="text-[#C41230] font-bold leading-[.96] tracking-[-.055em] text-[20px]" style="font-family:Georgia,'Times New Roman',serif">Carnegie Mellon<br/>University</div></div></div><div class="lg:border-l lg:border-stone-300/70 lg:pl-8 border-t lg:border-t-0 pt-4 lg:pt-0"><p class="text-[10px] uppercase tracking-[.18em] text-ink-soft mb-3">By the numbers</p><div class="flex flex-wrap items-center gap-x-6 gap-y-3"><div><span class="font-serif-title text-2xl text-accent" id="stat-1">600+</span><span class="block text-[10px] text-ink-soft">Research citations</span></div><div><span class="font-serif-title text-2xl text-accent" id="stat-2">200+</span><span class="block text-[10px] text-ink-soft">Employees supported</span></div><div><span class="font-serif-title text-2xl text-accent" id="stat-3">~80</span><span class="block text-[10px] text-ink-soft">Research participants</span></div></div></div></div></section>
 <!-- PRODUCT PROJECT GALLERY -->
 <section class="space-y-8" id="projects">
-<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><div><p class="text-xs uppercase tracking-widest text-accent font-bold mb-2">Selected work</p><h2 class="font-serif-title text-3xl sm:text-4xl">Selected Products</h2><p class="text-sm text-ink-mid mt-3 max-w-2xl"> A collection of projects where I've worked across product strategy/user research and design!</p><p class="text-xs text-ink-soft mt-2 max-w-2xl leading-relaxed">This portfolio highlights selected public work. Additional industry projects are not featured due to confidentiality restrictions.</p></div><span class="text-xs text-ink-soft">Three projects · Click to explore</span></div>
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 border-b border-stone-300 pb-5"><h2 class="apple-section-title">Selected Products</h2><span class="work-section-meta">03 — PRODUCT WORK</span><p class="apple-nda">A collection of projects where I’ve worked across product strategy, user research, and design. This portfolio highlights selected public work. Additional industry projects are not featured due to confidentiality restrictions.</p></div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7"><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="enterprise" onclick="openProject(0)" type="button">
-<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">01 / 03</span></div>
-<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Enterprise software · Shipped tool</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Enterprise Workflow Management Tool</h3><p class="text-sm text-ink-mid leading-relaxed">An internal application built to simplify how employees track performance metrics and manage approvals.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
-<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Ambrosia game launcher screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/ambrosia-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">02 / 03</span></div>
-<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Consumer product · UX design</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Ambrosia Game Launcher</h3><p class="text-sm text-ink-mid leading-relaxed">Bringing scattered game libraries into one place, so players can spend less time navigating launchers.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="public-systems" onclick="openProject(2)" type="button">
-<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Arezzo campus kiosk interface" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/arezzo-preview.webp"/></div><span class="absolute right-4 top-3 text-[11px] font-semibold text-ink-soft">03 / 03</span></div>
-<div class="p-6 sm:p-7 space-y-3"><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Campus services · Digital experience</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Interactive Campus Information Kiosk</h3><p class="text-sm text-ink-mid leading-relaxed">Reimagining an underused campus touchscreen as a practical resource for students studying abroad.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button></div>
-</section>
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Chevron application screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/chevron-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">01 / 03</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Enterprise software · Shipped tool</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Enterprise Workflow Management Tool</h3><p class="text-sm text-ink-mid leading-relaxed">An internal application built to simplify how employees track performance metrics and manage approvals.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="gaming" onclick="openProject(1)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Ambrosia game launcher screenshot" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/ambrosia-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">02 / 03</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Consumer product · UX design</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Ambrosia Game Launcher</h3><p class="text-sm text-ink-mid leading-relaxed">Bringing scattered game libraries into one place, so players can spend less time navigating launchers.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button><button class="group project-tile text-left bg-cream-100 border border-stone-300/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent" data-category="public-systems" onclick="openProject(2)" type="button">
+<div class="relative border-b border-stone-200 bg-[#F5F2ED] px-7 pt-8 pb-5 sm:px-10 sm:pt-10 sm:pb-7"><div class="w-full aspect-[5/4] flex items-center justify-center"><img alt="Arezzo campus kiosk interface" class="block w-full h-full object-contain drop-shadow-md group-hover:scale-[1.025] transition-transform duration-300" decoding="async" loading="lazy" src="images/arezzo-preview.webp"/></div></div>
+<div class="p-6 sm:p-7 space-y-3"><p class="work-number">03 / 03</p><p class="text-[11px] tracking-widest uppercase font-bold text-accent">Campus services · Digital experience</p><h3 class="font-serif-title text-2xl text-ink leading-snug">Interactive Campus Information Kiosk</h3><p class="text-sm text-ink-mid leading-relaxed">Reimagining an underused campus touchscreen as a practical resource for students studying abroad.</p><span class="inline-flex items-center gap-2 text-sm font-semibold text-accent pt-2">Explore project <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span></div></button></div>
+</section><section class="research-section" id="research"><div class="section-topline"><span>AI RESEARCH</span><span>04 — SELECTED RESEARCH</span></div><div class="research-intro"><h2>The research <em>behind the products.</em></h2><div><p>A lot of my work starts with a question: does this actually work for the person using it?</p><p>With AI, that question gets complicated. A response can sound convincing without being accurate or useful. People can interpret the same system differently depending on their experiences, expectations, and the situation they're using it in.</p><p>I've explored these questions from a few angles, including how AI practitioners evaluate fairness, how people from different communities experience AI assistants, and how design choices influence trust and reliance. Lately, I've been really interested in what these findings mean for the people building and evaluating AI products!</p><a class="text-link" href="https://scholar.google.com/citations?hl=en&amp;user=FtECS7YAAAAJ" rel="noopener" target="_blank">Google Scholar ↗</a></div></div></section>
 <template id="projectStore"><div id="storedProject0"><article class="case-card bg-cream-100 rounded-2xl p-6 sm:p-8 border border-stone-300/80 shadow-sm space-y-6" data-category="enterprise">
 <div class="border-b border-stone-200 pb-4">
 <span class="text-[11px] font-bold uppercase tracking-wider text-ink-soft">Product Development and Design | Houston, TX</span>
@@ -269,11 +283,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               As the sole developer on the application, I worked with full-time Chevron employees across four Agile sprints, gathering feedback as I built and bringing it into the next round of changes.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/font.png', 'Typography reference parameters and design system specs')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Typography Reference Parameters" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x450/1d4ed8/ffffff?text=Typography+Reference+Specs'" src="images/font.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Typography reference parameters &amp; design specs</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/theHomepage.png', 'Functional Excellence Framework Homepage Layout')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Application Homepage Layout" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e3a8a/ffffff?text=Application+Homepage+Layout'" src="images/theHomepage.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Application Homepage Environment Layout</p>
 </div>
@@ -284,7 +298,7 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 <p class="leading-relaxed">
               To ensure the app served real enterprise needs, we modeled <strong>Jessie</strong>—a full-time Chevron employee in a manager/sponsor role who needs to quickly verify metrics created by her direct reports during busy periods.
             </p>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/jessie.png', 'User Persona Framework: Jessie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="User Persona Framework" class="w-full h-auto max-h-[550px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x550/334155/ffffff?text=User+Persona+Framework:+Jessie'" src="images/jessie.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Our user persona: Jessie</p>
 </div>
@@ -294,7 +308,7 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 <p class="leading-relaxed">
               Jessie's step-by-step metric review, comment thread validation, and approval journey flow map:
             </p>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/journeyFlow.png', 'Jessie\'s End-to-End Milestone Tracking Journey Flow Map')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="User Journey Map Architecture Flow" class="w-full h-auto max-h-[600px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1100x600/0f172a/ffffff?text=User+Journey+Map+Architecture+Flow'" src="images/journeyFlow.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Jessie's end-to-end milestone tracking journey flow map</p>
 </div>
@@ -305,11 +319,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               During a 3-week intern hackathon with four other interns across IT departments, we built the <strong>TTA Tracker</strong> for volunteer event registration and administration.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker1.png', 'TTA Tracker Application Interface Overview')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="TTA Tracker Application Interface Overview" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker1.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> TTA Tracker Event History Dashboard</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant &amp; Problem Description')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ttaTracker2.png', 'TTA Interface Layout Variant &amp; Problem Description')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="TTA Interface layout variant" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='ttaTracker2-p-800 2.png'" src="images/ttaTracker2.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Volunteer Problem Statement &amp; Overview Layout</p>
 </div>
@@ -345,11 +359,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               Before writing code, we surveyed gamers across computer science courses and Discord communities to prioritize features.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png', 'Ambrosia User Flow Architecture Whiteboard Sketch')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Ambrosia Flow Whiteboard" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-22-at-11.44.34-PM.png'" src="Screen-Shot-2019-09-22-at-11.44.34-PM-p-1080 2.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> User Flow Architecture Whiteboard Sketch</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png', 'Collaborative Whiteboard Architecture Session')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Team Brainstorming Session" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.07.24-AM.png'" src="Screen-Shot-2019-09-23-at-12.07.24-AM-p-800 copy 2.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Collaborative Planning Session (Library, Settings &amp; Detail View)</p>
 </div>
@@ -361,11 +375,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               Iterating on wireframes in Figma and tracking component features through GitHub Issues.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png', 'Figma Design Canvas Exploration')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Figma Layout Exploration Canvas" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/1e293b/ffffff?text=Figma+Layout+Exploration+Canvas'" src="images/Screen-Shot-2019-09-17-at-2.31.08-PM-p-1080.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Figma design canvas exploration</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png', 'Ambrosia Interactive Add Game Library Modal')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Ambrosia Modal Dialog" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png'" src="Screen-Shot-2019-09-23-at-12.02.17-AM-p-1600.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Add Game Library modal flow</p>
 </div>
@@ -377,11 +391,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               Desktop application prototype rendering and dynamic game addition GIF animation:
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('Screen-Shot-2019-09-16-at-3.34.52-PM.png', 'Ambrosia Desktop Application Prototype Frame')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Ambrosia Mac Laptop Desktop" class="w-full h-auto max-h-[520px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='images/Screen-Shot-2019-09-16-at-3.34.52-PM.png'" src="Screen-Shot-2019-09-16-at-3.34.52-PM.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Desktop Application Sign-in Frame Mockup</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/ambrosia1.gif', 'Ambrosia Dynamic Game Addition Flow GIF')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Interactive Component Animation" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/0f172a/ffffff?text=Ambrosia+Interactive+Prototype+GIF'" src="images/ambrosia1.gif"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Interactive prototyping component: Dynamic Game Addition flow animation</p>
 </div>
@@ -410,11 +424,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               The touch kiosk was situated directly in the monastery lobby. I set up a dedicated UX workstation area to rapid-prototype content updates during the semester.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/screen.png', 'Physical Kiosk Installation View inside Monastery Lobby')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Monastery Lobby Kiosk" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/854d0e/ffffff?text=Monastery+Lobby+Kiosk'" src="images/screen.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Physical Kiosk Installation View inside Monastery Lobby</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/work.png', 'UX Workstation &amp; Interface Layout Workspace')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/work.png', 'UX Workstation &amp; Interface Layout Workspace')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="UX Workstation" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/475569/ffffff?text=UX+Workstation'" src="images/work.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Production Workstation Workspace</p>
 </div>
@@ -426,11 +440,11 @@ Over the years, I've worked on everything from internal enterprise tools to eval
               I designed practical local information, travel advisories, campus updates, and news from home. Because I lived there too, I could see the questions my classmates were running into and keep updating the content throughout the semester.
             </p>
 <div class="space-y-6">
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/newsstand.png', 'Newsstand Feature Conception UI Sketch Layout')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Newsstand Concept UI" class="w-full h-auto max-h-[450px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/3f6212/ffffff?text=Newsstand+Sketched+UI'" src="images/newsstand.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature conception sketch UI layout</p>
 </div>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/NewsStandFinal.png', 'Newsstand High Fidelity Production Shelf UI View')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Newsstand Final UI" class="w-full h-auto max-h-[480px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/900x500/b45309/ffffff?text=Newsstand+Production+UI'" src="images/NewsStandFinal.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Newsstand feature high-fidelity production shelf view</p>
 </div>
@@ -441,7 +455,7 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 <p class="leading-relaxed">
               Real-time feed integration allowed students to check campus Twitter updates directly on the touch screen:
             </p>
-<div class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory &amp; News Feed UI')">
+<div aria-label="Enlarge image" class="cursor-pointer group bg-cream-50 p-4 rounded-xl border border-stone-200" onclick="openLightbox('images/twitterSamp.png', 'Integrated Twitter Live Advisory &amp; News Feed UI')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}" role="button" tabindex="0">
 <img alt="Twitter Integrated Feed" class="w-full h-auto max-h-[500px] object-contain rounded img-zoom-hover mx-auto" decoding="async" loading="lazy" onerror="this.src='https://placehold.co/1000x500/0369a1/ffffff?text=Twitter+Integrated+Feed+UI'" src="images/twitterSamp.png"/>
 <p class="text-xs text-ink-soft text-center mt-3 font-medium"><i class="fas fa-search-plus text-accent mr-1"></i> Integrated Twitter real-time feed UI showcase</p>
 </div>
@@ -459,40 +473,6 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 <div class="bg-[#EFECE6] p-3 sm:p-7" id="projectDialogBody"></div>
 </dialog>
 <!-- AI RESEARCH HUB -->
-<section class="research-redesign rounded-2xl shadow-sm" id="research"><style>
-#research.research-redesign{padding:28px 30px!important; background:#FAF8F5; border:1px solid #ded9d0;}
-#research .research-editorial-intro{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(0,1.6fr);gap:28px;align-items:start;padding-bottom:23px;margin-bottom:21px;border-bottom:1px solid #e4dfd8}
-#research .research-intro-heading .r-title{font-size:29px;margin-top:9px;line-height:1.2}
-#research .research-intro-copy{font-size:13px;line-height:1.75;color:#4A4943;display:grid;gap:10px}
-#research .research-intro-copy p{margin:0}
-#research .research-explorer-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
-#research .research-explorer-caption{font-size:11px;color:#78766F}
-@media(max-width:700px){#research .research-editorial-intro{grid-template-columns:1fr;gap:14px}#research .research-intro-heading .r-title{font-size:27px}#research .research-explorer-heading{display:block}}
-#research .r-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#1D4ED8;font-weight:800}
-#research .r-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:16px}
-#research .r-title{font-family:'DM Serif Display',Georgia,serif;font-size:32px;line-height:1.15}
-#research .r-intro{font-size:13px;color:#78766F;max-width:550px;line-height:1.65;margin:8px 0 0}
-#research .r-action{color:#1D4ED8;font-size:12px;font-weight:700;white-space:nowrap}
-#research .r-input,#research .r-select{background:#fff;border:1px solid #d9d4cc;border-radius:9px;padding:10px 12px;font-size:12px;color:#1C1B18;max-width:100%;outline-offset:2px}
-#research .r-tabs{display:flex;flex-wrap:wrap;gap:6px}
-#research .r-tab{border:1px solid #d9d4cc;border-radius:100px;padding:7px 12px;font-size:11px;color:#4A4943;background:#fff;cursor:pointer}
-#research .r-tab.active{background:#1D4ED8;color:white;border-color:#1D4ED8}
-#research .r-row{border-bottom:1px solid #e9e5df;padding:14px 0;display:flex;gap:14px;align-items:start}
-#research .r-row:last-child{border:0}
-#research .r-paper{font-size:13px;font-weight:700;line-height:1.45;color:#1C1B18}
-#research .r-meta{font-size:11px;color:#78766F;margin-top:5px;line-height:1.5}
-#research .r-link{font-size:11px;font-weight:700;color:#1D4ED8;white-space:nowrap}
-#research .r-chip{font-size:10px;color:#6e6b64;background:#f1eee9;border-radius:4px;padding:4px 7px;white-space:nowrap}
-#research .r-details{font-size:12px;color:#4A4943;line-height:1.7;margin-top:10px}
-#research .r-details summary{cursor:pointer;color:#1D4ED8;font-weight:600;font-size:11px}
-@media(max-width:700px){#research.research-redesign{padding:20px!important}#research .r-head{display:block}#research .r-action{display:inline-block;margin-top:10px}#research .r-title{font-size:27px}}
-</style><div class="research-editorial-intro"><div class="research-intro-heading"><div class="r-kicker">AI RESEARCH</div><h2 class="r-title">The Research Behind the Products</h2></div><div class="research-intro-copy"><p>
-              A lot of my work starts with a question: does this actually work for the person using it?
-            </p><p>
-              With AI, that question gets complicated. A response can sound convincing without being accurate or useful. People can interpret the same system differently depending on their experiences, expectations, and the situation they're using it in.
-            </p><p>
-              I've explored these questions from a few angles, including how AI practitioners evaluate fairness, how people from different communities experience AI assistants, and how design choices influence trust and reliance. Lately, I've been really interested in what these findings mean for the people building and evaluating AI products!
-            </p></div></div><div class="research-explorer-heading" style="align-items:center;margin:8px 0 16px"><h3 class="font-serif-title text-2xl text-ink">Selected Research</h3><a aria-label="Find Lisa Egede publications on Google Scholar" class="r-action" href="https://scholar.google.com/scholar?q=Lisa+Egede" rel="noopener noreferrer" target="_blank">Google Scholar ↗</a></div><div class="grid grid-cols-1 md:grid-cols-[175px_minmax(0,1fr)] gap-5"><aside class="md:border-r border-stone-200 md:pr-4"><div aria-label="Research themes" class="flex flex-row md:flex-col flex-wrap gap-2" id="r-theme-nav"></div></aside><div><div class="mb-4"><h3 class="font-serif-title text-xl" id="r-theme-title"></h3><p class="text-sm text-stone-500 mt-1" id="r-theme-desc"></p></div><div id="r-theme-papers"></div></div></div><script>const researchPapers=[{"title": "\"For Us By Us\": Intentionally Designing Technology for Lived Black Experiences", "venue": "🏆 DIS 2024 — Honorable Mention", "year": "2024", "authors": "Lisa Egede, Leslie Coney, Brittany Johnson, Christina N. Harrington, Denae Ford • ACM DIS 2024", "desc": "We interviewed designers and technologists creating products for Black communities to understand what they wanted their work to make possible beyond simply avoiding harm.", "link": "https://dl.acm.org/doi/10.1145/3643834.3661535", "topic": "Culture & Design"}, {"title": "Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support", "venue": "CSCW 2022", "year": "2022", "authors": "Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach • ACM CSCW 2022", "desc": "We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.", "link": "https://dl.acm.org/doi/abs/10.1145/3512899", "topic": "Fairness"}, {"title": "Trust, Comfort, and Relatability: Understanding Black Older Adults’ Perceptions of Chatbot Design for Health Information Seeking", "venue": "CHI 2023", "year": "2023", "authors": "Lisa Egede, Christina Harrington • ACM CHI 2023", "desc": "We explored how Black older adults perceive conversational agents for health information and which design choices shape their comfort and trust.", "link": "https://dl.acm.org/doi/10.1145/3544548.3580719", "topic": "Health & Trust"}, {"title": "Exploring Culturally Informed AI Assistants: ChatBlackGPT vs ChatGPT", "venue": "CHI EA 2025", "year": "2025", "authors": "Lisa Egede, Ebtesam Al Haque, Gabriella Thompson, Alicia Boyd, Angela D. R. Smith, Brittany Johnson", "desc": "We compared responses from two AI assistants to explore how cultural context shows up in the information people receive, and what that might mean for their experiences.", "link": "https://dl.acm.org/doi/10.1145/3706599.3720136", "topic": "Culture & Design"}, {"title": "AI Automatons: AI Systems Intended to Imitate Humans", "venue": "FAccT 2025", "year": "2025", "authors": "Alexandra Olteanu, Solon Barocas, Su Lin Blodgett, Lisa Egede, Alicia DeVrio, Myra Cheng", "desc": "", "link": "https://dl.acm.org/doi/10.1145/3805689.3812377", "topic": "AI & Trust"}];</script><script>(function(){const topics=[['Fairness','How do practitioners assess AI fairness in real-world workflows?'],['Culture & Design','How do lived experiences and cultural context shape technology design?'],['Health & Trust','What makes AI health information feel trustworthy and useful?'],['AI & Trust','How do humanlike AI systems influence trust and reliance?']];const nav=document.getElementById('r-theme-nav');nav.innerHTML=topics.map((t,i)=>`<button type="button" class="r-tab text-left ${i===0?'active':''}" data-i="${i}">${t[0]}</button>`).join('');function draw(i){const [topic,desc]=topics[i];document.getElementById('r-theme-title').textContent=topic;document.getElementById('r-theme-desc').textContent=desc;document.getElementById('r-theme-papers').innerHTML=researchPapers.filter(p=>p.topic===topic).map(p=>`<article class="r-row"><div class="flex-1"><div class="r-paper">${p.title}</div><div class="r-meta">${p.venue} · ${p.authors}</div><p class="r-details">${p.desc}</p></div><a class="r-link" href="${p.link}" target="_blank" rel="noopener">Read ↗</a></article>`).join('');nav.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('active',i===j))}nav.addEventListener('click',e=>{let b=e.target.closest('[data-i]');if(b)draw(Number(b.dataset.i))});draw(0)})();</script></section>
 </main>
 <!-- LIGHTBOX MODAL -->
 <div class="fixed inset-0 z-50 hidden bg-stone-900/80 backdrop-blur-sm flex items-center justify-center p-4" id="lightboxModal">
@@ -511,9 +491,7 @@ Over the years, I've worked on everything from internal enterprise tools to eval
 <!-- FOOTER -->
 <footer class="border-t border-stone-300 bg-cream-100 py-8 mt-auto">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-<p class="text-xs text-ink-soft">
-            © lisa egede • product portfolio
-          </p>
+<p class="text-xs text-ink-soft">© Lisa Egede · Product portfolio</p>
 <div class="flex items-center gap-5 text-ink-mid text-sm">
 <a aria-label="Twitter" class="hover:text-accent" href="https://twitter.com/lisaegede" target="_blank"><i class="fab fa-twitter"></i></a>
 <a aria-label="LinkedIn" class="hover:text-accent" href="https://www.linkedin.com/in/lisaegede/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -663,5 +641,39 @@ Over the years, I've worked on everything from internal enterprise tools to eval
           observer.observe(section);
         })();
       </script>
-</body>
+<script id="working-image-lightbox">
+function openLightbox(source, title) {
+  const modal=document.getElementById('lightboxModal');
+  const image=document.getElementById('lightboxImg');
+  const heading=document.getElementById('lightboxTitle');
+  if(!modal||!image)return;
+  // Use the visible thumbnail's actual source if it differs from the original argument.
+  const trigger=window.event?.currentTarget;
+  const actual=trigger?.querySelector?.('img')?.getAttribute('src');
+  image.src=source||actual||'';
+  image.alt=title||'Expanded project image';
+  if(heading)heading.textContent=title||'Project image';
+  modal.classList.remove('hidden');
+  modal.style.display='flex';
+  document.body.style.overflow='hidden';
+  image.onerror=()=>{image.alt='Image not available. Check that the image assets are uploaded alongside this HTML file.'};
+}
+function closeLightbox(){
+  const modal=document.getElementById('lightboxModal');
+  if(!modal)return;
+  modal.classList.add('hidden');modal.style.display='';
+  document.body.style.overflow='';
+  const image=document.getElementById('lightboxImg');if(image)image.removeAttribute('src');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('lightboxModal')?.classList.contains('hidden')){e.preventDefault();closeLightbox()}});
+document.getElementById('lightboxModal')?.addEventListener('click',e=>{if(e.target.id==='lightboxModal'||e.target.id==='lightboxImg')closeLightbox()});
+</script><script>
+const researchData={
+ fairness:{tag:'FAIRNESS / CSCW 2022',question:'How do practitioners assess AI fairness in real-world workflows?',title:"Assessing the Fairness of AI Systems: AI Practitioners' Processes, Challenges, and Needs for Support",meta:'CSCW 2022 · Michael Madaio, Lisa Egede, Hariharan Subramonyam, Jenn Wortman Vaughan, Hanna Wallach',desc:'We talked with AI practitioners about how they evaluate fairness in practice, where existing tools fall short, and what would make those tools more useful.'},
+ culture:{tag:'CULTURE & DESIGN',question:'How can AI experiences better reflect the communities using them?',title:'Culturally Tailored AI Systems',meta:'Research on culturally tailored AI assistants and community-centered design',desc:'Exploring how people from different communities experience AI assistants and how cultural context can inform design.'},
+ health:{tag:'HEALTH & TRUST',question:'How do people make sense of AI in health contexts?',title:'Older Adults and Health Chatbots',meta:'CHI Extended Abstracts 2025',desc:'Research examining older adults’ experiences with conversational AI for health information.'},
+ trust:{tag:'AI & TRUST',question:'How do design choices shape trust and reliance on AI?',title:'Evaluating Generative AI in High-Stakes Information Seeking',meta:'Human–AI interaction research',desc:'Studying how people evaluate AI-generated information, and how system design influences interpretation and reliance.'}
+};
+document.querySelectorAll('[data-research]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-research]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-selected',b===button?'true':'false')});const d=researchData[button.dataset.research];const p=document.getElementById('research-panel');p.replaceChildren();const add=(tag,cls,t)=>{let e=document.createElement(tag);if(cls)e.className=cls;e.textContent=t;p.append(e)};add('div','research-tag',d.tag);add('h3','',d.question);add('h4','',d.title);add('p','research-meta',d.meta);add('p','',d.desc);let a=document.createElement('a');a.href='https://scholar.google.com/citations?hl=en&user=FtECS7YAAAAJ';a.target='_blank';a.rel='noopener';a.textContent='Explore research ↗';p.append(a)}));
+</script></body>
 </html>
