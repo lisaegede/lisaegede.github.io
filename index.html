@@ -12,39 +12,42 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-:root{--bg:#EFECE6;--paper:#FAF8F5;--ink:#1C1B18;--muted:#4A4943;--blue:#1D4ED8;--line:#D6D0C4}
+:root{--bg:#FFFFFF;--paper:#FFFFFF;--ink:#1C1B18;--muted:#4A4943;--blue:#1D4ED8;--line:#EAEAEA}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-underline-offset:3px}
+a{color:#12645F;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
 .wrap{max-width:1600px;width:calc(100% - 36px);margin:auto}
-header{background:var(--paper);border-bottom:1px solid var(--line)}
-nav{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-left:auto;margin-right:auto}
-.signature{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}
-.signature img{display:block;width:75px;height:auto}
+header{background:var(--paper);border-bottom:none}
+nav{min-height:79px;display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-left:auto;margin-right:auto}
 
 .navlinks{display:flex;gap:27px;align-items:center}
 .navlinks a{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
-.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--blue)}
+.navlinks a:hover,.navlinks a[aria-current="page"]{color:#12645F}
 main{flex:1;display:flex;align-items:center;padding:70px 0}
 .bio{display:grid;grid-template-columns:340px minmax(0,1fr);align-items:center;gap:clamp(38px,7vw,95px);width:100%;max-width:1080px;margin:0 auto}
-.portrait{display:flex;align-items:center;justify-content:center}
+.portrait{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.portrait-name{font-family:"DM Serif Display",Georgia,serif;font-size:30px;font-weight:400;color:var(--ink);text-align:center}
+.portrait-subtitle{font-size:14px;font-weight:400;color:var(--ink);opacity:.72;text-align:center;margin-top:3px}
 .portrait img{display:block;width:100%;max-width:340px;height:auto;object-fit:contain}
-h1{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(44px,5vw,66px);font-weight:400;letter-spacing:-1px;margin:0 0 24px}
-.copy{font-size:15.5px;line-height:1.9;color:var(--muted);max-width:690px}
-.copy p{margin:0 0 17px}
+h1{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(40px,4.6vw,60px);font-weight:400;letter-spacing:-1px;margin:0 0 24px}
+.copy{font-size:14px;line-height:1.8;color:var(--muted);max-width:690px}
+.copy p{margin:0 0 15px}
 .copy p:last-child{margin-bottom:0}
 footer{padding:22px 0 32px}
 .social{display:flex;justify-content:center;align-items:center;gap:37px}
 .social a{font-size:24px;color:var(--ink);text-decoration:none;transition:color .15s}
-.social a:hover{color:var(--blue)}
-@media(max-width:600px){.wrap{width:calc(100% - 36px)}nav{min-height:70px}.signature img{width:67px}.navlinks{gap:15px}.navlinks a{font-size:12px}main{padding:38px 0 28px}.bio{grid-template-columns:1fr;gap:18px}.portrait img{max-width:230px}h1{text-align:center;font-size:48px;margin-bottom:18px}.copy{font-size:15px}.social{gap:33px}}
+.social a[aria-label="Bluesky"]:is(:hover,:focus-visible){color:#0560FF}
+.social a[aria-label="Twitter"]:is(:hover,:focus-visible){color:#1DA1F2}
+.social a[aria-label="LinkedIn"]:is(:hover,:focus-visible){color:#0A66C2}
+.social a[aria-label="Google Scholar"]:is(:hover,:focus-visible){color:#4285F4}
+.social a svg{width:1em;height:1em;vertical-align:-.125em;fill:currentColor}
+@media(max-width:600px){.wrap{width:calc(100% - 36px)}nav{min-height:70px}.navlinks{gap:15px}.navlinks a{font-size:12px}main{padding:38px 0 28px}.bio{grid-template-columns:1fr;gap:18px}.portrait img{max-width:230px}h1{text-align:center;font-size:44px;margin-bottom:18px}.copy{font-size:13.5px}.social{gap:33px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <header><nav class="wrap" aria-label="Main navigation">
-<a href="https://www.lisaegede.com/" class="signature" aria-label="Lisa Egede home"><img src="images/lisa2.png" alt="Lisa Egede signature"></a>
 <div class="navlinks">
 <a href="https://www.lisaegede.com/photos">photography</a>
 <a href="https://www.lisaegede.com/" aria-current="page">about me</a>
@@ -52,13 +55,14 @@ footer{padding:22px 0 32px}
 </nav></header>
 <main class="wrap">
 <section class="bio" aria-label="About Lisa">
-<div class="portrait"><img src="images/headshot_circle.png" alt="Lisa Egede" fetchpriority="high"></div>
+<div class="portrait"><div><div class="portrait-name">Lisa Egede</div><div class="portrait-subtitle">she/her · human researcher</div></div><img src="images/headshot_circle.png" alt="Lisa Egede" fetchpriority="high"></div>
 <div>
-<h1>Hello!*~</h1>
 <div class="copy">
-<p>My name is <b>Lisa Egede</b> and I'm a mixed-methods researcher and PhD candidate in the <a href="https://hcii.cmu.edu/people/lisa-egede" target="_blank" rel="noopener noreferrer" class="link">Human-Computer Interaction Institute (HCII)</a> at Carnegie Mellon University. I received my undergraduate degree in Computer Science from the <a href="https://oudatalab.com/people#msualum" target="_blank" rel="noopener noreferrer" class="link">University of Oklahoma</a>.</p>
-<p>Grounded in societal computing, <a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="link">my research</a> explores how diverse users experience and make sense of emerging AI systems, particularly in high-stakes contexts. I'm interested in connecting what we learn from users to how technology is designed and evaluated, bringing a human perspective to technical and product decisions!</p>
-<p>In my free time I enjoy making Spotify playlists and <a href="https://www.lisaegede.com/photos" class="link">taking pictures</a> on my film camera.</p>
+<p>I'm a mixed-methods researcher completing my Ph.D. at Carnegie Mellon University's <a href="https://hcii.cmu.edu/people/lisa-egede" target="_blank" rel="noopener noreferrer" class="link">Human-Computer Interaction Institute</a>.</p>
+<p>Much of <a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="link">my research</a> is motivated by questions around what it means for AI systems to work well for diverse communities. I study how people seek information and make decisions with AI in high-stakes contexts, and how the social and human-like qualities of these systems influence their experiences. My research has informed both product design decisions and evaluation practices for generative AI systems.</p>
+<p>Beyond my work at CMU, I've spent time at Microsoft Research, where my work has focused on responsible AI and the evaluation of anthropomorphic behaviors in generative AI, and at IBM Research, where I developed a water availability prediction tool to support resource planning in Kenya.</p>
+<p>Before grad school, I studied Computer Science at the University of Oklahoma, where I conducted privacy and security research in the <a href="https://oudatalab.com/" target="_blank" rel="noopener noreferrer" class="link">OU Data Analytics Lab</a>. I also spent some of my time outside the lab helping organize Oklahoma's first student-run hackathon, <a href="https://medium.com/hacklahoma/first-time-hacker-to-hacklahoma-exec-member-497f882b5c8f" target="_blank" rel="noopener noreferrer" class="link">Hacklahoma</a>!</p>
+<p>My non-academic pursuits include curating Spotify playlists and documenting life <a href="https://www.lisaegede.com/photos" class="link">on film</a>!*~</p>
 <p>You can reach me at lisaegede96 [at] gmail [dot] com!</p>
 </div>
 </div>
@@ -68,6 +72,7 @@ footer{padding:22px 0 32px}
 <a href="https://bsky.app/profile/lisaegede.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
 <a href="https://x.com/lisaegede" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
 <a href="https://www.linkedin.com/in/lisaegede/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="https://scholar.google.com/citations?user=FtECS7YAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24 0 12 12 0l12 12z" opacity=".35"/><path d="M12 24a7 7 0 1 0 0-14 7 7 0 0 0 0 14M0 9l12-9 12 9-12 9z"/></svg></a>
 </div></footer>
 </body>
 </html>
